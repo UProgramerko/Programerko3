@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Reci gdje da idem – Kordinate i smjer &#8212; Block-based programming in Scratch - practice lessons</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/activecode.css" />
+    <link rel="stylesheet" type="text/css" href="_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="_static/clickable.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pytutor.css" />
+    <link rel="stylesheet" type="text/css" href="_static/modal-basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/datafile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/dragndrop.css" />
+    <link rel="stylesheet" type="text/css" href="_static/fitb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/matrixeq.css" />
+    <link rel="stylesheet" type="text/css" href="_static/parsons.css" />
+    <link rel="stylesheet" type="text/css" href="_static/lib/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="_static/poll.css" />
+    <link rel="stylesheet" type="text/css" href="_static/showEval.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabbedstuff.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="_static/karel.css" />
+    <link rel="stylesheet" type="text/css" href="_static/notes.css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-4.0.0-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flatly.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/petlja.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/CLDRPluralRuleParser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.messagestore.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.fallbacks.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.language.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.parser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script type="text/javascript" src="_static/activecode-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/mchoice-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/dragndrop-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/fitb-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/matrixeq.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/parsons-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/showEval.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="_static/runestonevideo.js"></script>
+    <script type="text/javascript" src="_static/karelCorner.js"></script>
+    <script type="text/javascript" src="_static/karelRobot.js"></script>
+    <script type="text/javascript" src="_static/karelWorld.js"></script>
+    <script type="text/javascript" src="_static/karelRobotDrawer.js"></script>
+    <script type="text/javascript" src="_static/karelUI.js"></script>
+    <script type="text/javascript" src="_static/karel.js"></script>
+    <script type="text/javascript" src="_static/karel-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/notes.js"></script>
+    <script type="text/javascript" src="_static/pygamelib-init.js"></script>
+    <script type="text/javascript" src="_static/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/python_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/msg-sr.js"></script>
+    <script type="text/javascript" src="_static/blockpy/utilities.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_errors.js"></script>
+    <script type="text/javascript" src="_static/blockpy/ast_node_visitor.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter.js"></script>
+    <script type="text/javascript" src="_static/blockpy/pytifa.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter_definitions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_to_blockly.js"></script>
+    <script type="text/javascript" src="_static/blockpy/imported.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/class.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comment.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comprehensions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/dict.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/if.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/io.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/lists.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/sets.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/loops.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/parking.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/tuple.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/turtles.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/text.js"></script>
+    <script type="text/javascript" src="_static/blockpy-modal.js"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Nizanje koraka" href="Scratch3 Sequencing.html" />
+    <link rel="prev" title="Okruženje programskog jezika Scratch" href="Scratch3 Interface.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'Scratch_eng';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = false;
+  eBookConfig.basecourse = 'Scratch_eng';
+  eBookConfig.runestone_version = '3.1.1';
+  eBookConfig.imagesDir = '_images/';
+  eBookConfig.staticDir = '_static/';
+  if(typeof(Sk) != "undefined")
+      Sk.imgPath = eBookConfig.imagesDir;
+</script>
+
+<div id="fb-root"></div>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+
+<nav id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     <img src="_static/img/logo.png" style="width:80px; height: 80px;"> 
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-top: 10px; margin-left: 25px;">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="./">Block-based programming in Scratch - practice lessons</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container col-md-12" id="continue-reading"></div>
+
+<div class="container col-md-8 col-md-offset-2" id="main-content">
+  
+  <div class="section" id="reci-gdje-da-idem-kordinate-i-smjer">
+<h1>Reci gdje da idem – Kordinate i smjer<a class="headerlink" href="#reci-gdje-da-idem-kordinate-i-smjer" title="Permalink to this headline">¶</a></h1>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p><img alt="intro2" src="_images/intro2.png" /></p>
+
+    </p></div></div>
+<p>Naučivši osnove okoline, vrijeme je da naučite kako slati likove na željena mjesta na pozornici. Morate znati kako je pozornica organizirana i naučiti naredbe koje vam omogućuju kretanje.</p>
+<div class="sidebar">
+<p class="sidebar-title">Sprite Coordinates</p>
+<p><img alt="stage" src="_images/fig2_1.png" /></p>
+</div>
+<div class="topic">
+<p class="topic-title">Pozornica</p>
+<p>Kad se Scratch pokrene, automatski se stvara pozornica: bijeli pravokutnik koji ima 480 točaka u širini i 360 točaka u visinu. Najmanja točka koja se može prikazati na zaslonu računalne grafike naziva se Pixel.</p>
+<p>Pozornica je mjesto na kojem će se prikazivati vaše priče, igre i animacije. Nepokretna je, poput akvarija, ali njegovi stanovnici - likovi - neprestano se kreću i međusobno se izmjenjuju. Da biste lako kontrolirali kretanje lokova, svakoj točki na pozornici dodjeljuje se adresa - koordinate x i y, koje predstavljaju udaljenost točke od središta pozornice. Središnji stupanj ima koordinate x = 0 i y = 0, ili kraće: (0,0).</p>
+<p>Koordinate omogućuju precizno vođenje likova oko pozornice i mogu se dovesti do proizvoljne točke (x, y). Trenutni položaj lika može se vidjeti u podacima o trenutnom liku.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Funkcije blokova iz grupe Motion (Kretanje)</p>
+<p>Sve naredbe koje vam omogućuju postavljanje znakova u željeni položaj i kontrolu njihova smjera i kretanja podudaraju se blokovima u grupi Motion. Njihova recenzija dana je u lekciji 11 ovog praktikuma. U ovoj lekciji ćemo kroz primjere i vježbe detaljnije predstaviti blokove koji omogućuju kretanje i pokazati kako se koriste blokovi reporteri. Blokovi reporteri se ne uklapaju u jezičnu naredbu i ne mogu biti samostalni u skripti. Funkcija reportera iz gupr Motion (Kretanje) je da zadržati trenutne koordinate i orijentaciju znakova.</p>
+</div>
+<div class="topic">
+<p class="topic-title">Motion Reporters</p>
+<p>To su blokovi <img alt="x_position" src="_images/x_position.png" /> i <img alt="y_position" src="_images/y_position.png" />, koji sadrže trenutne podatke o tome gdje se znak nalazi (koje su njegove x i y koordinate), kao i blok <img alt="direction" src="_images/direction.png" /> koji pokazuje kako je lik usmjeren.</p>
+<p>Da biste na pozornici vidjeli što su trenutne koordinate znaka i gdje gleda, potvrdite potvrdne okvire pored odgovarajućih blokova. Ako se potvrdnim okvirima potvrđuje izvještaj o kretanju, na pozornici su prikazani odgovarajući monitori za praćenje trenutnih koordinata i smjera znaka.</p>
+<a class="reference internal image-reference" href="_images/fig2_2.png"><img alt="_images/fig2_2.png" class="align-center" src="_images/fig2_2.png" style="width: 400px;" /></a>
+</div>
+<div class="topic">
+<p class="topic-title">Apsolutno i relativno kretanje</p>
+<p>Možete poslati lik na određeno mjesto na pozornici na dva načina: apsolutno i relativno kretanje.</p>
+<p><strong>Apsolutno kretanje</strong> je premještaj na određeno mjesto - odredište, neovisno o trenutnom položaju lika.</p>
+<p>Na Scratchu se lik može poslati na zadanu poziciju (x, y) na pozornici ili izvesti apsolutno kretanje, koristeći sljedeće blokove:</p>
+<ul class="simple">
+<li><p><img alt="goto_xy" src="_images/goto_xy.png" /> - go to position (х,у),</p></li>
+<li><p><img alt="glide_xy" src="_images/glide_xy.png" /> - glide to the position (х,у),</p></li>
+<li><p><img alt="set_x" src="_images/set_x.png" /> - set coordinate x to the position,</p></li>
+<li><p><img alt="set_y" src="_images/set_y.png" /> - set coordinate y to the position.</p></li>
+</ul>
+<p>Naredbom <img alt="goto_xy" src="_images/goto_xy.png" /> lik se premješta na zadanu lokaciju (x,y).</p>
+<p>Slično bi, s početne točke, s odredbom stigla do odredišta <img alt="glide_xy" src="_images/glide_xy.png" />,, ali taj se potez ne bi dogodio trenutno, već bi trajao određeni broj sekundi. Što veći broj puta kliznete, duže će vam trebati da stignete na svoje odredište.</p>
+<p>Drugi način postavljanja odredišta u apsolutnom gibanju je neovisno postavljanje x i y koordinata pomoću naredbi <img alt="set_x" src="_images/set_x.png" /> and <img alt="set_y" src="_images/set_y.png" />.</p>
+<p><strong>Relativno kretanje</strong> je pomicanje mjesta koje je udaljeno određenog broja koraka od trenutne pozicije lika. Naravno, treba reći i u kojem smjeru ići (desno, gore i sl.).</p>
+<p>Drugi način da se odredište postavi u relativnom gibanju je neovisno postavljanje h i u koordinata pomoću naredbi <img alt="change_x" src="_images/change_x.png" /> i <img alt="change_y" src="_images/change_y.png" />.</p>
+<p>Na Scratchu se lik može poslati u položaj udaljen od trenutnog zadanog broja koraka ili izvršiti relativno pomicanje, koristeći sljedeće blokove:</p>
+<ul class="simple">
+<li><p><img alt="change_x" src="_images/change_x.png" /> - promijenite x za 10 pixela horizontalno u odnosu na trenutnu poziciju,</p></li>
+<li><p><img alt="change_y" src="_images/change_y.png" /> - promijenite y za 10 pixela vertikalno u odnosu na trenutnu poziciju,</p></li>
+<li><p><img alt="turn_right" src="_images/turn_right.png" /> - okreni se udesno 15 stupnjeva u odnosu na zadanu poziciju,</p></li>
+<li><p><img alt="turn_left" src="_images/turn_left.png" /> - okreni se ulijevo  15 stupnjeva u odnosu na zadanu poziciju</p></li>
+<li><p><img alt="move_steps" src="_images/move_steps.png" /> - idi 10 koraka u zadanom smjeru u odnosu na zadanu poziciju.</p></li>
+</ul>
+</div>
+<div class="sidebar">
+<p class="sidebar-title">Direction Blocks</p>
+<p class="sidebar-subtitle"><img alt="point_direction" src="_images/point_direction.png" /> and <img alt="point_towards" src="_images/point_towards.png" /></p>
+<p>Postoje tri načina za postavljanje vrijednosti u polje unosa prvog bloka:</p>
+<p><img alt="direction1" src="_images/fig2_3.png" /></p>
+<ol class="arabic simple">
+<li><p>za odabir jedne od ponuđenih vrijednosti s padajućeg popisa, na primjer (0) gore;</p></li>
+<li><p>unesite novu vrijednost, umjesto stare, na primjer 45;</p></li>
+<li><p>za okretanje plave strelice koja označava smjer u trenutnim podacima Sprite-a.</p></li>
+</ol>
+<p>s drop-down popisa možete odabrati prema kojem će objektu biti usmjeren Sprite u drugom bloku.</p>
+<p><img alt="direction2" src="_images/fig2_4.png" /></p>
+</div>
+<div class="topic">
+<p class="topic-title">Upravljanje i skretanje</p>
+<p>Pored naredbi za skretanje <img alt="turn_right" src="_images/turn_right.png" /> i <img alt="turn_left" src="_images/turn_left.png" />, koje omogućuju promjenu smjera u odnosu na to kako je lik bio usmjeren, u Scratchu postoje i naredbe koje postavljaju usmjerenje nazavisno od trenutnog položaja lika</p>
+<p>To su naredbe <img alt="point_direction" src="_images/point_direction.png" /> i <img alt="point_towards" src="_images/point_towards.png" />.</p>
+<p>Sljedeća slika prikazuje vrijednosti glavnih smjerova koje možete unijeti u polje unosa prvog bloka: <em>gore</em> (sjever), <em>desno</em> (istok), <em>dolje</em> (jug) i <em>lijevo</em> (zapad).</p>
+<a class="reference internal image-reference" href="_images/fig2_5.png"><img alt="_images/fig2_5.png" class="align-center" src="_images/fig2_5.png" style="width: 250px;" /></a>
+<p>Možete unijeti druge vrijednosti, na primjer, 45 stupnjeva prema sjeveroistoku i 135 stupnjeva prema jugoistoku. Za vožnju prema zapadu ne morate koristiti negativne brojeve. Umjesto toga možete unijeti brojeve od 180 do 360.</p>
+<p>Drugi blok omogućuje znaku da pokaže na pokazivač miša ili znak u projektu. Možete odabrati koji lik treba usmjeriti klikom na bijeli trokut u polju vrijednosti, otvaranjem padajućeg popisa i odabirom. Na primjer, u projektu “Šetnja dinosaura” koji ćemo analizirati kasnije u ovoj lekciji, mačka može usmjeriti pokazivača miša ili jednog od 3 dinosaura koji su likovi u ovom projektu.</p>
+</div>
+<div class="section" id="study-study-the-following-examples">
+<h2><img alt="study" src="_images/study.png" /> Study the following examples<a class="headerlink" href="#study-study-the-following-examples" title="Permalink to this headline">¶</a></h2>
+<p>Baš kao što smo pokazali u projektu Hello World jednostavan način da lik govori, a zatim smo kroz vježbe nadogradili Projekt tako da lik stvarno izgovara tekst, tako ćemo sada pokazati osnovne naredbe koje pomažu liku da se pomakne, a zatim nadograditi kroz vježbe ove mogućnosti.</p>
+<div class="section" id="prouci-sljedece-primjere-projekata">
+<h3>Prouči sljedeće primjere projekata<a class="headerlink" href="#prouci-sljedece-primjere-projekata" title="Permalink to this headline">¶</a></h3>
+<p><img alt="1" src="_images/1.png" /> Klikni na grupu blokova <em>Motion</em> (Kretanje), pa povuci blok  <img alt="move_steps" src="_images/move_steps.png" /> u područje skripti i klikni na njega. Mačak će se pomaknuti u desno 10 koraka.</p>
+<p><img alt="2" src="_images/2.png" /> Pritisnite ovaj blok više puta i odvedite mačku do desnog ruba zaslona.</p>
+<p>Klikanje na pomični blok omogućilo je da se radnja koju ovaj blok izvodi ponavlja više puta. Ponavljanje radnje više puta može se postići i programskim putem.</p>
+<p><img alt="3" src="_images/3.png" /> Vratite mačku na sredinu ekrana i kliknite na kontrolnu grupu za upravljanje. Blokovi će se pojaviti u blokovima različitog oblika od blokova koje ste koristili - blokovi u obliku slova C sa “ustima” u koje možete umetnuti druge blokove.</p>
+<p><img alt="4" src="_images/4.png" /> Izaberite blok <img alt="forever" src="_images/forever.png" /> i povucite ga u područje skripte. Klikom na ovaj blok omogućava se da svi blokovi koji su u njega uloženi izvršavaju zauvijek (sve dok ne zaustavite izvršavanje programa klikom na znak <em>stop</em>).</p>
+<p><img alt="5" src="_images/5.png" /> Umetnite u “usta” bloka koji se ponavlja i kliknite na njih. Mačka će ponovno nestati sa zaslona.</p>
+<p>Postoji način da se kretanje znakova može zadržati unutar granica zaslona. Ovo je naredba <em>if on edge, bounce</em>. Odgovarajući blok nalazi se u grupi Motion (Kretanje).</p>
+<p><img alt="6" src="_images/6.png" /> Zaustavi izvršavanje blokova klikom na znak <em>stop</em>, pa povuci blok <img alt="if_edge" src="_images/if_edge.png" /> u području skripte i stavite je u “usta” bloka ponavljanja, iza bloka kretanje.</p>
+<div class="sidebar">
+<p class="sidebar-title">The Project Script</p>
+<p>The following Script is added to the cat sprite.</p>
+<p><img alt="script" src="_images/fig2_6.png" /></p>
+</div>
+<p>Izvodeći ovaj scenarij mačka će se neprestano kretati od jednog do drugog ruba, ali će također ići naopako. Naravno, postoji način da se to ispravi. Jedno je promijeniti način na koji se lik kreće u informacijama o znakovima, a drugo je dati naredbu da okrene lik.</p>
+<p><img alt="7" src="_images/7.png" /> Povucite blok <img alt="rotation_style" src="_images/rotation_style.png" /> iz grupe <em>Kretanje</em> i stavite je iznad bloka ponavljanja. Provjerite je li način okretanja <em>lijevo-desno</em> odabran s padajućeg popisa ovog bloka.</p>
+<p><img alt="8" src="_images/8.png" /> Postavite blok <img alt="clicked_flag" src="_images/clicked_flag.png" /> na početka skripte, i time ste dovršili projekt “The Walk”.</p>
+<p>Projekt sada možete pokrenuti klikom na <em>zelenu zastavu</em> i zaustavljanjem klikom na <em>stop</em>. Spremite ga, a zatim krenite u nova istraživanja.</p>
+<hr class="docutils" />
+<p>U sljedećem ćemo projektu pokazati kako se uvode novi likovi i pozadine te kako se upravlja znakom pomoću pokazivača miša. Dakle, prije nego što prođete kroz ovaj primjer, proučite priručnike <em>Add Sprite</em> i <em>Add Backdrop</em>.</p>
+</div>
+<div class="section" id="primjer-2-the-dinosaur-walk">
+<h3>Primjer 2 – “The Dinosaur Walk”<a class="headerlink" href="#primjer-2-the-dinosaur-walk" title="Permalink to this headline">¶</a></h3>
+<p>U prethodnom projektu koristili smo <code class="docutils literal notranslate"><span class="pre">repeat</span> <span class="pre">forever</span></code> blok da bismo mačku zauvijek pomaknuli između rubova zaslona, odnosno dok projekt ne bude zaustavljen klikom na znak stop. U ovaj projekt su uključena 4 lika, a svakom ćemo priložiti skriptu koja opisuje njegovo ponašanje. Mačka će zauvijek slijediti pokazivač miša, a ostala 3 znaka - dinosauri, zauvijek će ciljati na mačku.</p>
+<a class="reference internal image-reference" href="_images/fig2_7.png"><img alt="_images/fig2_7.png" class="align-center" src="_images/fig2_7.png" style="width: 490px;" /></a>
+<p><strong>Stvaranje projekta</strong></p>
+<div class="sidebar">
+<p class="sidebar-title">Izbor pozadine</p>
+<p>Novu pozadinu možete dodati u projekt klikom na sličicu koja se nalazi desno od tipke za izbor likova.</p>
+<p><img alt="new_backdrop" src="_images/fig2_8.png" /></p>
+</div>
+<p><img alt="1" src="_images/1.png" /> Kliknite gumb pozadine i odaberite <em>Jurassic</em> pozadinu iz biblioteke pozadina.</p>
+<p><img alt="2" src="_images/2.png" /> Odaberite knjižnicu znakova <em>Dinosaur1</em>, <em>Dinosaur2</em> i <em>Dinosaur3</em>.</p>
+<p><img alt="3" src="_images/3.png" /> Raspored likova kao na slici gore. Liku <em>Dinosaura2</em> potrebna je promjena smjera. Podrazumijeva se da je orijentacija likova postavljena na 90 (gledajući desno) i da je njihov način rada <em>All Around</em>. Te se postavke mogu promijeniti u znakovnim informacijama ili pomoću odgovarajućih blokova u skriptama uz koje se pridružuju. Koristit ćemo prvu metodu u ovom projektu.</p>
+<p><img alt="4" src="_images/4.png" /> U znakovnim podacima postavite način rotacije za lik: <em>Dinosaur1 – ne rotiraj</em>, <em>Dinosaur2 - lijevo / desno</em>, <em>Dinosaur3 – All Around</em></p>
+<p><img alt="5" src="_images/5.png" /> Svim dinosaurima pridružite istou skriptu, što zahtijeva da se oni usredotoče na mačku tijekom cijelog projekta. Međutim, ponašat će se drugačije jer imaju različite načine okretanja</p>
+<p><img alt="6" src="_images/6.png" /> Liku mačka pridruži naredbe koje mu omogućuju da prati koordinate pokazivača miša, odnosno da pomiče po pozornici dok korisnik pomiče miš.</p>
+<p>Skripte koje opisuju ponašanje dinosaura i mačke prikazane su na sljedećoj slici.</p>
+<a class="reference internal image-reference" href="_images/fig2_9.png"><img alt="_images/fig2_9.png" class="align-center" src="_images/fig2_9.png" style="width: 395px;" /></a>
+<p>Započnite projekt i premjesštajte mačku po pozornici. Imajte na umu da dinosauri prate mačku na različite načine.</p>
+<hr class="docutils" />
+<div class="sidebar">
+<p class="sidebar-title">Selection of the Keys</p>
+<p>Tipka na tipkovnici koja će pokrenuti skriptu odabrana je klikom na bijeli trokut pored naziva tipke (razmak), a zatim odabirom željene tipke s padajućeg popisa.</p>
+<p><img alt="fig2_11" src="_images/fig2_10.png" /></p>
+</div>
+</div>
+<div class="section" id="primjer-3-linear-motion">
+<h3>Primjer 3 – “Linear Motion”<a class="headerlink" href="#primjer-3-linear-motion" title="Permalink to this headline">¶</a></h3>
+<p>Proučite priručnik <em>Use the Arrow Keys</em> i kreirajte projekt u kojem se mačka kreće pomoću tipkovnice po pozornici.</p>
+<p><img alt="1" src="_images/1.png" />   Liku mačke pridruži naredbu <img alt="clicked_key" src="_images/clicked_key.png" />.</p>
+<p><img alt="2" src="_images/2.png" />   Izaberi tipku <em>Right arrow</em>.</p>
+<p><img alt="3" src="_images/3.png" />     Iz grupe kretanje izaberi naredbu <img alt="point_direction" src="_images/point_direction.png" /> i poveži je s predhodnom naredbom</p>
+<p><img alt="4" src="_images/4.png" />     Iz grupe kretanje izaberi naredbu <img alt="move_steps" src="_images/move_steps.png" /> i poveži je s predhodnom naredbom</p>
+<p><img alt="5" src="_images/5.png" />     Pritisnite tipku sa strelicom desno nekoliko puta. Što se događa?</p>
+<p><img alt="6" src="_images/6.png" />     Duplicirajte ovu skriptu (desnom tipkom miša kliknite prvu naredbu, a zatim odaberite <em>Dupliciraj</em>).</p>
+<p><img alt="7" src="_images/7.png" />     U novoj skripti zamijenite strelicu desno u lijevoj strelici, u bloku <em>točke u smjeru</em> odaberite -90 umjesto 90.</p>
+<p><img alt="8" src="_images/8.png" />     Pritisnite tipku sa strelicom ulijevo nekoliko puta. Što se događa?</p>
+<p><img alt="9" src="_images/9.png" />     Slično napravite još dvije skripte: voditi mačku 10 koraka prema gore pritiskom tipke sa strelicom prema gore ili 10 koraka prema dolje pritiskom tipke sa strelicom prema dolje.</p>
+<a class="reference internal image-reference" href="_images/fig2_11.png"><img alt="_images/fig2_11.png" class="align-center" src="_images/fig2_11.png" style="width: 480px;" /></a>
+</div>
+<hr class="docutils" />
+<div class="section" id="primjer-4-motion-with-a-turn">
+<h3>Primjer 4 – “Motion with a Turn”<a class="headerlink" href="#primjer-4-motion-with-a-turn" title="Permalink to this headline">¶</a></h3>
+<p>Napravit ćemo još jedan projekt za izvođenje znakova pomoću tipki na tastaturi, ali s modificiranim značajkama tipki s strelicamae. Izbacit ćemo naredbe usmjerenja, a s lijevim strelicama i desnim strelicama pridružit ćemo naredbe koje rotiraju znak za 15 stupnjeva lijevo ili desno. S strelicama gore i dolje ćemo pomaknuti 10 koraka i pomaknuti -10 koraka. Odgovarajuće skripte imat će sljedeći izgled.</p>
+<a class="reference internal image-reference" href="_images/fig2_12.png"><img alt="_images/fig2_12.png" class="align-center" src="_images/fig2_12.png" style="width: 435px;" /></a>
+<p>Pokreni projekt i testiraj kako se u njemu upravlja s likom.</p>
+</div>
+</div>
+<div class="section" id="ask-jeste-li-razumijeli">
+<h2><img alt="ask" src="_images/ask.png" /> Jeste li razumijeli?<a class="headerlink" href="#ask-jeste-li-razumijeli" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pitanje-1">
+<h3>Pitanje 1<a class="headerlink" href="#pitanje-1" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="stage1">
+            <p>Q-10: Kolike su dimenzije pozornice?</p>
+
+            <li data-component="answer"  id="stage1_opt_a">1280 tаčаkа pо širini i 600 tаčаkа pо visini</li><li data-component="feedback" id="stage1_opt_a"></li>
+            
+            <li data-component="answer"  id="stage1_opt_b">800 tаčаkа pо širini i 600 tаčаkа pо visini</li><li data-component="feedback" id="stage1_opt_b"></li>
+            
+            <li data-component="answer" data-correct id="stage1_opt_c">480 tаčаkа pо širini i 360 tаčаkа pо visini</li><li data-component="feedback" id="stage1_opt_c">Točno.</li>
+            
+            <li data-component="answer"  id="stage1_opt_d">360 tаčаkа pо širini i 480 tаčаkа pо visini</li><li data-component="feedback" id="stage1_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-2">
+<h3>Pitanje 2<a class="headerlink" href="#pitanje-2" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="stage2">
+            <p>Q-11: Gdje se nalazi točka s kordinatama (0,0)?</p>
+
+            <li data-component="answer"  id="stage2_opt_a">u gornjem lijevom uglu pozornice</li><li data-component="feedback" id="stage2_opt_a"></li>
+            
+            <li data-component="answer"  id="stage2_opt_b">u donjem lijevom uglu pozorni</li><li data-component="feedback" id="stage2_opt_b"></li>
+            
+            <li data-component="answer" data-correct id="stage2_opt_c">u centru pozornice</li><li data-component="feedback" id="stage2_opt_c">Točno.</li>
+            
+            <li data-component="answer"  id="stage2_opt_d">zavisi od pridružene pozadine</li><li data-component="feedback" id="stage2_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-3">
+<h3>Pitanje 3<a class="headerlink" href="#pitanje-3" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="blocks1">
+            <p>Q-12: Kojoj grupi pripadaju blokovi koji upravljaju položajem, orijentacijom, okretanjem i kretanjem likova?</p>
+
+            <li data-component="answer"  id="blocks1_opt_a">Osjećaji</li><li data-component="feedback" id="blocks1_opt_a"></li>
+            
+            <li data-component="answer" data-correct id="blocks1_opt_b">Kretanje</li><li data-component="feedback" id="blocks1_opt_b">Točno.</li>
+            
+            <li data-component="answer"  id="blocks1_opt_c">Upravljanje</li><li data-component="feedback" id="blocks1_opt_c"></li>
+            
+            <li data-component="answer"  id="blocks1_opt_d">Izgled</li><li data-component="feedback" id="blocks1_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-4">
+<h3>Pitanje 4<a class="headerlink" href="#pitanje-4" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="stage3">
+            <p>Q-13:  Može li pozornica izvršavati nardebe kretanja?</p>
+
+            <li data-component="answer"  id="stage3_opt_a">da</li><li data-component="feedback" id="stage3_opt_a"></li>
+            
+            <li data-component="answer" data-correct id="stage3_opt_b">ne</li><li data-component="feedback" id="stage3_opt_b">Točno.</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-5">
+<h3>Pitanje 5<a class="headerlink" href="#pitanje-5" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="absolute_motion">
+            <p>Q-14: Koje naredbe omogućavaju apsolutno kretanje? (Izaberi sve točne odgovore)</p>
+<a class="reference internal image-reference" href="_images/q2_5.png"><img alt="_images/q2_5.png" class="align-center" src="_images/q2_5.png" style="width: 530px;" /></a>
+
+            <li data-component="answer" data-correct id="absolute_motion_opt_a"></li><li data-component="feedback" id="absolute_motion_opt_a"></li>
+            
+            <li data-component="answer"  id="absolute_motion_opt_b"></li><li data-component="feedback" id="absolute_motion_opt_b"></li>
+            
+            <li data-component="answer"  id="absolute_motion_opt_c"></li><li data-component="feedback" id="absolute_motion_opt_c"></li>
+            
+            <li data-component="answer" data-correct id="absolute_motion_opt_d"></li><li data-component="feedback" id="absolute_motion_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-6">
+<h3>Pitanje 6<a class="headerlink" href="#pitanje-6" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="relative_motion">
+            <p>Q-15: Koje naredbe omogućavaju relativno kretanje? (Izaberi sve točne odgovore)</p>
+<a class="reference internal image-reference" href="_images/q2_6.png"><img alt="_images/q2_6.png" class="align-center" src="_images/q2_6.png" style="width: 530px;" /></a>
+
+            <li data-component="answer"  id="relative_motion_opt_a"></li><li data-component="feedback" id="relative_motion_opt_a"></li>
+            
+            <li data-component="answer" data-correct id="relative_motion_opt_b"></li><li data-component="feedback" id="relative_motion_opt_b"></li>
+            
+            <li data-component="answer"  id="relative_motion_opt_c"></li><li data-component="feedback" id="relative_motion_opt_c"></li>
+            
+            <li data-component="answer" data-correct id="relative_motion_opt_d"></li><li data-component="feedback" id="relative_motion_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-7">
+<h3>Pitanje 7<a class="headerlink" href="#pitanje-7" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="reporters">
+            <p>Q-16:  Koji blokovi predstavljaju reportere kretanja? (Izaberi sve točne odgovore)</p>
+<a class="reference internal image-reference" href="_images/q2_7.png"><img alt="_images/q2_7.png" class="align-center" src="_images/q2_7.png" style="width: 310px;" /></a>
+
+            <li data-component="answer"  id="reporters_opt_a"></li><li data-component="feedback" id="reporters_opt_a"></li>
+            
+            <li data-component="answer" data-correct id="reporters_opt_b"></li><li data-component="feedback" id="reporters_opt_b"></li>
+            
+            <li data-component="answer" data-correct id="reporters_opt_c"></li><li data-component="feedback" id="reporters_opt_c"></li>
+            
+            <li data-component="answer" data-correct id="reporters_opt_d"></li><li data-component="feedback" id="reporters_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-8">
+<h3>Pitanje 8<a class="headerlink" href="#pitanje-8" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="3" style="display:none">
+
+    </div>
+<a class="reference internal image-reference" href="_images/q2_8.png"><img alt="_images/q2_8.png" class="align-center" src="_images/q2_8.png" style="width: 400px;" /></a>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="compass">
+            <p>Q-17: Na koju će stranu svijeta gledati lik poslije izvršavanja naredbe <img alt="2_8" src="_images/block2_8.png" />?</p>
+
+            <li data-component="answer"  id="compass_opt_a">Jugoistok</li><li data-component="feedback" id="compass_opt_a">Tamo pokazuje kut od 135 stupnjeva.</li>
+            
+            <li data-component="answer"  id="compass_opt_b">Jugozapad</li><li data-component="feedback" id="compass_opt_b">Tamo pokazuje kut od -135 stupnjeva.</li>
+            
+            <li data-component="answer"  id="compass_opt_c">Sjeveroistok</li><li data-component="feedback" id="compass_opt_c">Tamo pokazuje kut od 45 stupnjeva.</li>
+            
+            <li data-component="answer" data-correct id="compass_opt_d">Sjeverozapad</li><li data-component="feedback" id="compass_opt_d">Točno.</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-9">
+<h3>Pitanje 9<a class="headerlink" href="#pitanje-9" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+<p>Na sljedećoj slici su prikazani položaji 5 točaka na pozornici.</p>
+<a class="reference internal image-reference" href="_images/q2_9.png"><img alt="_images/q2_9.png" class="align-center" src="_images/q2_9.png" style="width: 300px;" /></a>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="coordinates1">
+            <p>Q-18: Koje su kordinate točke A?</p>
+
+            <li data-component="answer"  id="coordinates1_opt_a">(-200,-40)</li><li data-component="feedback" id="coordinates1_opt_a"></li>
+            
+            <li data-component="answer" data-correct id="coordinates1_opt_b">(-200,40)</li><li data-component="feedback" id="coordinates1_opt_b">Točno.</li>
+            
+            <li data-component="answer"  id="coordinates1_opt_c">(200,-40)</li><li data-component="feedback" id="coordinates1_opt_c"></li>
+            
+            <li data-component="answer"  id="coordinates1_opt_d">(200,40)</li><li data-component="feedback" id="coordinates1_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="coordinates2">
+            <p>Q-19: Koje točke imaju negativnu <em>y</em> kordinatu?
+(Izaberi sve točne odgovore)</p>
+
+            <li data-component="answer"  id="coordinates2_opt_a">Point A</li><li data-component="feedback" id="coordinates2_opt_a"></li>
+            
+            <li data-component="answer" data-correct id="coordinates2_opt_b">Point B</li><li data-component="feedback" id="coordinates2_opt_b"></li>
+            
+            <li data-component="answer"  id="coordinates2_opt_c">Point D</li><li data-component="feedback" id="coordinates2_opt_c"></li>
+            
+            <li data-component="answer" data-correct id="coordinates2_opt_d">Point E</li><li data-component="feedback" id="coordinates2_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            
+<div class="course-box course-box-problem course-content">
+<ul data-component="dragndrop" id="coordinates_various">
+    <span data-component="question">Q-20: Upari točke s njihovim kordinatama.</span>
+	<span data-component=feedback>Pokušaj ponovo</span>
+
+    <li data-component="draggable" id="coordinates_various_drag1">A</li>
+    <li data-component="dropzone" for="coordinates_various_drag1">(-200,40)</li>
+
+    <li data-component="draggable" id="coordinates_various_drag2">B</li>
+    <li data-component="dropzone" for="coordinates_various_drag2">(-160,-60)</li>
+
+    <li data-component="draggable" id="coordinates_various_drag3">C</li>
+    <li data-component="dropzone" for="coordinates_various_drag3">(20,0)</li>
+
+    <li data-component="draggable" id="coordinates_various_drag4">D</li>
+    <li data-component="dropzone" for="coordinates_various_drag4">(100,120)</li>
+
+    <li data-component="draggable" id="coordinates_various_drag5">E</li>
+    <li data-component="dropzone" for="coordinates_various_drag5">(180,-80)</li>
+</ul></div></div>
+<div class="section" id="pitanje-10">
+<h3>Pitanje 10<a class="headerlink" href="#pitanje-10" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+<p>Na sljedećoj slici prikazani su položaji 6 točaka na pozornici</p>
+<a class="reference internal image-reference" href="_images/q2_10.png"><img alt="_images/q2_10.png" class="align-center" src="_images/q2_10.png" style="width: 300px;" /></a>
+
+<div class="course-box course-box-problem course-content">
+<ul data-component="dragndrop" id="coordinates_symmetrical">
+    <span data-component="question">Q-21: Upari točke s njihovim kordinatama.</span>
+	<span data-component=feedback>Pokušaj ponovo</span>
+
+    <li data-component="draggable" id="coordinates_symmetrical_drag1">A</li>
+    <li data-component="dropzone" for="coordinates_symmetrical_drag1">(-160,80)</li>
+
+    <li data-component="draggable" id="coordinates_symmetrical_drag2">B</li>
+    <li data-component="dropzone" for="coordinates_symmetrical_drag2">(-160,-80)</li>
+
+    <li data-component="draggable" id="coordinates_symmetrical_drag3">C</li>
+    <li data-component="dropzone" for="coordinates_symmetrical_drag3">(160,-80)</li>
+
+    <li data-component="draggable" id="coordinates_symmetrical_drag4">D</li>
+    <li data-component="dropzone" for="coordinates_symmetrical_drag4">(80,0)</li>
+
+    <li data-component="draggable" id="coordinates_symmetrical_drag5">E</li>
+    <li data-component="dropzone" for="coordinates_symmetrical_drag5">(160,80)</li>
+
+    <li data-component="draggable" id="coordinates_symmetrical_drag6">F</li>
+    <li data-component="dropzone" for="coordinates_symmetrical_drag6">(0,80)</li>
+</ul></div>
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="symmetry_х">
+            <p>Q-22: Koja je točka simetrična na točku E u odnosu na <em>X</em> os?</p>
+
+            <li data-component="answer"  id="symmetry_х_opt_a">Točka A</li><li data-component="feedback" id="symmetry_х_opt_a">Ovo bi trebala biti točka koja ima isti x, i suprotnu vrijednost koordinate y kao točka E.</li>
+            
+            <li data-component="answer"  id="symmetry_х_opt_b">Točka B</li><li data-component="feedback" id="symmetry_х_opt_b">Ovo bi trebala biti točka koja ima isti x, i suprotnu vrijednost koordinate y kao točka E.</li>
+            
+            <li data-component="answer" data-correct id="symmetry_х_opt_c">Točka C</li><li data-component="feedback" id="symmetry_х_opt_c">Točno.</li>
+            
+            <li data-component="answer"  id="symmetry_х_opt_d">Točka D</li><li data-component="feedback" id="symmetry_х_opt_d">Ovo bi trebala biti točka koja ima isti x, i suprotnu vrijednost koordinate y kao točka E.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="symmetry_у">
+            <p>Q-23: Koja je točka simetrična na točku E u odnosu na <em>Y</em> os?</p>
+
+            <li data-component="answer" data-correct id="symmetry_у_opt_a">Točka А</li><li data-component="feedback" id="symmetry_у_opt_a">Točno.</li>
+            
+            <li data-component="answer"  id="symmetry_у_opt_b">Točka В</li><li data-component="feedback" id="symmetry_у_opt_b">To bi trebala biti točka koja ima suprotnu vrijednost x koordinate i istu y koordinatu kao točka E.</li>
+            
+            <li data-component="answer"  id="symmetry_у_opt_c">Točka С</li><li data-component="feedback" id="symmetry_у_opt_c">To bi trebala biti točka koja ima suprotnu vrijednost x koordinate i istu y koordinatu kao točka E.</li>
+            
+            <li data-component="answer"  id="symmetry_у_opt_d">Točka D</li><li data-component="feedback" id="symmetry_у_opt_d">To bi trebala biti točka koja ima suprotnu vrijednost x koordinate i istu y koordinatu kao točka E.</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="symmetry2">
+            <p>Q-24: Koje su točke jednako udaljene od y osi? (Izaberi sve točne odgovore)</p>
+
+            <li data-component="answer" data-correct id="symmetry2_opt_a">A i B</li><li data-component="feedback" id="symmetry2_opt_a"></li>
+            
+            <li data-component="answer" data-correct id="symmetry2_opt_b">A i C</li><li data-component="feedback" id="symmetry2_opt_b"></li>
+            
+            <li data-component="answer" data-correct id="symmetry2_opt_c">A i E</li><li data-component="feedback" id="symmetry2_opt_c"></li>
+            
+            <li data-component="answer"  id="symmetry2_opt_d">D i F</li><li data-component="feedback" id="symmetry2_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            </div>
+</div>
+<div class="section" id="try-pokusaj">
+<h2><img alt="try" src="_images/try.png" /> Pokušaj!<a class="headerlink" href="#try-pokusaj" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vjezba-1-pracenje-polozaja-likova">
+<h3>Vježba 1 – Praćenje položaja likova<a class="headerlink" href="#vjezba-1-pracenje-polozaja-likova" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p><img alt="1" src="_images/1.png" /> Povucite znak mačke u gornji lijevi kut pozornice, pa provjerite informacije o znakovima za koordinate točke na kojoj ste ga ostavili.</p>
+<p><img alt="2" src="_images/2.png" /> Zatim ga povucite u gornji desni kut pozornice i ponovno provjerite koordinate točke na kojoj ste ga ostavili</p>
+<p><img alt="3" src="_images/3.png" /> Ponovi prethodni postupak za točke u donjim kutovima pozornice. U kojim je točkama na pozornici koordinata x imala znak minus, a na kojoj je y koordinata negativna?</p>
+<p><img alt="4" src="_images/4.png" /> Uvezite <em>Appleov</em> lik iz biblioteke likova. Plavi okvir bi se trebao pojaviti oko sličice novog lika na popisu likova, što znači da je lik u fokusu. Ako ne, kliknite na njegovu sličicu na popisu likova.</p>
+<p><img alt="5" src="_images/5.png" /> Provjerite varijable h i u položaja na dnu blokade <em>Motion</em>. Apple: <em>x položaj</em> i Apple: <em>y monitori</em> položaja pojavit će se na pozornici.</p>
+<p><img alt="6" src="_images/6.png" /> Sada povlači <em>Appleov</em> lik na različita mjesta na pozornici i nadgleda kako se njegove koordinate mijenjaju.</p>
+
+    </p></div></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="vjezba-2-postavljanje-polozaja-lika-s-apsolutnim-naredbama-kretanja">
+<h3>Vježba 2 – Postavljanje položaja lika s apsolutnim naredbama kretanja<a class="headerlink" href="#vjezba-2-postavljanje-polozaja-lika-s-apsolutnim-naredbama-kretanja" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p><img alt="1" src="_images/1.png" /> Kliknite na scensku sliku pored popisa znakova. Oko slike pozornice pojavit će se plavi okvir, tako da je pozornica u fokusu.</p>
+<p><img alt="2" src="_images/2.png" /> Kliknite gumb <em>Odaberi pozadinu</em>, a zatim iz prozora <em>knjižnice Pozadine</em> koji će se otvoriti odaberite: <em>Xy-grid</em>.</p>
+<p><img alt="3" src="_images/3.png" /> Kliknite karticu <em>Code</em> sada da biste dobili paletu blokova umjesto popisa pozadina.</p>
+<p><img alt="4" src="_images/4.png" /> U grupi <em>Motion</em> block dobit ćete poruku <em>Stage selected: no motion</em>, što je i razumljivo jer se pozornica, koja je trenutno aktivna, ne može pomaknuti.</p>
+<p><img alt="5" src="_images/5.png" /> Kliknite na lik mačke na popisu likova. Kad se oko minijature pojavi plavi okvir, blokovi grupe <em>Motion</em> također će se vratiti.</p>
+<p><img alt="6" src="_images/6.png" /> Povucite blok <img alt="goto_xy" src="_images/goto_xy.png" /> u područje skripte, pa promijeni</p>
+<p><img alt="7" src="_images/7.png" /> Klikni na ovako izmjenje blok u području skripti. Što se dogodilo?</p>
+<p><img alt="8" src="_images/8.png" /> Povucite blok <img alt="glide_xy" src="_images/glide_xy.png" /> u područje skripti, pa promijenite  vrijednost x na -120 i vrijednost y na 100. Što se dogodilo kada kliknete ovaj blok?</p>
+<p><img alt="9" src="_images/9.png" />   Prati gdje će se lik naći poslije klika na blok u koji si prdhodno upisao različite vrijednosti za x i y. Na primjer, gdje će biti lik ako su obe kordinate negativne, ako su van pozornice i slično.</p>
+
+    </p></div></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="vjezba-3-apsolutno-i-relativno-kretanje">
+<h3>Vježba 3 – Apsolutno i relativno kretanje<a class="headerlink" href="#vjezba-3-apsolutno-i-relativno-kretanje" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="3" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p>Pokušaj voditi lika od točke A do točke B koristeći različite naredbe <em>kretanja</em>.</p>
+<p><img alt="1" src="_images/1.png" /> Postavi kao pozadinu <em>Xy-grid</em> iz biblioteke pozadina.</p>
+<p><img alt="2" src="_images/2.png" /> Iz biblioteke likova izaberi dva nova lika – slova A i B</p>
+<p><img alt="3" src="_images/3.png" /> Slovo A postavi u donji lijevi ugao pozornice na poziciju (-200,-120), a slovo B u gornji desni ugao pozornice na poziciju (200,120). Ovo ćeš najpreciznije napraviti ako slovu A pridružiš blok <img alt="goto_xy" src="_images/goto_xy.png" /> (povučeš ga u područje skripti dok je slovo A u fokusu), uneseš odgovarajuće kordinate x,y klikneš na blok. Postupak ponovi i za slovo B.</p>
+<p><img alt="4" src="_images/4.png" /> Mačku pridruži naredbu <img alt="goto" src="_images/goto.png" /> iz padajućeg izbornika (koju ćeš dobiti kada klikneš na bijeli trokut u polju izbora) izaberi <em>slovo A (Block A)</em>.</p>
+<p><img alt="5" src="_images/5.png" /> Klikni na blok <img alt="goto" src="_images/goto.png" /> Block A i mačak će se naći iznad slova A.</p>
+<p><img alt="6" src="_images/6.png" /> Klikni na blok <img alt="goto_layer" src="_images/goto_layer.png" /> iz grupe <em>Looks</em> i mačak će se naći ispod slova A.</p>
+<a class="reference internal image-reference" href="_images/ex2_3.png"><img alt="_images/ex2_3.png" class="align-center" src="_images/ex2_3.png" style="width: 220px;" /></a>
+<p><img alt="7" src="_images/7.png" /> Sada u blok <img alt="goto" src="_images/goto.png" /> izaberi <em>Block-B</em>, pa klikni na njega. Mačak će se istog trenutka naći iznad slova B.</p>
+<p><img alt="8" src="_images/8.png" /> Mačku pridruži blok <img alt="glide_to" src="_images/glide_to.png" /> a iz padajućeg izbornika izaberi <em>Block-A</em>, pa klikni na njega.  Mačak će se 1 sekundu kretati do slova A. <strong>Napomena</strong>. <img alt="glide_to" src="_images/glide_to.png" /> <img alt="!=" src="_images/not_equal.png" /> <img alt="glide_xy" src="_images/glide_xy.png" />.</p>
+<p><img alt="9" src="_images/9.png" /> Probaj i treći način. Prvo mačku pridruži blok  <img alt="point_towards" src="_images/point_towards.png" /> i iz padajućeg izbornika izaberi da usmjeriš prema liku <em>Block-A</em>. <strong>Napomena</strong>.  <img alt="point_towards" src="_images/point_towards.png" /> <img alt="!=" src="_images/not_equal.png" /> <img alt="point_direction" src="_images/point_direction.png" /></p>
+<p>Klikći na blok <img alt="move_steps" src="_images/move_steps.png" /> sve dok mačka ne stigne do slova A.</p>
+
+    </p></div></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="vjezba-4-koristenje-naredbi-za-nacin-okretanja-i-usmjerenja">
+<h3>Vježba 4 – Korištenje naredbi za način okretanja i usmjerenja<a class="headerlink" href="#vjezba-4-koristenje-naredbi-za-nacin-okretanja-i-usmjerenja" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p>Napravite projekt u kojem će se likovi ponašati potpuno isto kao u projektu “Dinosaur Walk”, ali nemojte mijenjati podatke o likovima. Umjesto toga, postavite način rotacije i orijentacije znakova u skripte povezane s likovima. Spremite ovaj projekt pod nazivom “Dinosaur Walk2”</p>
+
+    </p></div></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="vjezba-5-dodavanje-novih-likova-postojecim-projektima">
+<h3>Vježba 5 – Dodavanje novih likova postojećim projektima<a class="headerlink" href="#vjezba-5-dodavanje-novih-likova-postojecim-projektima" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p>Pomoću projekta Walk napravite novi projekt u koji ćete uvesti novi lik. To bi mogao biti, na primjer, pas ili miš, koji bi u svakom trenutku trebao biti usmjeren na mačku. Dodajte pozadinu po vašem izboru. U scenariju koje opisuje ponašanje novog lika iza i način na koji se okreću. Ne mijenjajte skriptu povezanu s mačkama. Spremite ovaj projekt pod nazivom “Walk2”.</p>
+
+    </p></div></div>
+</div>
+</div>
+<div class="section" id="bug-ispravi-greske">
+<h2><img alt="bug" src="_images/bug.png" /> Ispravi greške!<a class="headerlink" href="#bug-ispravi-greske" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="greska-1">
+<h3>Greška 1<a class="headerlink" href="#greska-1" title="Permalink to this headline">¶</a></h3>
+<p>Učenik je želio napraviti jednostavnu animaciju kretanja mačke promijenom kostima. Zato mu je pridružio sljedeću skriptu.</p>
+<a class="reference internal image-reference" href="_images/bug2_1.png"><img alt="_images/bug2_1.png" class="align-center" src="_images/bug2_1.png" style="width: 220px;" /></a>
+<p>Međutim, ništa se nije dešavalo. Što je pogriješio?</p>
+</div>
+<div class="section" id="greska-2">
+<h3>Greška 2<a class="headerlink" href="#greska-2" title="Permalink to this headline">¶</a></h3>
+<p>Učenik je želio da se njegov lik kreće između lijevog i desnog ruba pozornice. Zbog toga je stavio forever naredbu da neprestano mijenja kostim i korača 10 koraka dok ne dođe do rub pozornice dok se okreće. Međutim, nije mu se svidjelo što lik ide gore na lijevi rub pozornice. Što bi trebao učiniti da popravi ovu pogrešku?</p>
+</div>
+</div>
+<div class="section" id="book-sto-smo-naucili">
+<h2><img alt="book" src="_images/book.png" /> Što smo naučili<a class="headerlink" href="#book-sto-smo-naucili" title="Permalink to this headline">¶</a></h2>
+<p>U ovoj lekciji smo pokazali kako se pomoću dvije koordinate može precizno odrediti položaj točke na pozornici. Likove možemo poslati na mjesto pomoću apsolutnih i relativnih naredbi pokreta. Apsolutno kretanje je pomicanje određenog mjesta - odredišta, neovisno o trenutnom položaju lika, dok je relativno kretanje pomak do mjesta koje je određeni broj koraka u određenom smjeru od trenutnog položaja lika. Stupanj ne može izvršavati naredbe pokreta. Kroz primjere projekata i vježbi pokazali smo kako se kretanjem likova može upravljati pokretima tipkovnice i miša.</p>
+<p><strong>Primjeri projekta</strong>: <a class="reference external" href="https://scratch.mit.edu/studios/25119440/">2Studio</a></p>
+<p><strong>Novi pojmovi</strong>:  pixel, coordinate system, coordinates, motion blocks, motion reporters, absolute motion, relative motion, direction, rotation mode.</p>
+<p><strong>Nove naredbe</strong>: <img alt="motion_blocks" src="_images/motion.png" /> - <img alt="move_steps" src="_images/move_steps.png" />, <img alt="turn_right" src="_images/turn_right.png" />, <img alt="turn_left" src="_images/turn_left.png" />, <img alt="point_direction" src="_images/point_direction.png" />, <img alt="point_towards" src="_images/point_towards.png" />, <img alt="goto_xy" src="_images/goto_xy.png" />, <img alt="goto" src="_images/goto.png" />,  <img alt="glide_xy" src="_images/glide_xy.png" />, <img alt="glide_to" src="_images/glide_to.png" />, <img alt="set_x" src="_images/set_x.png" />, <img alt="set_y" src="_images/set_y.png" />, <img alt="change_x" src="_images/change_x.png" />, <img alt="change_y" src="_images/change_y.png" />, <img alt="if_edge" src="_images/if_edge.png" />, <img alt="rotation_style" src="_images/rotation_style.png" />, <img alt="x_position" src="_images/x_position.png" />, <img alt="y_position" src="_images/y_position.png" />, <img alt="direction" src="_images/direction.png" />;</p>
+<p><img alt="events_blocks" src="_images/events.png" /> - <img alt="clicked_key" src="_images/clicked_key.png" />; <img alt="looks_blocks" src="_images/looks.png" /> - <img alt="*" src="_images/asterix.png" /> <img alt="goto_layer" src="_images/goto_layer.png" />,  <img alt="*" src="_images/asterix.png" /> <img alt="switch_costume" src="_images/switch_costume.png" />; <img alt="control_blocks" src="_images/control.png" /> - <img alt="*" src="_images/asterix.png" /> <img alt="forever" src="_images/forever.png" />.</p>
+<p>Napomena. Naredbe označene znakom <img alt="*" src="_images/asterix.png" /> biti će u obrađene u narednim lekcijama.</p>
+</div>
+<div class="section" id="project-napravi-neki-od-sljedecih-projekata">
+<h2><img alt="project" src="_images/project.png" /> Napravi neki od sljedećih projekata<a class="headerlink" href="#project-napravi-neki-od-sljedecih-projekata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="projekt-1-dva-igraca">
+<h3>Projekt 1 – “Dva igrača”<a class="headerlink" href="#projekt-1-dva-igraca" title="Permalink to this headline">¶</a></h3>
+<p>Započnite novi projekt koji ćete nazvati “Dva igrača”. Stavite dva lika na pozornicu, jedan s lijeve strane, a drugi s desne strane. Podesite likove koji će biti usmjereni jedan prema drugom. Pridružite likovima skriptama koje im omogućuju kretanje naprijed-nazad u smjeru kazaljke na satu i obrnuto.</p>
+<p>Upravljačke tipke za prvi lik trebaju biti:</p>
+<ul class="simple">
+<li><p>Strelica prema gore - Lik ide ravno naprijed,</p></li>
+<li><p>Strelica prema dole - Lik ide ravno natrag,</p></li>
+<li><p>Strelica lijevo - znak se okreće u smjeru suprotnom od kazaljke na satu,</p></li>
+<li><p>Strelica desno - Znak se okreće u smjeru kazaljke na satu.</p></li>
+</ul>
+<p>Upravljačke tipke za drugi lik trebaju biti:</p>
+<ul class="simple">
+<li><p>Tipka W - Lik ide ravno naprijed,</p></li>
+<li><p>Tipka S - Lik ide ravno natrag,</p></li>
+<li><p>Tipka A - Lik se okreće u smjeru suprotnom od kazaljke na satu,</p></li>
+<li><p>Tipka D - Znak se okreće u smjeru kazaljke na satu.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+  
+      <div class="col-md-12">
+<ul class="pager">
+        <li id="relations-prev" title='Previous chapter - Okruženje programskog jezika Scratch' data-toggle="tooltip"><a href="Scratch3 Interface.html">Previous chapter</a></li>
+    
+        <li id="relations-next" title='Next chapter - Nizanje koraka' data-toggle="tooltip"><a href="Scratch3 Sequencing.html">Next chapter</a></li>
+</ul>
+
+<!-- <ul class="pager"> -->
+    <!-- -->
+        <!-- <li id="relations-prev" title='Претходно поглавље - Okruženje programskog jezika Scratch' data-toggle="tooltip"><a href="Scratch3 Interface.html">Претходно поглавље</a></li> -->
+    <!--  -->
+    <!-- -->
+        <!-- <li id="relations-next" title='Следеће поглавље - Nizanje koraka' data-toggle="tooltip"><a href="Scratch3 Sequencing.html">Следеће поглавље</a></li> -->
+    <!-- -->
+<!-- </ul> -->
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+  
+</div>
+<footer class="footer col-md-12">
+    <div class="container">
+        <div class="text-center">
+            <hr>
+            <p class="text-muted">
+                <span class="text-center">&copy; 2019 <a href="https://petlja.org">Petlja.org</a> 
+                  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; vertical-align: text-bottom" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+                  
+                  (Created using  <a href="https://pypi.org/project/Sphinx/">Sphinx</a>, <a href="http://runestoneinteractive.org/">RunestoneComponents</a> and <a href="https://github.com/Petlja/PetljaDoc">PetljaDoc</a>)</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

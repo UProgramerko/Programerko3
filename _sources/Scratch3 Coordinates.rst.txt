@@ -1,0 +1,699 @@
+Reci gdje da idem – Kordinate i smjer
+=================================================
+
+.. include:: blocks.txt
+
+.. include:: icons.txt
+
+.. infonote::
+
+  |intro2|
+
+
+Naučivši osnove okoline, vrijeme je da naučite kako slati likove na željena mjesta na pozornici. Morate znati kako je pozornica organizirana i naučiti naredbe koje vam omogućuju kretanje.
+
+.. sidebar:: Sprite Coordinates
+
+ |stage|
+
+.. |stage| image:: ../_images/2/fig2_1.png
+
+.. topic:: Pozornica
+      
+ Kad se Scratch pokrene, automatski se stvara pozornica: bijeli pravokutnik koji ima 480 točaka u širini i 360 točaka u visinu. Najmanja točka koja se može prikazati na zaslonu računalne grafike naziva se Pixel.
+
+ Pozornica je mjesto na kojem će se prikazivati vaše priče, igre i animacije. Nepokretna je, poput akvarija, ali njegovi stanovnici - likovi - neprestano se kreću i međusobno se izmjenjuju. Da biste lako kontrolirali kretanje lokova, svakoj točki na pozornici dodjeljuje se adresa - koordinate x i y, koje predstavljaju udaljenost točke od središta pozornice. Središnji stupanj ima koordinate x = 0 i y = 0, ili kraće: (0,0).
+ 
+ Koordinate omogućuju precizno vođenje likova oko pozornice i mogu se dovesti do proizvoljne točke (x, y). Trenutni položaj lika može se vidjeti u podacima o trenutnom liku.
+
+
+.. topic:: Funkcije blokova iz grupe Motion (Kretanje)
+ 
+ Sve naredbe koje vam omogućuju postavljanje znakova u željeni položaj i kontrolu njihova smjera i kretanja podudaraju se blokovima u grupi Motion. Njihova recenzija dana je u lekciji 11 ovog praktikuma. U ovoj lekciji ćemo kroz primjere i vježbe detaljnije predstaviti blokove koji omogućuju kretanje i pokazati kako se koriste blokovi reporteri. Blokovi reporteri se ne uklapaju u jezičnu naredbu i ne mogu biti samostalni u skripti. Funkcija reportera iz gupr Motion (Kretanje) je da zadržati trenutne koordinate i orijentaciju znakova.
+
+.. topic:: Motion Reporters
+
+ To su blokovi |x_position| i |y_position|, koji sadrže trenutne podatke o tome gdje se znak nalazi (koje su njegove x i y koordinate), kao i blok |direction| koji pokazuje kako je lik usmjeren.
+
+ Da biste na pozornici vidjeli što su trenutne koordinate znaka i gdje gleda, potvrdite potvrdne okvire pored odgovarajućih blokova. Ako se potvrdnim okvirima potvrđuje izvještaj o kretanju, na pozornici su prikazani odgovarajući monitori za praćenje trenutnih koordinata i smjera znaka.
+ 
+ .. image:: ../_images/2/fig2_2.png
+   :width: 400px   
+   :align: center
+ 
+ 
+.. topic:: Apsolutno i relativno kretanje
+
+ Možete poslati lik na određeno mjesto na pozornici na dva načina: apsolutno i relativno kretanje.
+
+ **Apsolutno kretanje** je premještaj na određeno mjesto - odredište, neovisno o trenutnom položaju lika.
+
+ Na Scratchu se lik može poslati na zadanu poziciju (x, y) na pozornici ili izvesti apsolutno kretanje, koristeći sljedeće blokove:
+
+ - |goto_xy| - go to position (х,у), 
+ - |glide_xy| - glide to the position (х,у), 
+ - |set_x| - set coordinate x to the position, 
+ - |set_y| - set coordinate y to the position. 
+
+ Naredbom |goto_xy| lik se premješta na zadanu lokaciju (x,y).
+
+ Slično bi, s početne točke, s odredbom stigla do odredišta |glide_xy|,, ali taj se potez ne bi dogodio trenutno, već bi trajao određeni broj sekundi. Što veći broj puta kliznete, duže će vam trebati da stignete na svoje odredište.
+
+ Drugi način postavljanja odredišta u apsolutnom gibanju je neovisno postavljanje x i y koordinata pomoću naredbi |set_x| and |set_y|.
+
+ **Relativno kretanje** je pomicanje mjesta koje je udaljeno određenog broja koraka od trenutne pozicije lika. Naravno, treba reći i u kojem smjeru ići (desno, gore i sl.).
+
+ Drugi način da se odredište postavi u relativnom gibanju je neovisno postavljanje h i u koordinata pomoću naredbi |change_x| i |change_y|.
+
+ Na Scratchu se lik može poslati u položaj udaljen od trenutnog zadanog broja koraka ili izvršiti relativno pomicanje, koristeći sljedeće blokove:
+ 
+ - |change_x| - promijenite x za 10 pixela horizontalno u odnosu na trenutnu poziciju,
+ - |change_y| - promijenite y za 10 pixela vertikalno u odnosu na trenutnu poziciju,
+ - |turn_right| - okreni se udesno 15 stupnjeva u odnosu na zadanu poziciju,
+ - |turn_left| - okreni se ulijevo  15 stupnjeva u odnosu na zadanu poziciju
+ - |move_steps| - idi 10 koraka u zadanom smjeru u odnosu na zadanu poziciju.
+    
+
+.. sidebar::  Direction Blocks
+   :subtitle: |point_direction| and |point_towards|
+
+   Postoje tri načina za postavljanje vrijednosti u polje unosa prvog bloka:
+
+   |direction1|
+
+   (1) za odabir jedne od ponuđenih vrijednosti s padajućeg popisa, na primjer (0) gore;
+   (2) unesite novu vrijednost, umjesto stare, na primjer 45;
+   (3) za okretanje plave strelice koja označava smjer u trenutnim podacima Sprite-a.
+
+   s drop-down popisa možete odabrati prema kojem će objektu biti usmjeren Sprite u drugom bloku.
+
+   |direction2|
+
+.. |direction1| image:: ../_images/2/fig2_3.png
+
+.. |direction2| image:: ../_images/2/fig2_4.png
+
+.. topic:: Upravljanje i skretanje
+
+ Pored naredbi za skretanje |turn_right| i |turn_left|, koje omogućuju promjenu smjera u odnosu na to kako je lik bio usmjeren, u Scratchu postoje i naredbe koje postavljaju usmjerenje nazavisno od trenutnog položaja lika
+
+ To su naredbe |point_direction| i |point_towards|.
+
+ Sljedeća slika prikazuje vrijednosti glavnih smjerova koje možete unijeti u polje unosa prvog bloka: *gore* (sjever), *desno* (istok), *dolje* (jug) i *lijevo* (zapad). 
+
+ .. image:: ../_images/2/fig2_5.png
+   :width: 250px   
+   :align: center
+
+ Možete unijeti druge vrijednosti, na primjer, 45 stupnjeva prema sjeveroistoku i 135 stupnjeva prema jugoistoku. Za vožnju prema zapadu ne morate koristiti negativne brojeve. Umjesto toga možete unijeti brojeve od 180 do 360.
+
+ Drugi blok omogućuje znaku da pokaže na pokazivač miša ili znak u projektu. Možete odabrati koji lik treba usmjeriti klikom na bijeli trokut u polju vrijednosti, otvaranjem padajućeg popisa i odabirom. Na primjer, u projektu "Šetnja dinosaura" koji ćemo analizirati kasnije u ovoj lekciji, mačka može usmjeriti pokazivača miša ili jednog od 3 dinosaura koji su likovi u ovom projektu.
+  
+
+|study| Study the following examples
+------------------------------------
+
+Baš kao što smo pokazali u projektu Hello World jednostavan način da lik govori, a zatim smo kroz vježbe nadogradili Projekt tako da lik stvarno izgovara tekst, tako ćemo sada pokazati osnovne naredbe koje pomažu liku da se pomakne, a zatim nadograditi kroz vježbe ove mogućnosti.
+
+Prouči sljedeće primjere projekata
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+|1| Klikni na grupu blokova *Motion* (Kretanje), pa povuci blok  |move_steps| u područje skripti i klikni na njega. Mačak će se pomaknuti u desno 10 koraka.
+
+|2| Pritisnite ovaj blok više puta i odvedite mačku do desnog ruba zaslona.
+
+Klikanje na pomični blok omogućilo je da se radnja koju ovaj blok izvodi ponavlja više puta. Ponavljanje radnje više puta može se postići i programskim putem.
+
+|3| Vratite mačku na sredinu ekrana i kliknite na kontrolnu grupu za upravljanje. Blokovi će se pojaviti u blokovima različitog oblika od blokova koje ste koristili - blokovi u obliku slova C sa "ustima" u koje možete umetnuti druge blokove.
+
+|4| Izaberite blok |forever| i povucite ga u područje skripte. Klikom na ovaj blok omogućava se da svi blokovi koji su u njega uloženi izvršavaju zauvijek (sve dok ne zaustavite izvršavanje programa klikom na znak *stop*).
+
+|5| Umetnite u "usta" bloka koji se ponavlja i kliknite na njih. Mačka će ponovno nestati sa zaslona.
+
+Postoji način da se kretanje znakova može zadržati unutar granica zaslona. Ovo je naredba *if on edge, bounce*. Odgovarajući blok nalazi se u grupi Motion (Kretanje).
+
+|6| Zaustavi izvršavanje blokova klikom na znak *stop*, pa povuci blok |if_edge| u području skripte i stavite je u "usta" bloka ponavljanja, iza bloka kretanje.
+
+.. sidebar:: The Project Script
+
+  The following Script is added to the cat sprite.
+
+  |script|
+
+.. |script| image:: ../_images/2/fig2_6.png
+
+Izvodeći ovaj scenarij mačka će se neprestano kretati od jednog do drugog ruba, ali će također ići naopako. Naravno, postoji način da se to ispravi. Jedno je promijeniti način na koji se lik kreće u informacijama o znakovima, a drugo je dati naredbu da okrene lik.
+
+|7| Povucite blok |rotation_style| iz grupe *Kretanje* i stavite je iznad bloka ponavljanja. Provjerite je li način okretanja *lijevo-desno* odabran s padajućeg popisa ovog bloka.
+
+|8| Postavite blok |clicked_flag| na početka skripte, i time ste dovršili projekt "The Walk". 
+
+Projekt sada možete pokrenuti klikom na *zelenu zastavu* i zaustavljanjem klikom na *stop*. Spremite ga, a zatim krenite u nova istraživanja.
+
+.......
+
+U sljedećem ćemo projektu pokazati kako se uvode novi likovi i pozadine te kako se upravlja znakom pomoću pokazivača miša. Dakle, prije nego što prođete kroz ovaj primjer, proučite priručnike *Add Sprite* i *Add Backdrop*.
+
+Primjer 2 – “The Dinosaur Walk”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+U prethodnom projektu koristili smo ``repeat forever`` blok da bismo mačku zauvijek pomaknuli između rubova zaslona, odnosno dok projekt ne bude zaustavljen klikom na znak stop. U ovaj projekt su uključena 4 lika, a svakom ćemo priložiti skriptu koja opisuje njegovo ponašanje. Mačka će zauvijek slijediti pokazivač miša, a ostala 3 znaka - dinosauri, zauvijek će ciljati na mačku.
+
+.. image:: ../_images/2/fig2_7.png
+   :width: 490px   
+   :align: center
+
+**Stvaranje projekta**
+
+.. sidebar:: Izbor pozadine
+
+  Novu pozadinu možete dodati u projekt klikom na sličicu koja se nalazi desno od tipke za izbor likova.
+
+  |new_backdrop|
+
+.. |new_backdrop| image:: ../_images/2/fig2_8.png
+
+
+|1| Kliknite gumb pozadine i odaberite *Jurassic* pozadinu iz biblioteke pozadina.
+
+|2| Odaberite knjižnicu znakova *Dinosaur1*, *Dinosaur2* i *Dinosaur3*.
+
+|3| Raspored likova kao na slici gore. Liku *Dinosaura2* potrebna je promjena smjera. Podrazumijeva se da je orijentacija likova postavljena na 90 (gledajući desno) i da je njihov način rada *All Around*. Te se postavke mogu promijeniti u znakovnim informacijama ili pomoću odgovarajućih blokova u skriptama uz koje se pridružuju. Koristit ćemo prvu metodu u ovom projektu.
+
+|4| U znakovnim podacima postavite način rotacije za lik: *Dinosaur1 – ne rotiraj*, *Dinosaur2 - lijevo / desno*, *Dinosaur3 – All Around*
+
+|5| Svim dinosaurima pridružite istou skriptu, što zahtijeva da se oni usredotoče na mačku tijekom cijelog projekta. Međutim, ponašat će se drugačije jer imaju različite načine okretanja
+   
+|6| Liku mačka pridruži naredbe koje mu omogućuju da prati koordinate pokazivača miša, odnosno da pomiče po pozornici dok korisnik pomiče miš.
+
+Skripte koje opisuju ponašanje dinosaura i mačke prikazane su na sljedećoj slici.
+
+.. image:: ../_images/2/fig2_9.png
+   :width: 395px   
+   :align: center
+ 
+Započnite projekt i premjesštajte mačku po pozornici. Imajte na umu da dinosauri prate mačku na različite načine.
+
+.......
+
+.. sidebar:: Selection of the Keys
+
+  Tipka na tipkovnici koja će pokrenuti skriptu odabrana je klikom na bijeli trokut pored naziva tipke (razmak), a zatim odabirom željene tipke s padajućeg popisa. 
+
+  |fig2_11|
+
+.. |fig2_11| image:: ../_images/2/fig2_10.png
+
+Primjer 3 – “Linear Motion”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Proučite priručnik *Use the Arrow Keys* i kreirajte projekt u kojem se mačka kreće pomoću tipkovnice po pozornici.
+
+|1|   Liku mačke pridruži naredbu |clicked_key|.
+
+|2|   Izaberi tipku *Right arrow*.
+ 
+|3|	Iz grupe kretanje izaberi naredbu |point_direction| i poveži je s predhodnom naredbom
+
+|4|	Iz grupe kretanje izaberi naredbu |move_steps| i poveži je s predhodnom naredbom
+
+|5|	Pritisnite tipku sa strelicom desno nekoliko puta. Što se događa?
+
+|6|	Duplicirajte ovu skriptu (desnom tipkom miša kliknite prvu naredbu, a zatim odaberite *Dupliciraj*).
+
+|7|	U novoj skripti zamijenite strelicu desno u lijevoj strelici, u bloku *točke u smjeru* odaberite -90 umjesto 90.
+
+|8|	Pritisnite tipku sa strelicom ulijevo nekoliko puta. Što se događa?
+
+|9|	Slično napravite još dvije skripte: voditi mačku 10 koraka prema gore pritiskom tipke sa strelicom prema gore ili 10 koraka prema dolje pritiskom tipke sa strelicom prema dolje.
+ 
+.. image:: ../_images/2/fig2_11.png
+   :width: 480px   
+   :align: center
+
+.......
+
+Primjer 4 – “Motion with a Turn”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Napravit ćemo još jedan projekt za izvođenje znakova pomoću tipki na tastaturi, ali s modificiranim značajkama tipki s strelicamae. Izbacit ćemo naredbe usmjerenja, a s lijevim strelicama i desnim strelicama pridružit ćemo naredbe koje rotiraju znak za 15 stupnjeva lijevo ili desno. S strelicama gore i dolje ćemo pomaknuti 10 koraka i pomaknuti -10 koraka. Odgovarajuće skripte imat će sljedeći izgled.
+
+.. image:: ../_images/2/fig2_12.png
+   :width: 435px   
+   :align: center
+
+Pokreni projekt i testiraj kako se u njemu upravlja s likom.
+
+|ask| Jeste li razumijeli?
+--------------------------
+
+Pitanje 1
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: stage1
+   :answer_a: 1280 tаčаkа pо širini i 600 tаčаkа pо visini
+   :answer_b: 800 tаčаkа pо širini i 600 tаčаkа pо visini 
+   :answer_c: 480 tаčаkа pо širini i 360 tаčаkа pо visini 
+   :answer_d: 360 tаčаkа pо širini i 480 tаčаkа pо visini
+   :correct: c
+   :feedback_a: 
+   :feedback_b: 
+   :feedback_c: Točno.
+   :feedback_d: 
+   
+   Kolike su dimenzije pozornice?
+   
+Pitanje 2
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: stage2
+   :answer_a: u gornjem lijevom uglu pozornice
+   :answer_b: u donjem lijevom uglu pozorni
+   :answer_c: u centru pozornice 
+   :answer_d: zavisi od pridružene pozadine 
+   :correct: c
+   :feedback_a: 
+   :feedback_b: 
+   :feedback_c: Točno.
+   :feedback_d: 
+   
+   Gdje se nalazi točka s kordinatama (0,0)?
+   
+   
+Pitanje 3
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: blocks1
+   :answer_a: Osjećaji 
+   :answer_b: Kretanje
+   :answer_c: Upravljanje
+   :answer_d: Izgled
+   :correct: b
+   :feedback_a: 
+   :feedback_b: Točno.
+   :feedback_c: 
+   :feedback_d: 
+   
+   Kojoj grupi pripadaju blokovi koji upravljaju položajem, orijentacijom, okretanjem i kretanjem likova?
+   
+
+Pitanje 4
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: stage3
+   :answer_a: da
+   :answer_b: ne
+   :correct: b
+   :feedback_a:  
+   :feedback_b: Točno.
+   
+    Može li pozornica izvršavati nardebe kretanja?
+
+Pitanje 5
+~~~~~~~~~~
+
+.. level:: 2
+
+.. mchoice:: absolute_motion
+   :multiple_answers:
+   :answer_a: 
+   :answer_b: 
+   :answer_c: 
+   :answer_d: 
+   :correct: a, d
+   :feedback_a: 
+   :feedback_b: 
+   :feedback_c: 
+   :feedback_d: 
+
+   Koje naredbe omogućavaju apsolutno kretanje? (Izaberi sve točne odgovore) 
+
+   .. image:: ../_images/2/q2_5.png
+      :width: 530px   
+      :align: center
+
+Pitanje 6
+~~~~~~~~~~
+
+.. level:: 2
+
+.. mchoice:: relative_motion
+   :multiple_answers:
+   :answer_a: 
+   :answer_b: 
+   :answer_c: 
+   :answer_d: 
+   :correct: b, d
+   :feedback_a: 
+   :feedback_b: 
+   :feedback_c: 
+   :feedback_d: 
+
+   Koje naredbe omogućavaju relativno kretanje? (Izaberi sve točne odgovore) 
+
+   .. image:: ../_images/2/q2_6.png
+      :width: 530px   
+      :align: center
+
+Pitanje 7
+~~~~~~~~~~
+
+.. level:: 2
+
+.. mchoice:: reporters
+   :multiple_answers:
+   :answer_a: 
+   :answer_b: 
+   :answer_c: 
+   :answer_d: 
+   :correct: b, c, d
+   :feedback_a:  
+   :feedback_b: 
+   :feedback_c: 
+   :feedback_d: 
+
+    Koji blokovi predstavljaju reportere kretanja? (Izaberi sve točne odgovore)
+
+   .. image:: ../_images/2/q2_7.png
+      :width: 310px   
+      :align: center
+
+
+Pitanje 8
+~~~~~~~~~~
+
+.. level:: 3
+
+.. image:: ../_images/2/q2_8.png
+   :width: 400px   
+   :align: center
+
+.. mchoice:: compass
+   :answer_a: Jugoistok
+   :answer_b: Jugozapad
+   :answer_c: Sjeveroistok
+   :answer_d: Sjeverozapad
+   :correct: d
+   :feedback_a: Tamo pokazuje kut od 135 stupnjeva.
+   :feedback_b: Tamo pokazuje kut od -135 stupnjeva.
+   :feedback_c: Tamo pokazuje kut od 45 stupnjeva.
+   :feedback_d: Točno.
+   
+   Na koju će stranu svijeta gledati lik poslije izvršavanja naredbe |2_8|?
+
+.. |2_8| image:: ../_images/2/block2_8.png   
+
+Pitanje 9
+~~~~~~~~~~
+
+.. level:: 1
+
+Na sljedećoj slici su prikazani položaji 5 točaka na pozornici.
+
+.. image:: ../_images/2/q2_9.png
+   :width: 300px   
+   :align: center
+      
+.. mchoice:: coordinates1
+   :answer_a: (-200,-40)
+   :answer_b: (-200,40)
+   :answer_c: (200,-40)
+   :answer_d: (200,40)
+   :correct: b
+   :feedback_a:  
+   :feedback_b: Točno.
+   :feedback_c: 
+   :feedback_d: 
+   
+   Koje su kordinate točke A?
+  
+.. mchoice:: coordinates2
+   :multiple_answers:
+   :answer_a: Point A
+   :answer_b: Point B
+   :answer_c: Point D
+   :answer_d: Point E
+   :correct: b, d
+   :feedback_a:  
+   :feedback_b: 
+   :feedback_c: 
+   :feedback_d: 
+
+   Koje točke imaju negativnu *y* kordinatu? 
+   (Izaberi sve točne odgovore)
+   
+
+
+.. dragndrop:: coordinates_various
+   :feedback: Pokušaj ponovo
+   :match_1: A|||(-200,40)
+   :match_2: B|||(-160,-60)
+   :match_3: C|||(20,0)
+   :match_4: D|||(100,120)
+   :match_5: E|||(180,-80)
+    
+   Upari točke s njihovim kordinatama.
+
+Pitanje 10
+~~~~~~~~~~~
+
+.. level:: 2
+
+Na sljedećoj slici prikazani su položaji 6 točaka na pozornici
+
+.. image:: ../_images/2/q2_10.png
+   :width: 300px   
+   :align: center
+      
+
+.. dragndrop:: coordinates_symmetrical
+    :feedback: Pokušaj ponovo
+    :match_1: A|||(-160,80)
+    :match_2: B|||(-160,-80)
+    :match_3: C|||(160,-80)
+    :match_4: D|||(80,0)
+    :match_5: E|||(160,80)
+    :match_6: F|||(0,80)
+    
+    Upari točke s njihovim kordinatama.
+
+
+.. mchoice:: symmetry_х
+   :answer_a: Točka A 
+   :answer_b: Točka B 
+   :answer_c: Točka C 
+   :answer_d: Točka D 
+   :correct: c
+   :feedback_a: Ovo bi trebala biti točka koja ima isti x, i suprotnu vrijednost koordinate y kao točka E. 
+   :feedback_b: Ovo bi trebala biti točka koja ima isti x, i suprotnu vrijednost koordinate y kao točka E.
+   :feedback_c: Točno.
+   :feedback_d: Ovo bi trebala biti točka koja ima isti x, i suprotnu vrijednost koordinate y kao točka E.
+   
+   Koja je točka simetrična na točku E u odnosu na *X* os?
+
+.. mchoice:: symmetry_у
+   :answer_a: Točka А
+   :answer_b: Točka В
+   :answer_c: Točka С
+   :answer_d: Točka D
+   :correct: a
+   :feedback_a: Točno.
+   :feedback_b: To bi trebala biti točka koja ima suprotnu vrijednost x koordinate i istu y koordinatu kao točka E.
+   :feedback_c: To bi trebala biti točka koja ima suprotnu vrijednost x koordinate i istu y koordinatu kao točka E.
+   :feedback_d: To bi trebala biti točka koja ima suprotnu vrijednost x koordinate i istu y koordinatu kao točka E.
+   
+   Koja je točka simetrična na točku E u odnosu na *Y* os?
+ 
+.. mchoice:: symmetry2
+   :multiple_answers:
+   :answer_a: A i B
+   :answer_b: A i C
+   :answer_c: A i E
+   :answer_d: D i F
+   :correct: a, b, c
+   :feedback_a: 
+   :feedback_b: 
+   :feedback_c: 
+   :feedback_d: 
+
+   Koje su točke jednako udaljene od y osi? (Izaberi sve točne odgovore)
+
+|try| Pokušaj!
+-----------------
+
+Vježba 1 – Praćenje položaja likova
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+.. infonote::
+
+  |1| Povucite znak mačke u gornji lijevi kut pozornice, pa provjerite informacije o znakovima za koordinate točke na kojoj ste ga ostavili.
+
+  |2| Zatim ga povucite u gornji desni kut pozornice i ponovno provjerite koordinate točke na kojoj ste ga ostavili
+
+  |3| Ponovi prethodni postupak za točke u donjim kutovima pozornice. U kojim je točkama na pozornici koordinata x imala znak minus, a na kojoj je y koordinata negativna?
+
+  |4| Uvezite *Appleov* lik iz biblioteke likova. Plavi okvir bi se trebao pojaviti oko sličice novog lika na popisu likova, što znači da je lik u fokusu. Ako ne, kliknite na njegovu sličicu na popisu likova.
+       
+  |5| Provjerite varijable h i u položaja na dnu blokade *Motion*. Apple: *x položaj* i Apple: *y monitori* položaja pojavit će se na pozornici. 
+
+  |6| Sada povlači *Appleov* lik na različita mjesta na pozornici i nadgleda kako se njegove koordinate mijenjaju.
+
+.......
+
+Vježba 2 – Postavljanje položaja lika s apsolutnim naredbama kretanja
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 2
+
+.. infonote::
+
+  |1| Kliknite na scensku sliku pored popisa znakova. Oko slike pozornice pojavit će se plavi okvir, tako da je pozornica u fokusu.
+
+  |2| Kliknite gumb *Odaberi pozadinu*, a zatim iz prozora *knjižnice Pozadine* koji će se otvoriti odaberite: *Xy-grid*.
+
+  |3| Kliknite karticu *Code* sada da biste dobili paletu blokova umjesto popisa pozadina.
+
+  |4| U grupi *Motion* block dobit ćete poruku *Stage selected: no motion*, što je i razumljivo jer se pozornica, koja je trenutno aktivna, ne može pomaknuti.
+  
+  |5| Kliknite na lik mačke na popisu likova. Kad se oko minijature pojavi plavi okvir, blokovi grupe *Motion* također će se vratiti.
+
+  |6| Povucite blok |goto_xy| u područje skripte, pa promijeni 
+
+  |7| Klikni na ovako izmjenje blok u području skripti. Što se dogodilo?
+
+  |8| Povucite blok |glide_xy| u područje skripti, pa promijenite  vrijednost x na -120 i vrijednost y na 100. Što se dogodilo kada kliknete ovaj blok?
+
+  |9|	Prati gdje će se lik naći poslije klika na blok u koji si prdhodno upisao različite vrijednosti za x i y. Na primjer, gdje će biti lik ako su obe kordinate negativne, ako su van pozornice i slično.
+
+........
+
+Vježba 3 – Apsolutno i relativno kretanje
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 3
+
+.. infonote::
+
+  Pokušaj voditi lika od točke A do točke B koristeći različite naredbe *kretanja*.
+   
+  |1| Postavi kao pozadinu *Xy-grid* iz biblioteke pozadina.
+
+  |2| Iz biblioteke likova izaberi dva nova lika – slova A i B
+  
+  |3| Slovo A postavi u donji lijevi ugao pozornice na poziciju (-200,-120), a slovo B u gornji desni ugao pozornice na poziciju (200,120). Ovo ćeš najpreciznije napraviti ako slovu A pridružiš blok |goto_xy| (povučeš ga u područje skripti dok je slovo A u fokusu), uneseš odgovarajuće kordinate x,y klikneš na blok. Postupak ponovi i za slovo B.
+  
+  |4| Mačku pridruži naredbu |goto| iz padajućeg izbornika (koju ćeš dobiti kada klikneš na bijeli trokut u polju izbora) izaberi *slovo A (Block A)*.
+ 
+  |5| Klikni na blok |goto| Block A i mačak će se naći iznad slova A.
+
+  |6| Klikni na blok |goto_layer| iz grupe *Looks* i mačak će se naći ispod slova A. 
+  
+  .. image:: ../_images/2/ex2_3.png
+     :width: 220px   
+     :align: center
+
+  |7| Sada u blok |goto| izaberi *Block-B*, pa klikni na njega. Mačak će se istog trenutka naći iznad slova B.
+
+  |8| Mačku pridruži blok |glide_to| a iz padajućeg izbornika izaberi *Block-A*, pa klikni na njega.  Mačak će se 1 sekundu kretati do slova A. **Napomena**. |glide_to| |!=| |glide_xy|. 
+    
+  |9| Probaj i treći način. Prvo mačku pridruži blok  |point_towards| i iz padajućeg izbornika izaberi da usmjeriš prema liku *Block-A*. **Napomena**.  |point_towards| |!=| |point_direction|
+
+  Klikći na blok |move_steps| sve dok mačka ne stigne do slova A.
+
+.......
+
+Vježba 4 – Korištenje naredbi za način okretanja i usmjerenja
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 2
+
+.. infonote::
+
+ Napravite projekt u kojem će se likovi ponašati potpuno isto kao u projektu "Dinosaur Walk", ali nemojte mijenjati podatke o likovima. Umjesto toga, postavite način rotacije i orijentacije znakova u skripte povezane s likovima. Spremite ovaj projekt pod nazivom "Dinosaur Walk2"
+
+.......
+
+Vježba 5 – Dodavanje novih likova postojećim projektima
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 2
+
+.. infonote::
+
+ Pomoću projekta Walk napravite novi projekt u koji ćete uvesti novi lik. To bi mogao biti, na primjer, pas ili miš, koji bi u svakom trenutku trebao biti usmjeren na mačku. Dodajte pozadinu po vašem izboru. U scenariju koje opisuje ponašanje novog lika iza i način na koji se okreću. Ne mijenjajte skriptu povezanu s mačkama. Spremite ovaj projekt pod nazivom "Walk2".
+
+|bug| Ispravi greške!
+-----------------------
+
+Greška 1
+~~~~~~~~
+
+Učenik je želio napraviti jednostavnu animaciju kretanja mačke promijenom kostima. Zato mu je pridružio sljedeću skriptu. 
+
+.. image:: ../_images/2/bug2_1.png
+    :width: 220px 
+    :align: center
+
+Međutim, ništa se nije dešavalo. Što je pogriješio?
+
+Greška 2
+~~~~~~~~
+
+Učenik je želio da se njegov lik kreće između lijevog i desnog ruba pozornice. Zbog toga je stavio forever naredbu da neprestano mijenja kostim i korača 10 koraka dok ne dođe do rub pozornice dok se okreće. Međutim, nije mu se svidjelo što lik ide gore na lijevi rub pozornice. Što bi trebao učiniti da popravi ovu pogrešku?
+
+  
+|book| Što smo naučili
+-----------------------
+
+U ovoj lekciji smo pokazali kako se pomoću dvije koordinate može precizno odrediti položaj točke na pozornici. Likove možemo poslati na mjesto pomoću apsolutnih i relativnih naredbi pokreta. Apsolutno kretanje je pomicanje određenog mjesta - odredišta, neovisno o trenutnom položaju lika, dok je relativno kretanje pomak do mjesta koje je određeni broj koraka u određenom smjeru od trenutnog položaja lika. Stupanj ne može izvršavati naredbe pokreta. Kroz primjere projekata i vježbi pokazali smo kako se kretanjem likova može upravljati pokretima tipkovnice i miša.
+
+**Primjeri projekta**: 2Studio_
+
+.. _2Studio: https://scratch.mit.edu/studios/25119440/
+
+**Novi pojmovi**:  pixel, coordinate system, coordinates, motion blocks, motion reporters, absolute motion, relative motion, direction, rotation mode.
+
+**Nove naredbe**: |motion_blocks| - |move_steps|, |turn_right|, |turn_left|, |point_direction|, |point_towards|, |goto_xy|, |goto|,  |glide_xy|, |glide_to|, |set_x|, |set_y|, |change_x|, |change_y|, |if_edge|, |rotation_style|, |x_position|, |y_position|, |direction|; 
+
+|events_blocks| - |clicked_key|; |looks_blocks| - |*| |goto_layer|,  |*| |switch_costume|; |control_blocks| - |*| |forever|.
+
+Napomena. Naredbe označene znakom |*| biti će u obrađene u narednim lekcijama.
+
+|project| Napravi neki od sljedećih projekata
+----------------------------------------------
+
+Projekt 1 – “Dva igrača”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Započnite novi projekt koji ćete nazvati "Dva igrača". Stavite dva lika na pozornicu, jedan s lijeve strane, a drugi s desne strane. Podesite likove koji će biti usmjereni jedan prema drugom. Pridružite likovima skriptama koje im omogućuju kretanje naprijed-nazad u smjeru kazaljke na satu i obrnuto.
+
+Upravljačke tipke za prvi lik trebaju biti:
+
+•	Strelica prema gore - Lik ide ravno naprijed,
+
+•	Strelica prema dole - Lik ide ravno natrag,
+
+•	Strelica lijevo - znak se okreće u smjeru suprotnom od kazaljke na satu,
+
+•	Strelica desno - Znak se okreće u smjeru kazaljke na satu.
+
+Upravljačke tipke za drugi lik trebaju biti:
+
+•	Tipka W - Lik ide ravno naprijed,
+
+•	Tipka S - Lik ide ravno natrag,
+
+•	Tipka A - Lik se okreće u smjeru suprotnom od kazaljke na satu,
+
+•	Tipka D - Znak se okreće u smjeru kazaljke na satu.

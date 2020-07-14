@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Okruženje programskog jezika Scratch &#8212; Block-based programming in Scratch - practice lessons</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/activecode.css" />
+    <link rel="stylesheet" type="text/css" href="_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="_static/clickable.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pytutor.css" />
+    <link rel="stylesheet" type="text/css" href="_static/modal-basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/datafile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/dragndrop.css" />
+    <link rel="stylesheet" type="text/css" href="_static/fitb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/matrixeq.css" />
+    <link rel="stylesheet" type="text/css" href="_static/parsons.css" />
+    <link rel="stylesheet" type="text/css" href="_static/lib/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="_static/poll.css" />
+    <link rel="stylesheet" type="text/css" href="_static/showEval.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabbedstuff.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="_static/karel.css" />
+    <link rel="stylesheet" type="text/css" href="_static/notes.css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-4.0.0-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flatly.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/petlja.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/CLDRPluralRuleParser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.messagestore.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.fallbacks.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.language.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.parser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script type="text/javascript" src="_static/activecode-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/mchoice-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/dragndrop-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/fitb-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/matrixeq.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/parsons-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/showEval.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="_static/runestonevideo.js"></script>
+    <script type="text/javascript" src="_static/karelCorner.js"></script>
+    <script type="text/javascript" src="_static/karelRobot.js"></script>
+    <script type="text/javascript" src="_static/karelWorld.js"></script>
+    <script type="text/javascript" src="_static/karelRobotDrawer.js"></script>
+    <script type="text/javascript" src="_static/karelUI.js"></script>
+    <script type="text/javascript" src="_static/karel.js"></script>
+    <script type="text/javascript" src="_static/karel-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/notes.js"></script>
+    <script type="text/javascript" src="_static/pygamelib-init.js"></script>
+    <script type="text/javascript" src="_static/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/python_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/msg-sr.js"></script>
+    <script type="text/javascript" src="_static/blockpy/utilities.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_errors.js"></script>
+    <script type="text/javascript" src="_static/blockpy/ast_node_visitor.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter.js"></script>
+    <script type="text/javascript" src="_static/blockpy/pytifa.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter_definitions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_to_blockly.js"></script>
+    <script type="text/javascript" src="_static/blockpy/imported.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/class.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comment.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comprehensions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/dict.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/if.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/io.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/lists.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/sets.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/loops.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/parking.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/tuple.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/turtles.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/text.js"></script>
+    <script type="text/javascript" src="_static/blockpy-modal.js"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Reci gdje da idem – Kordinate i smjer" href="Scratch3 Coordinates.html" />
+    <link rel="prev" title="Blok programiranje u Scrtachu - praktični dio" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'Scratch_eng';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = false;
+  eBookConfig.basecourse = 'Scratch_eng';
+  eBookConfig.runestone_version = '3.1.1';
+  eBookConfig.imagesDir = '_images/';
+  eBookConfig.staticDir = '_static/';
+  if(typeof(Sk) != "undefined")
+      Sk.imgPath = eBookConfig.imagesDir;
+</script>
+
+<div id="fb-root"></div>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+
+<nav id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     <img src="_static/img/logo.png" style="width:80px; height: 80px;"> 
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-top: 10px; margin-left: 25px;">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="./">Block-based programming in Scratch - practice lessons</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container col-md-12" id="continue-reading"></div>
+
+<div class="container col-md-8 col-md-offset-2" id="main-content">
+  
+  <div class="section" id="okruzenje-programskog-jezika-scratch">
+<h1>Okruženje programskog jezika Scratch<a class="headerlink" href="#okruzenje-programskog-jezika-scratch" title="Permalink to this headline">¶</a></h1>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p><img alt="intro1" src="_images/intro1.png" /></p>
+
+    </p></div></div>
+<p>Želite li stvoriti vlastitu računalnu igru, animiranu priču, vodič ili prezentaciju? Scratch je programski jezik koji vam omogućuje da radite sve to i još više.</p>
+<p>Za razliku od mnogih programskih jezika, Scratch je <em>vizualni</em> jezik - umjesto pisanja naredbi pomoću tipkovnice, programi se stvaraju povezivanjem raznobojnih blokova koji predstavljaju naredbe, slično kao konstruiranje različitih objekata iz Lego kockica.</p>
+<p>Scratch stvara <strong>projekte</strong>. Da biste stvorili projekt, prvo morate upoznati likove koji u njemu sudjeluju. Likovi se mogu povezati različitim izgledom, zvukovima i ponašanjem. Ponašanje lika opisano je <strong>skriptom</strong>. Projekt sadrži jednu ili više skripti, od kojih je svaka povezana s likom ili pozornicom - mjestom na kojem se projekt odvija.</p>
+<p>Za pisanje programa na Skrecu potrebno je upoznati okruženje u kojem se programi stvaraju, odnosno njegovo <strong>sučelje</strong>.</p>
+<div class="topic">
+<p class="topic-title">Programsko jezično sučelje Scratch</p>
+<p>The following Figure shows the interface of the Scratch programming language.</p>
+<a class="reference internal image-reference" href="_images/fig1_1.png"><img alt="_images/fig1_1.png" class="align-center" src="_images/fig1_1.png" style="width: 800px;" /></a>
+<p>Za početak ćemo upoznati osnovne funkcije njegovih glavnih dijelova, a u sljedećim lekcijama ćemo postupno upoznavati ostale komponente okoliša.</p>
+<p><strong>The Stage</strong> će pokrenuti vaše priče, igre i animacije. Sama pozornica je nepokretna, ali sadrži likove koji se mogu kretati i reagirati na druge likove.</p>
+<p><strong>The Blocks Palette</strong> mjesto je na kojem se pohranjuju sve dostupne naredbe programskog jezika Skrec. Zove se “paleta”, jer se podudara u paleti boja s kojima slikar stvara svoje slike. Međutim, za razliku od slikara, programer stvara žive slike čiji objekti međusobno djeluju.</p>
+<p><strong>Scripts Area</strong>  je prostor gdje se stvaraju skripte. Da biste stvorili skriptu, morate povući i ispustiti odgovarajuće blokove iz palete blokova u područje skripte i povezati ih.</p>
+<p><strong>The Sprite List</strong> prikazuje sličice svih likova koji su uključeni u projekt. Ispod svakog znaka upisano je ime.</p>
+<p><strong>The Menu Bar</strong> omogućuje vam postavljanje naredbi za upravljanje projektima i prilagođava samo okruženje.</p>
+</div>
+<div class="topic">
+<p class="topic-title">My First Program</p>
+<p>Čak i najduža putovanja započinju prvim korakom. A taj prvi korak za učenje programskog jezika je pisanje programa koji bi na ekranu trebao reći “Hello Holy”. I tako ćemo započeti osvajanje Scratch-a.</p>
+<p>Kad god se pokrene Scratch, <strong>pozornicu</strong> automatski stvara bijeli pravokutnik u kojem se nalazi <strong>lik</strong> mačke.</p>
+<p>Scena i likovi su <strong>predmeti</strong> čije je ponašanje programirano naredbama Turn. Koristeći <strong>blokove</strong> koji odgovaraju jezičnim naredbama, sastavljamo skripte koje opisuju ponašanje objekata. Svaki objekt ima svoje ponašanje, čak i fiksnu fazu koja, na primjer, može promijeniti svoj izgled.</p>
+<p>Pozornice i figure mogu se pored skripti povezati i s <strong>grafikom</strong> (slike - crteži, fotografije) i <strong>zvučnim</strong> datotekama. Slike likova zovu se <strong>kostimi</strong>, a scenske slike <strong>pozadina</strong>.</p>
+<p><strong>Popis znakova</strong> prikazuje sličice svih likova koji su uključeni u projekt. Ispod svakog znaka upisano je ime.</p>
+<p>Možete pregledavati i mijenjati trenutne informacije o znakovima u prostoru iznad popisa znakova.</p>
+<a class="reference internal image-reference" href="_images/fig1_2.png"><img alt="_images/fig1_2.png" class="align-center" src="_images/fig1_2.png" style="width: 650px;" /></a>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<ol class="arabic simple">
+<li><p><em>Ime</em> lika može se promijeniti upisivanjem novog imena u polje imena lika.</p></li>
+<li><p><em>Položaj</em> lika na pozornici zadaje se njegovim koordinatama h i u.</p></li>
+<li><p>Hoće li se lik vidjeti na pozornici ili skriven, ovisi o tome što je potvrđeno u okviru <em>Show</em>.</p></li>
+<li><p><em>Veličina</em> znaka izražena je u postotku od izvorne veličine. Broj 100 označava da se lik vidi u svojoj prirodnoj veličini.4.    Veličina znaka izražena je u postotku od izvorne veličine. Broj 100 označava da se lik vidi u svojoj prirodnoj veličini.</p></li>
+<li><p>Smjer označava smjer u kojem će se lik kretati. Plava strelica na krugu pokazuje smjer znaka. Orijentaciju možete promijeniti rotiranjem strelice ili upisivanjem odgovarajućeg broja u polje smjera (0: gore, 90: desno, 180: dolje, -90: lijevo). Oznake <img alt="rot_style" src="_images/rot_style.png" /> označavaju način rotacije, a to mogu biti: <em>Sve strane, Lijevo / Desno ili Bez rotacije.</em></p></li>
+</ol>
+
+    </p></div></div>
+<p>Da biste stvorili skriptu, trebate proslijediti odgovarajuće naredbe iz naredbene trake u područje skripte za aktivni objekt i povezati ih.</p>
+<p><strong>Aktivni objekt</strong> - lik ili pozornica, prepoznaje se po tome što na njegovom popisu znakova postoji plavi okvir. Sve što stvaramo: skripte koje opisuju ponašanje, kostimi koji opisuju izgled, zvukovi koji će se čuti kada pokrenemo projekt, pridružuju se objektu koji je aktivan dok to radimo.</p>
+<p>Stvaranje skripti vrši se postavljanjem blokova jedan preko drugog. Klikom bilo kojeg mjesta u nizu blokova pokreće se cjelovita skripta koja se izvršava od vrha do dna.</p>
+</div>
+<div class="section" id="study-prouci-sljedece-primjere-projekata">
+<h2><img alt="study" src="_images/study.png" /> Prouči sljedeće primjere projekata<a class="headerlink" href="#study-prouci-sljedece-primjere-projekata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="primjer-1-projekt-hello-world">
+<h3>Primjer 1 – Projekt “Hello World”<a class="headerlink" href="#primjer-1-projekt-hello-world" title="Permalink to this headline">¶</a></h3>
+<p>Mačku zaštitnom znaku Scratcha, priložiti na početku najjednostavnije moguće skripte, koja se sastoji od jedne naredbe - bloka koji omogućuje da lik “izgovori”, odnosno rečenica, Pozdrav svijetu, pojavljuje se u stripu. Evo kako to radi.</p>
+<p><img alt="1" src="_images/1.png" /> 1Kliknite skupinu <em>Looks</em> blokova u paleti blokova. Pojavit će se skupina ljubičastih blokova koja je odgovorna za vizualne efekte koji se mogu dodijeliti likovima.</p>
+<p><img alt="2" src="_images/2.png" /> Povucite blok <img alt="say_sec" src="_images/say_sec.png" /> u područje scenarija.</p>
+<p><img alt="3" src="_images/3.png" /> Zatim umjesto riječi <em>Hello</em>, upišite <em>Hello World</em> i kliknite na tako izmijenjen blok.</p>
+<a class="reference internal image-reference" href="_images/fig1_3.png"><img alt="_images/fig1_3.png" class="align-center" src="_images/fig1_3.png" style="width: 740px;" /></a>
+<p>S mačkom će pozdravni tekst <em>Hello World</em> stajati na pozornici 2 sekunde. Kao što vidite, prilično jednostavno.</p>
+<p>Sada ćemo dodati još nekoliko blokova <img alt="say_sec" src="_images/say_sec.png" /> i tako će naš lik izgovoriti još nekoliko rečenica.</p>
+<p>Pokazat ćemo dva načina za dodavanje bloka koji već postoji u području skripte.</p>
+<ul class="simple">
+<li><ol class="arabic simple">
+<li><p>Ponavljanjem postupka koji smo već učinili: povucite blok <img alt="say_sec" src="_images/say_sec.png" /> još jednom iz palate blokova i umjesto teksta <em>Hello World</em> upišite <em>I am a cat</em></p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><ol class="arabic simple" start="2">
+<li><p>Desnom tipkom miša kliknite blok u području skripte za otvaranje izbornika prečaca i iz njega odaberite <em>Dupliciraj</em>. Zatim u kopiju bloka upišite željeni tekst, u našem primjeru - <em>volim hodati</em>. Ovaj način rada omogućuje mu brže pokretanje jer može množiti više blokova koji su prethodno povezani jednim potezom.</p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<a class="reference internal image-reference" href="_images/fig1_4.png"><img alt="_images/fig1_4.png" class="align-center" src="_images/fig1_4.png" style="width: 740px;" /></a>
+<p>Da bi se blokovi automatski izvršavali jedan za drugim, moraju ih biti povezani u cijelosti - snop. To radimo povlačenjem blokova. Kad se blokovi približe jedni drugima, oko vrha se pojavljuje sjenka koja pokazuje da će blokovi biti povezani. Spajanjem sva tri bloka u nizu postižemo da dvostrukim klikom na njega lik izgovara sve tri rečenice jednu za drugom, jednu za drugom.</p>
+<p><strong>Running the Project</strong></p>
+<p>Primjećujete da blok koji ste koristili ima udubljenje na vrhu i izbočenje na dnu. Blok ovog oblika naziva se blok stog. Većina Scratch naredbi povezana je s blokovima snopa. No, početni blok, blok koji pokazuje koji će događaj pokrenuti skriptu za izvršenje, ne bi trebao imati udubljenje na vrhu, jer mu nijedan blok ne prethodi. Većina uvodnih blokova nalazi se u grupi <em>Događanja</em>. Kliknite grupu Događaji u paleti blokova i povucite je <img alt="clicked_flag" src="_images/clicked_flag.png" /> u područje scenarija. Zatim postavite ovaj blok na vrh prethodno formiranog snopa i vaš prvi projekt je gotov. Da biste ga izvršili, potrebno je kliknuti na <img alt="g_flag" src="_images/g_flag.png" /> iznad gornjeg lijevog ugla pozornice.</p>
+<p><strong>Projektna memorija</strong></p>
+<p>Projekt možete spremiti na računalo na sljedeći način:</p>
+<p><img alt="1" src="_images/1.png" /> Kliknite na stavku <em>File</em> i liniji menija</p>
+<p><img alt="2" src="_images/2.png" /> Izaberite opciju <em>Save to your computer</em></p>
+<p><img alt="3" src="_images/3.png" /> U dijaloškom okviru koji će se otvoriti odaberite mapu i unesite naziv pod kojim ćete pamtiti projekt, a zatim kliknite gumb <em>Spremi</em>.</p>
+<p><strong>Nadogradnja projekta</strong></p>
+<p>Slično tome, umjesto da prikazuje govorni mjehurić s tekstom, mačka bi zapravo mogla izgovoriti ovaj tekst. To možete postići odabirom bloka <img alt="play_until" src="_images/play_until.png" /> iz grupe <em>Sound</em>, tako da u uređivač zvuka zapišete rečenicu koju on mora izgovoriti. Zatim odaberite snimljeni govor s padajućeg popisa ovog bloka umjesto zvuka <em>meow</em>.</p>
+<p>U ovoj verziji Scratch možete učiniti više od toga. Među proširenjima nalazi se grupa <em>Text-to-Speech</em> koja omogućuje likovima u projektima da stvarno govore. To možete postići samo ako ste povezani na Internet, jer on koristi usluge <em>Amazon Web Services.</em></p>
+</div>
+</div>
+<div class="section" id="ask-odgovori-na-sljedeca-pitanja">
+<h2><img alt="ask" src="_images/ask.png" /> Odgovori na sljedeća pitanja<a class="headerlink" href="#ask-odgovori-na-sljedeca-pitanja" title="Permalink to this headline">¶</a></h2>
+<p>Naziv svih prozora i gumba koji su vidljivi prilikom pokretanja?</p>
+<div class="section" id="pitanje-1">
+<h3>Pitanje 1<a class="headerlink" href="#pitanje-1" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="interface1">
+            <p>Q-33: Naziv svih prozora i gumba koji su vidljivi prilikom pokretanja?</p>
+
+            <li data-component="answer"  id="interface1_opt_a">skripta</li><li data-component="feedback" id="interface1_opt_a"></li>
+            
+            <li data-component="answer"  id="interface1_opt_b">objekt</li><li data-component="feedback" id="interface1_opt_b"></li>
+            
+            <li data-component="answer" data-correct id="interface1_opt_c">sučelje</li><li data-component="feedback" id="interface1_opt_c">Točno.</li>
+            
+            <li data-component="answer"  id="interface1_opt_d">program</li><li data-component="feedback" id="interface1_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-2">
+<h3>Pitanje 2<a class="headerlink" href="#pitanje-2" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+<p>Pojedini djelovi Scratch sučelja na sljedećoj slici označeni su brojevima od 1 do 5.</p>
+<a class="reference internal image-reference" href="_images/q1_2.png"><img alt="_images/q1_2.png" class="align-center" src="_images/q1_2.png" style="width: 600px;" /></a>
+
+<div class="course-box course-box-problem course-content">
+<ul data-component="dragndrop" id="interface2">
+    <span data-component="question">Q-34: Uparite dijelove okoline prema njihovim položajima na slici.</span>
+	<span data-component=feedback>Pokušaj ponovo</span>
+
+    <li data-component="draggable" id="interface2_drag1">stage</li>
+    <li data-component="dropzone" for="interface2_drag1">4</li>
+
+    <li data-component="draggable" id="interface2_drag2">blocks palette</li>
+    <li data-component="dropzone" for="interface2_drag2">2</li>
+
+    <li data-component="draggable" id="interface2_drag3">scripts area</li>
+    <li data-component="dropzone" for="interface2_drag3">3</li>
+
+    <li data-component="draggable" id="interface2_drag4">sprite list</li>
+    <li data-component="dropzone" for="interface2_drag4">5</li>
+
+    <li data-component="draggable" id="interface2_drag5">menu bar</li>
+    <li data-component="dropzone" for="interface2_drag5">1</li>
+</ul></div></div>
+<div class="section" id="pitanje-3">
+<h3>Pitanje 3<a class="headerlink" href="#pitanje-3" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="interface3">
+            <p>Q-35: Može li se napraviti projekt koji nema pozornicu?</p>
+
+            <li data-component="answer"  id="interface3_opt_a">da</li><li data-component="feedback" id="interface3_opt_a">Netočno. Projekt mora imati pozornicu sa jednom pozadinom</li>
+            
+            <li data-component="answer" data-correct id="interface3_opt_b">ne</li><li data-component="feedback" id="interface3_opt_b">Točno.</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-4">
+<h3>Pitanje 4<a class="headerlink" href="#pitanje-4" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="interface4">
+            <p>Q-36: Može li se napraviti projekt bez likova?</p>
+
+            <li data-component="answer" data-correct id="interface4_opt_a">da</li><li data-component="feedback" id="interface4_opt_a">Točno.</li>
+            
+            <li data-component="answer"  id="interface4_opt_b">ne</li><li data-component="feedback" id="interface4_opt_b">Netočno. Projekt može imati samo skripte koje su pridružene pozornici</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-5">
+<h3>Pitanje 5<a class="headerlink" href="#pitanje-5" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="interface5">
+            <p>Q-37:  Može li se kreirati pozornica ili lik, a da im se ne pridruži izgled?</p>
+
+            <li data-component="answer"  id="interface5_opt_a">da</li><li data-component="feedback" id="interface5_opt_a">Netočno. Objekt mora imati barem jedan izgled, pozornica – pozadinu, a lik – kostim</li>
+            
+            <li data-component="answer" data-correct id="interface5_opt_b">no</li><li data-component="feedback" id="interface5_opt_b">Točno.</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-6">
+<h3>Pitanje 6<a class="headerlink" href="#pitanje-6" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="interface6">
+            <p>Q-38: DTreba li se svakom projektu pridružiti bar jedna skripta?</p>
+
+            <li data-component="answer"  id="interface6_opt_a">da</li><li data-component="feedback" id="interface6_opt_a">Netočno. Neki likovi mogu biti samo dekoracija projekta, kao i pozornica</li>
+            
+            <li data-component="answer" data-correct id="interface6_opt_b">ne</li><li data-component="feedback" id="interface6_opt_b">Točno.</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-7">
+<h3>Pitanje 7<a class="headerlink" href="#pitanje-7" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="interface7">
+            <p>Q-39: Omogučavaju li zelena zastavica i crvena tipka stop kontrolu izvršavanja skripti?</p>
+
+            <li data-component="answer" data-correct id="interface7_opt_a">da</li><li data-component="feedback" id="interface7_opt_a">Točno.</li>
+            
+            <li data-component="answer"  id="interface7_opt_b">ne</li><li data-component="feedback" id="interface7_opt_b">Netočno. Izvršenje projekta pokreće se klikom na zelenu zastavicu, a klikom na crvenu tipku se zaustavlja projekt</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-8">
+<h3>Pitanje 8<a class="headerlink" href="#pitanje-8" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="interface8">
+            <p>Q-40: Kako se zove mjesto gdje su prikazane sličice likova koji su u projektu?</p>
+
+            <li data-component="answer"  id="interface8_opt_a">Meni</li><li data-component="feedback" id="interface8_opt_a"></li>
+            
+            <li data-component="answer" data-correct id="interface8_opt_b">Lista likova</li><li data-component="feedback" id="interface8_opt_b">Točno.</li>
+            
+            <li data-component="answer"  id="interface8_opt_c">Područje skripti</li><li data-component="feedback" id="interface8_opt_c"></li>
+            
+            <li data-component="answer"  id="interface8_opt_d">Paleta naredbi</li><li data-component="feedback" id="interface8_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-9">
+<h3>Pitanje 9<a class="headerlink" href="#pitanje-9" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="interface9">
+            <p>Q-41: Lik može imati jedan ili više ________ koji mu omogućuju da promijeni izgled za vrijeme izvršavanja projekta.</p>
+
+            <li data-component="answer"  id="interface9_opt_a">izgleda</li><li data-component="feedback" id="interface9_opt_a"></li>
+            
+            <li data-component="answer"  id="interface9_opt_b">odijela</li><li data-component="feedback" id="interface9_opt_b"></li>
+            
+            <li data-component="answer" data-correct id="interface9_opt_c">kostima</li><li data-component="feedback" id="interface9_opt_c">Točno.</li>
+            
+            <li data-component="answer"  id="interface9_opt_d">maski</li><li data-component="feedback" id="interface9_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-10">
+<h3>Pitanje 10<a class="headerlink" href="#pitanje-10" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="interface10">
+            <p>Q-42: Pozornici i likovima mogu biti pridruženi i:
+(Izaberi sve točne odgovore)</p>
+
+            <li data-component="answer"  id="interface10_opt_a">prezentacije</li><li data-component="feedback" id="interface10_opt_a"></li>
+            
+            <li data-component="answer" data-correct id="interface10_opt_b">skripte</li><li data-component="feedback" id="interface10_opt_b"></li>
+            
+            <li data-component="answer" data-correct id="interface10_opt_c">grafičke datoteke</li><li data-component="feedback" id="interface10_opt_c"></li>
+            
+            <li data-component="answer" data-correct id="interface10_opt_d">zvučne datoteke</li><li data-component="feedback" id="interface10_opt_d"></li>
+            
+
+            </ul>
+            </div>
+            <p>Vrijeme je za istraživanje.</p>
+</div>
+</div>
+<div class="section" id="try-pokusaj">
+<h2><img alt="try" src="_images/try.png" /> Pokušaj!<a class="headerlink" href="#try-pokusaj" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vjezba-1-istrazivanje-prirucnika">
+<h3>Vježba 1 – Istraživanje Priručnika<a class="headerlink" href="#vjezba-1-istrazivanje-prirucnika" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p>Klikom na gumb <em>Vodiči</em> na traci izbornika (1) otvorit ćete knjižnicu kratkih uputa za kreiranje različitih projekata na Skrecu. Odaberite priručnik <em>Prvi koraci</em> (2), pogledajte pridruženi videozapis (3) i kliknite zelene strelice (4) da biste vratili način stvaranja i izvršenja jednostavnog projekta poput našeg Hello World projekta.</p>
+<a class="reference internal image-reference" href="_images/ex1_1.png"><img alt="_images/ex1_1.png" class="align-center" src="_images/ex1_1.png" style="width: 1000px;" /></a>
+
+    </p></div></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="vjezba-2-informacije-o-liku">
+<h3>Vježba 2 – Informacije o liku<a class="headerlink" href="#vjezba-2-informacije-o-liku" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p><img alt="1" src="_images/1.png" /> U trenutnim informacijama o likovima promijeni smjer kretanja lika tako da ide prema gore. Što će se dogoditi na pozornici?</p>
+<p><img alt="2" src="_images/2.png" /> Kako će lik biti usmjeren ako kao smjer kretanja postavite vrijednost od 45 stupnjeva?</p>
+<p><img alt="3" src="_images/3.png" /> Pomaknite pokazivač miša preko onoga što se događa s koordinatama u trenutnim informacijama o znakovima.</p>
+<p><img alt="4" src="_images/4.png" /> Provjerite što se događa s likom ako polje Prikaži pokazuje da je znak skriven? Kako možete vratiti lik na pozornicu?</p>
+<p><img alt="5" src="_images/5.png" /> Promijenite ime aktivnog lika.</p>
+
+    </p></div></div>
+<hr class="docutils" />
+<div class="sidebar">
+<p class="sidebar-title">Izbor likova</p>
+<p>Novi lik  možeš dodati u projekat klikom na sličicu mačke koja se nalazi u desnom kutu liste likova</p>
+<p><img alt="new_sprite" src="_images/fig1_5.png" /></p>
+</div>
+</div>
+<div class="section" id="vjezba-3-uvodenje-novih-likova">
+<h3>Vježba 3 – Uvođenje novih likova<a class="headerlink" href="#vjezba-3-uvodenje-novih-likova" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p><img alt="1" src="_images/1.png" /> Uvezi novi lik iz biblioteke likova.</p>
+<p>Klikom na gumb <em>Odaberite Lik</em> otvorit će se prozor biblioteke likova. Morate kliknuti na željeni lik - na primjer, lik balerine.</p>
+<p><img alt="2" src="_images/2.png" /> Nacrtajte novi znak pomoću ugrađenog uređivača slika.</p>
+<p>Klikom na gumb <em>Boja</em> umjesto na kartici Kod otvara se kartica <em>Kostimi</em>. Na mjestu gdje je bilo područje skripte, otvorit će se grafički uređivač gdje trebate nacrtati novi znak. Kada završite, kliknite karticu <em>Kod</em>.</p>
+<p><img alt="3" src="_images/3.png" /> Iz biblioteke likova uvezite nekoliko znakova iznenađenja.</p>
+<p><img alt="4" src="_images/4.png" /> Uvezite novi lik iz datoteke klikom na gumb <em>Prijenos likova</em>.</p>
+
+    </p></div></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="vjezba-4-umnozavanje-i-brisanje-likova">
+<h3>Vježba 4 – Umnožavanje i brisanje likova<a class="headerlink" href="#vjezba-4-umnozavanje-i-brisanje-likova" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p><img alt="1" src="_images/1.png" /> Desnom tipkom miša kliknite na popis likova da biste otvorili izbornik prečaca. Odaberite duplikat da biste napravili 3 kopije.</p>
+<p><img alt="2" src="_images/2.png" /> Uklonite jednu kopiju znakova odabirom <em>brisanja</em> iz izbornika prečaca.</p>
+<p><img alt="3" src="_images/3.png" /> Unosom brojeva 50 i 200 u okvir veličine postavite jednu kopiju da bude dvostruko manja, a drugu dvostruko veću od originala.</p>
+
+    </p></div></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="vjezba-5-koristenje-zvuka">
+<h3>Vježba 5 – Korištenje zvuka<a class="headerlink" href="#vjezba-5-koristenje-zvuka" title="Permalink to this headline">¶</a></h3>
+<p><strong>Napomena</strong>. Ovu vježbu možete izvesti samo ako vaše računalo ima mogućnost snimanja zvuka!</p>
+<p>Proučite zvučni priručnik <em>Record</em>, pa pokušajte stvoriti projekt u kojem će lik glasom izgovoriti frazu “Hello World”. Kako se u ovoj vježbi koristi uređivač zvuka čiju ćemo upotrebu kasnije objasniti, u ovom trenutku možete je preskočiti, pa joj se vratite kasnije.</p>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p><img alt="1" src="_images/1.png" /> Pokrenite Scratch.</p>
+<p><img alt="2" src="_images/2.png" /> Kliknite grupu Sound u paleti blokova. Pojavit će se skupina svijetlo ljubičastih blokova koji su zaduženi za zvučne efekte koji se mogu dodijeliti likovima.</p>
+<p><img alt="3" src="_images/3.png" /> Povucite blok <img alt="play_until" src="_images/play_until.png" /> u područje skripti.</p>
+<p><img alt="4" src="_images/4.png" /> Kliknite karticu <em>Zvuk</em>. Otvorit će se prozor Sound Editor.</p>
+<p><img alt="5" src="_images/5.png" /> Kliknite gumb <em>Odaberi zvuk</em> i odaberite opciju snimanja.</p>
+<p><img alt="6" src="_images/6.png" /> Kad se pojavi dijaloški okvir Snimanje, kliknite gumb za <em>snimanje</em>, zatim recite “Hello World” i zaustavite snimanje.</p>
+<p><img alt="7" src="_images/7.png" /> Poslušajte snimku, pa ako ste sretni, pritisnite gumb <em>Spremi</em>. Na popisu zvukova povezanih s karakterom mačke pojavit će se drugi zvuk nazvan <em>snimanje1</em>.</p>
+<p><img alt="8" src="_images/8.png" /> Vratite se na karticu <em>Code</em> i umjesto snimanja odaberite <em>snimanje1</em>. Ako kliknete na zelenu zastavu, mačka će izgovoriti rečenicu koju ste snimili.</p>
+<p><img alt="9" src="_images/9.png" /> Dodajte još dva bloka <img alt="play_until" src="_images/play_until.png" /> pa u njih dodajte snimke druge dve rečenice koje izgovara mačak.</p>
+<p><img alt="10" src="_images/10.png" /> Povežite blokove u snop <img alt="clicked_flag" src="_images/clicked_flag.png" /> i stavite na vrh. Spremite ovaj projekt pod nazivom “Hello World2”.</p>
+
+    </p></div></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="vjezba-6-upotreba-ekstenzije-tekst-za-govor">
+<h3>Vježba 6 - Upotreba ekstenzije <em>Tekst za govor</em><a class="headerlink" href="#vjezba-6-upotreba-ekstenzije-tekst-za-govor" title="Permalink to this headline">¶</a></h3>
+<p><strong>Napomena</strong>. Ovu vježbu možete izvesti samo ako je vaše računalo spojeno na Internet!</p>
+<p>Proučite priručnik <em>Stvorite animacije koji razgovaraju</em>, pa pokušajte stvoriti projekt u kojem će lik reći “Pozdrav svijetu” pomoću bloka <img alt="speak" src="_images/speak.png" />. Ova vježba koristi i naredbe koje ćemo uvesti u sljedećim lekcijama, tako da možete preskočiti i vratiti se kasnije.</p>
+
+    <div data-level="3" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p><img alt="1" src="_images/1.png" /> Pokrenite Scratch.</p>
+<p><img alt="2" src="_images/2.png" /> Pritisnite gumb <img alt="extensions" src="_images/extension.png" /> na dnu palete blokova. Pojavit će se grupa blokova <em>Extension</em>.</p>
+<p><img alt="3" src="_images/3.png" /> Iz grupe <em>Extension</em> trebate izabrati <img alt="voices_extension" src="_images/voices.png" />.Tri nova bloka pojavit će se u paleti blokova, omogućujući vam znakove na jeziku koji odredite sa naredbom <img alt="set_language" src="_images/set_language.png" />. Recite tekst koji upišete u polje za unos naredbe <img alt="speak" src="_images/speak.png" />. Također možete postaviti glas koji se izgovara: ženski (sopran ili alt) ili muški (tenor ili bas). Ovo se zadaje naredbom <img alt="set_voice" src="_images/set_voice.png" />.</p>
+<p><img alt="4" src="_images/4.png" /> Povucite blok <img alt="set_language" src="_images/set_language.png" /> u područje skripti.</p>
+<p><img alt="5" src="_images/5.png" /> Povucite blok <img alt="set_voice" src="_images/set_voice.png" /> u područje skripti i izaberite kakvim će glasom lik govoriti.</p>
+<p><img alt="6" src="_images/6.png" /> Povucite blok <img alt="speak" src="_images/speak.png" /> u područje skripti i u polje upišite Hello World.</p>
+<p><img alt="7" src="_images/7.png" /> Dodajte još dva bloka <img alt="speak" src="_images/speak.png" /> pa u njih upišite druge dvije rečenice koje izgovara mačka.</p>
+<p><img alt="8" src="_images/8.png" /> Povežite blokove u snop, a na vrh stavite <img alt="clicked_flag" src="_images/clicked_flag.png" />.</p>
+<p><img alt="9" src="_images/9.png" /> Spremite ovaj projekt pod nazivom “Hello World 3”.</p>
+
+    </p></div></div>
+</div>
+</div>
+<div class="section" id="bug-ispravi-greske">
+<h2><img alt="bug" src="_images/bug.png" /> Ispravi greške!<a class="headerlink" href="#bug-ispravi-greske" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="greska-1">
+<h3>Greška 1<a class="headerlink" href="#greska-1" title="Permalink to this headline">¶</a></h3>
+<p>Učenik je želio napraviti svoju verziju projekta “Hello World”. U njemu lik treba izgovarati rečenicu za rečenicom: <em>Hello World, My name is Mike, I like programming</em>. Liku je pridružio sljedeću skriptu:</p>
+<a class="reference internal image-reference" href="_images/bug1_1.png"><img alt="_images/bug1_1.png" class="align-center" src="_images/bug1_1.png" style="width: 160px;" /></a>
+<p>Ali, poslije klika na zelenu zastavicu, lik je izgovorio samo <em>I like programming</em>. U čemu je greška?</p>
+</div>
+</div>
+<div class="section" id="book-sto-smo-naucili">
+<h2><img alt="book" src="_images/book.png" /> Što smo naučili<a class="headerlink" href="#book-sto-smo-naucili" title="Permalink to this headline">¶</a></h2>
+<p>U prvoj lekciji upoznali smo se s glavnim dijelovima sučelja programskog jezika Scratch i napisali, izveli i upamtili prvi program - projekt Hello World. Kroz vježbe smo pokazali kako na Scratchu možemo likovima doista izgovoriti poruke koje snimamo sami pomoću uređivača zvuka ili ih izgovoriti pomoću proširenja Text to Speech (tekst na govor) (ako je vaše računalo spojeno na Internet).</p>
+<p><strong>Primjeri projekta</strong>: <a class="reference external" href="https://scratch.mit.edu/studios/25119438/">1Studio</a></p>
+<p><strong>Novi pojmovi</strong>:  interface, Scratch project, active object, sprites, costumes, stage, backdrop, scripts, blocks.</p>
+<p><strong>Nove naredbe</strong>: <img alt="events_blocks" src="_images/events.png" /> - <img alt="clicked_flag" src="_images/clicked_flag.png" />; <img alt="looks_blocks" src="_images/looks.png" /> - <img alt="say_sec" src="_images/say_sec.png" />,  <img alt="say" src="_images/say.png" />; <img alt="sound_blocks" src="_images/sound.png" /> - <img alt="*" src="_images/asterix.png" />
+<img alt="play_until" src="_images/play_until.png" />; <img alt="voices_extension" src="_images/voices.png" /> -  <img alt="*" src="_images/asterix.png" /> <img alt="set_language" src="_images/set_language.png" />,  <img alt="*" src="_images/asterix.png" /> <img alt="set_voice" src="_images/set_voice.png" />,  <img alt="*" src="_images/asterix.png" /> <img alt="speak" src="_images/speak.png" />.</p>
+<p>Napomena. Naredbe označene znakom <img alt="*" src="_images/asterix.png" /> biti će obrađene u narednim lekcijama.</p>
+</div>
+<div class="section" id="project-napravi-neki-od-sljedecih-projekata">
+<h2><img alt="project" src="_images/project.png" /> Napravi neki od sljedećih projekata<a class="headerlink" href="#project-napravi-neki-od-sljedecih-projekata" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="projekt-1-to-sam-ja">
+<h3>Projekt 1 – “To sam ja”<a class="headerlink" href="#projekt-1-to-sam-ja" title="Permalink to this headline">¶</a></h3>
+<p>Kreiraj projekt koji će te predstaviti. Izaberi lik dječaka ili djevojčice iz biblioteke likova i pridruži mu skriptu koja omogučava da izgovara tri rečenice: “Ja se zovem…”, “Imam…godine” i “Idem u školu…”. Umjesto točkica stavi svoje podatke.</p>
+</div>
+</div>
+</div>
+
+
+  
+      <div class="col-md-12">
+<ul class="pager">
+        <li id="relations-prev" title='Previous chapter - Blok programiranje u Scrtachu - praktični dio' data-toggle="tooltip"><a href="index.html">Previous chapter</a></li>
+    
+        <li id="relations-next" title='Next chapter - Reci gdje da idem – Kordinate i smjer' data-toggle="tooltip"><a href="Scratch3 Coordinates.html">Next chapter</a></li>
+</ul>
+
+<!-- <ul class="pager"> -->
+    <!-- -->
+        <!-- <li id="relations-prev" title='Претходно поглавље - Blok programiranje u Scrtachu - praktični dio' data-toggle="tooltip"><a href="index.html">Претходно поглавље</a></li> -->
+    <!--  -->
+    <!-- -->
+        <!-- <li id="relations-next" title='Следеће поглавље - Reci gdje da idem – Kordinate i smjer' data-toggle="tooltip"><a href="Scratch3 Coordinates.html">Следеће поглавље</a></li> -->
+    <!-- -->
+<!-- </ul> -->
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+  
+</div>
+<footer class="footer col-md-12">
+    <div class="container">
+        <div class="text-center">
+            <hr>
+            <p class="text-muted">
+                <span class="text-center">&copy; 2019 <a href="https://petlja.org">Petlja.org</a> 
+                  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; vertical-align: text-bottom" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+                  
+                  (Created using  <a href="https://pypi.org/project/Sphinx/">Sphinx</a>, <a href="http://runestoneinteractive.org/">RunestoneComponents</a> and <a href="https://github.com/Petlja/PetljaDoc">PetljaDoc</a>)</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

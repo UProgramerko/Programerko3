@@ -1,0 +1,488 @@
+Okruženje programskog jezika Scratch
+=====================================
+
+.. include:: blocks.txt
+
+.. include:: icons.txt
+
+.. infonote::
+
+  |intro1|
+
+   
+Želite li stvoriti vlastitu računalnu igru, animiranu priču, vodič ili prezentaciju? Scratch je programski jezik koji vam omogućuje da radite sve to i još više.
+
+Za razliku od mnogih programskih jezika, Scratch je *vizualni* jezik - umjesto pisanja naredbi pomoću tipkovnice, programi se stvaraju povezivanjem raznobojnih blokova koji predstavljaju naredbe, slično kao konstruiranje različitih objekata iz Lego kockica.
+
+Scratch stvara **projekte**. Da biste stvorili projekt, prvo morate upoznati likove koji u njemu sudjeluju. Likovi se mogu povezati različitim izgledom, zvukovima i ponašanjem. Ponašanje lika opisano je **skriptom**. Projekt sadrži jednu ili više skripti, od kojih je svaka povezana s likom ili pozornicom - mjestom na kojem se projekt odvija.
+
+Za pisanje programa na Skrecu potrebno je upoznati okruženje u kojem se programi stvaraju, odnosno njegovo **sučelje**.
+
+.. topic:: Programsko jezično sučelje Scratch
+
+ The following Figure shows the interface of the Scratch programming language. 
+
+ .. image:: ../_images/1/fig1_1.png
+   :width: 800px   
+   :align: center
+
+ Za početak ćemo upoznati osnovne funkcije njegovih glavnih dijelova, a u sljedećim lekcijama ćemo postupno upoznavati ostale komponente okoliša.
+
+ **The Stage** će pokrenuti vaše priče, igre i animacije. Sama pozornica je nepokretna, ali sadrži likove koji se mogu kretati i reagirati na druge likove.
+
+ **The Blocks Palette** mjesto je na kojem se pohranjuju sve dostupne naredbe programskog jezika Skrec. Zove se "paleta", jer se podudara u paleti boja s kojima slikar stvara svoje slike. Međutim, za razliku od slikara, programer stvara žive slike čiji objekti međusobno djeluju.
+
+ **Scripts Area**  je prostor gdje se stvaraju skripte. Da biste stvorili skriptu, morate povući i ispustiti odgovarajuće blokove iz palete blokova u područje skripte i povezati ih.
+
+ **The Sprite List** prikazuje sličice svih likova koji su uključeni u projekt. Ispod svakog znaka upisano je ime.
+
+ **The Menu Bar** omogućuje vam postavljanje naredbi za upravljanje projektima i prilagođava samo okruženje.
+
+.. topic:: My First Program
+
+ Čak i najduža putovanja započinju prvim korakom. A taj prvi korak za učenje programskog jezika je pisanje programa koji bi na ekranu trebao reći "Hello Holy". I tako ćemo započeti osvajanje Scratch-a.
+
+ Kad god se pokrene Scratch, **pozornicu** automatski stvara bijeli pravokutnik u kojem se nalazi **lik** mačke.
+
+ Scena i likovi su **predmeti** čije je ponašanje programirano naredbama Turn. Koristeći **blokove** koji odgovaraju jezičnim naredbama, sastavljamo skripte koje opisuju ponašanje objekata. Svaki objekt ima svoje ponašanje, čak i fiksnu fazu koja, na primjer, može promijeniti svoj izgled.
+
+ Pozornice i figure mogu se pored skripti povezati i s **grafikom** (slike - crteži, fotografije) i **zvučnim** datotekama. Slike likova zovu se **kostimi**, a scenske slike **pozadina**.
+
+ **Popis znakova** prikazuje sličice svih likova koji su uključeni u projekt. Ispod svakog znaka upisano je ime.
+
+ Možete pregledavati i mijenjati trenutne informacije o znakovima u prostoru iznad popisa znakova.
+
+ .. image:: ../_images/1/fig1_2.png
+   :width: 650px   
+   :align: center
+ 
+ .. infonote::
+
+  1.	*Ime* lika može se promijeniti upisivanjem novog imena u polje imena lika.
+
+  2.	*Položaj* lika na pozornici zadaje se njegovim koordinatama h i u.
+
+  3.	Hoće li se lik vidjeti na pozornici ili skriven, ovisi o tome što je potvrđeno u okviru *Show*.
+
+  4.	*Veličina* znaka izražena je u postotku od izvorne veličine. Broj 100 označava da se lik vidi u svojoj prirodnoj veličini.4.	Veličina znaka izražena je u postotku od izvorne veličine. Broj 100 označava da se lik vidi u svojoj prirodnoj veličini.
+
+  5.	Smjer označava smjer u kojem će se lik kretati. Plava strelica na krugu pokazuje smjer znaka. Orijentaciju možete promijeniti rotiranjem strelice ili upisivanjem odgovarajućeg broja u polje smjera (0: gore, 90: desno, 180: dolje, -90: lijevo). Oznake |rot_style| označavaju način rotacije, a to mogu biti: *Sve strane, Lijevo / Desno ili Bez rotacije.*
+
+ Da biste stvorili skriptu, trebate proslijediti odgovarajuće naredbe iz naredbene trake u područje skripte za aktivni objekt i povezati ih.
+
+ **Aktivni objekt** - lik ili pozornica, prepoznaje se po tome što na njegovom popisu znakova postoji plavi okvir. Sve što stvaramo: skripte koje opisuju ponašanje, kostimi koji opisuju izgled, zvukovi koji će se čuti kada pokrenemo projekt, pridružuju se objektu koji je aktivan dok to radimo.
+
+ Stvaranje skripti vrši se postavljanjem blokova jedan preko drugog. Klikom bilo kojeg mjesta u nizu blokova pokreće se cjelovita skripta koja se izvršava od vrha do dna.
+
+|study| Prouči sljedeće primjere projekata
+-------------------------------------------
+
+Primjer 1 – Projekt “Hello World”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mačku zaštitnom znaku Scratcha, priložiti na početku najjednostavnije moguće skripte, koja se sastoji od jedne naredbe - bloka koji omogućuje da lik "izgovori", odnosno rečenica, Pozdrav svijetu, pojavljuje se u stripu. Evo kako to radi.
+
+|1| 1Kliknite skupinu *Looks* blokova u paleti blokova. Pojavit će se skupina ljubičastih blokova koja je odgovorna za vizualne efekte koji se mogu dodijeliti likovima.
+
+|2| Povucite blok |say_sec| u područje scenarija.
+
+|3| Zatim umjesto riječi *Hello*, upišite *Hello World* i kliknite na tako izmijenjen blok.
+
+.. image:: ../_images/1/fig1_3.png
+   :width: 740px   
+   :align: center
+
+S mačkom će pozdravni tekst *Hello World* stajati na pozornici 2 sekunde. Kao što vidite, prilično jednostavno.
+
+Sada ćemo dodati još nekoliko blokova |say_sec| i tako će naš lik izgovoriti još nekoliko rečenica.
+
+Pokazat ćemo dva načina za dodavanje bloka koji već postoji u području skripte.
+
+- 1. Ponavljanjem postupka koji smo već učinili: povucite blok |say_sec| još jednom iz palate blokova i umjesto teksta *Hello World* upišite *I am a cat*
+
+- 2. 2.	Desnom tipkom miša kliknite blok u području skripte za otvaranje izbornika prečaca i iz njega odaberite *Dupliciraj*. Zatim u kopiju bloka upišite željeni tekst, u našem primjeru - *volim hodati*. Ovaj način rada omogućuje mu brže pokretanje jer može množiti više blokova koji su prethodno povezani jednim potezom.
+
+
+.. image:: ../_images/1/fig1_4.png
+   :width: 740px   
+   :align: center
+ 
+Da bi se blokovi automatski izvršavali jedan za drugim, moraju ih biti povezani u cijelosti - snop. To radimo povlačenjem blokova. Kad se blokovi približe jedni drugima, oko vrha se pojavljuje sjenka koja pokazuje da će blokovi biti povezani. Spajanjem sva tri bloka u nizu postižemo da dvostrukim klikom na njega lik izgovara sve tri rečenice jednu za drugom, jednu za drugom.
+
+**Running the Project**
+
+Primjećujete da blok koji ste koristili ima udubljenje na vrhu i izbočenje na dnu. Blok ovog oblika naziva se blok stog. Većina Scratch naredbi povezana je s blokovima snopa. No, početni blok, blok koji pokazuje koji će događaj pokrenuti skriptu za izvršenje, ne bi trebao imati udubljenje na vrhu, jer mu nijedan blok ne prethodi. Većina uvodnih blokova nalazi se u grupi *Događanja*. Kliknite grupu Događaji u paleti blokova i povucite je |clicked_flag| u područje scenarija. Zatim postavite ovaj blok na vrh prethodno formiranog snopa i vaš prvi projekt je gotov. Da biste ga izvršili, potrebno je kliknuti na |g_flag| iznad gornjeg lijevog ugla pozornice.
+
+**Projektna memorija**
+
+Projekt možete spremiti na računalo na sljedeći način:
+
+|1| Kliknite na stavku *File* i liniji menija
+
+|2| Izaberite opciju *Save to your computer*
+
+|3| U dijaloškom okviru koji će se otvoriti odaberite mapu i unesite naziv pod kojim ćete pamtiti projekt, a zatim kliknite gumb *Spremi*.
+
+**Nadogradnja projekta**
+
+Slično tome, umjesto da prikazuje govorni mjehurić s tekstom, mačka bi zapravo mogla izgovoriti ovaj tekst. To možete postići odabirom bloka |play_until| iz grupe *Sound*, tako da u uređivač zvuka zapišete rečenicu koju on mora izgovoriti. Zatim odaberite snimljeni govor s padajućeg popisa ovog bloka umjesto zvuka *meow*.
+
+U ovoj verziji Scratch možete učiniti više od toga. Među proširenjima nalazi se grupa *Text-to-Speech* koja omogućuje likovima u projektima da stvarno govore. To možete postići samo ako ste povezani na Internet, jer on koristi usluge *Amazon Web Services.*
+
+|ask| Odgovori na sljedeća pitanja
+------------------------------------
+
+Naziv svih prozora i gumba koji su vidljivi prilikom pokretanja?
+
+Pitanje 1
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: interface1
+   :answer_a: skripta
+   :answer_b: objekt
+   :answer_c: sučelje
+   :answer_d: program
+   :correct: c
+   :feedback_a:  
+   :feedback_b: 
+   :feedback_c: Točno.
+   :feedback_d: 
+   
+   Naziv svih prozora i gumba koji su vidljivi prilikom pokretanja?
+  
+
+Pitanje 2
+~~~~~~~~~~
+.. level:: 1
+
+Pojedini djelovi Scratch sučelja na sljedećoj slici označeni su brojevima od 1 do 5.
+
+.. image:: ../_images/1/q1_2.png
+   :width: 600px   
+   :align: center
+      
+.. dragndrop:: interface2
+    :feedback: Pokušaj ponovo
+    :match_1: stage|||4
+    :match_2: blocks palette|||2
+    :match_3: scripts area|||3
+    :match_4: sprite list|||5
+    :match_5: menu bar|||1
+    
+    Uparite dijelove okoline prema njihovim položajima na slici.
+
+
+Pitanje 3
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: interface3
+   :answer_a: da
+   :answer_b: ne
+   :correct: b
+   :feedback_a: Netočno. Projekt mora imati pozornicu sa jednom pozadinom
+   :feedback_b: Točno.
+   
+   Može li se napraviti projekt koji nema pozornicu?
+
+Pitanje 4
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: interface4
+   :answer_a: da
+   :answer_b: ne
+   :correct: a
+   :feedback_a: Točno.
+   :feedback_b: Netočno. Projekt može imati samo skripte koje su pridružene pozornici
+   
+   Može li se napraviti projekt bez likova?
+
+Pitanje 5
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: interface5
+   :answer_a: da
+   :answer_b: no
+   :correct: b
+   :feedback_a: Netočno. Objekt mora imati barem jedan izgled, pozornica – pozadinu, a lik – kostim
+   :feedback_b: Točno.
+   
+    Može li se kreirati pozornica ili lik, a da im se ne pridruži izgled?
+
+Pitanje 6
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: interface6
+   :answer_a: da
+   :answer_b: ne
+   :correct: b
+   :feedback_a: Netočno. Neki likovi mogu biti samo dekoracija projekta, kao i pozornica
+   :feedback_b: Točno.
+   
+   DTreba li se svakom projektu pridružiti bar jedna skripta?
+
+Pitanje 7
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: interface7
+   :answer_a: da
+   :answer_b: ne
+   :correct: a
+   :feedback_a: Točno. 
+   :feedback_b: Netočno. Izvršenje projekta pokreće se klikom na zelenu zastavicu, a klikom na crvenu tipku se zaustavlja projekt
+   
+   Omogučavaju li zelena zastavica i crvena tipka stop kontrolu izvršavanja skripti?
+
+Pitanje 8
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: interface8
+   :answer_a: Meni
+   :answer_b: Lista likova
+   :answer_c: Područje skripti 
+   :answer_d: Paleta naredbi
+   :correct: b
+   :feedback_a:  
+   :feedback_b: Točno.
+   :feedback_c: 
+   :feedback_d: 
+   
+   Kako se zove mjesto gdje su prikazane sličice likova koji su u projektu? 
+
+Pitanje 9
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: interface9
+   :answer_a: izgleda
+   :answer_b: odijela
+   :answer_c: kostima
+   :answer_d: maski
+   :correct: c
+   :feedback_a:  
+   :feedback_b: 
+   :feedback_c: Točno.
+   :feedback_d: 
+   
+   Lik može imati jedan ili više ________ koji mu omogućuju da promijeni izgled za vrijeme izvršavanja projekta. 
+
+Pitanje 10
+~~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: interface10
+   :multiple_answers:
+   :answer_a: prezentacije
+   :answer_b: skripte
+   :answer_c: grafičke datoteke
+   :answer_d: zvučne datoteke
+   :correct: b,c,d
+   :feedback_a:  
+   :feedback_b: 
+   :feedback_c: 
+   :feedback_d: 
+
+   Pozornici i likovima mogu biti pridruženi i: 
+   (Izaberi sve točne odgovore)
+
+
+
+
+Vrijeme je za istraživanje.
+
+|Try| Pokušaj!
+----------------
+
+Vježba 1 – Istraživanje Priručnika
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+.. infonote::
+
+ Klikom na gumb *Vodiči* na traci izbornika (1) otvorit ćete knjižnicu kratkih uputa za kreiranje različitih projekata na Skrecu. Odaberite priručnik *Prvi koraci* (2), pogledajte pridruženi videozapis (3) i kliknite zelene strelice (4) da biste vratili način stvaranja i izvršenja jednostavnog projekta poput našeg Hello World projekta.
+
+ .. image:: ../_images/1/ex1_1.png
+   :width: 1000px   
+   :align: center
+
+.......
+
+Vježba 2 – Informacije o liku
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+.. infonote::
+
+ |1| U trenutnim informacijama o likovima promijeni smjer kretanja lika tako da ide prema gore. Što će se dogoditi na pozornici?
+
+ |2| Kako će lik biti usmjeren ako kao smjer kretanja postavite vrijednost od 45 stupnjeva?
+
+ |3| Pomaknite pokazivač miša preko onoga što se događa s koordinatama u trenutnim informacijama o znakovima.
+
+ |4| Provjerite što se događa s likom ako polje Prikaži pokazuje da je znak skriven? Kako možete vratiti lik na pozornicu?
+
+ |5| Promijenite ime aktivnog lika.
+
+.......
+
+.. sidebar:: Izbor likova
+    
+    Novi lik  možeš dodati u projekat klikom na sličicu mačke koja se nalazi u desnom kutu liste likova
+
+    |new_sprite|
+
+.. |new_sprite| image:: ../_images/1/fig1_5.png
+
+Vježba 3 – Uvođenje novih likova
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      
+.. level:: 1
+
+.. infonote::
+  
+ |1| Uvezi novi lik iz biblioteke likova. 
+
+ Klikom na gumb *Odaberite Lik* otvorit će se prozor biblioteke likova. Morate kliknuti na željeni lik - na primjer, lik balerine.
+
+ |2| Nacrtajte novi znak pomoću ugrađenog uređivača slika. 
+
+ Klikom na gumb *Boja* umjesto na kartici Kod otvara se kartica *Kostimi*. Na mjestu gdje je bilo područje skripte, otvorit će se grafički uređivač gdje trebate nacrtati novi znak. Kada završite, kliknite karticu *Kod*.
+  
+ |3| Iz biblioteke likova uvezite nekoliko znakova iznenađenja.
+
+ |4| Uvezite novi lik iz datoteke klikom na gumb *Prijenos likova*.
+
+.......
+
+Vježba 4 – Umnožavanje i brisanje likova
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+.. infonote::
+
+ |1| Desnom tipkom miša kliknite na popis likova da biste otvorili izbornik prečaca. Odaberite duplikat da biste napravili 3 kopije.
+
+ |2| Uklonite jednu kopiju znakova odabirom *brisanja* iz izbornika prečaca.
+
+ |3| Unosom brojeva 50 i 200 u okvir veličine postavite jednu kopiju da bude dvostruko manja, a drugu dvostruko veću od originala.
+
+.......
+
+Vježba 5 – Korištenje zvuka
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Napomena**. Ovu vježbu možete izvesti samo ako vaše računalo ima mogućnost snimanja zvuka!
+
+Proučite zvučni priručnik *Record*, pa pokušajte stvoriti projekt u kojem će lik glasom izgovoriti frazu "Hello World". Kako se u ovoj vježbi koristi uređivač zvuka čiju ćemo upotrebu kasnije objasniti, u ovom trenutku možete je preskočiti, pa joj se vratite kasnije.
+
+.. level:: 2
+
+.. infonote::
+
+ |1| Pokrenite Scratch.
+
+ |2| Kliknite grupu Sound u paleti blokova. Pojavit će se skupina svijetlo ljubičastih blokova koji su zaduženi za zvučne efekte koji se mogu dodijeliti likovima.
+  
+ |3| Povucite blok |play_until| u područje skripti.
+  
+ |4| Kliknite karticu *Zvuk*. Otvorit će se prozor Sound Editor.
+  
+ |5| Kliknite gumb *Odaberi zvuk* i odaberite opciju snimanja.
+
+ |6| Kad se pojavi dijaloški okvir Snimanje, kliknite gumb za *snimanje*, zatim recite "Hello World" i zaustavite snimanje.
+
+ |7| Poslušajte snimku, pa ako ste sretni, pritisnite gumb *Spremi*. Na popisu zvukova povezanih s karakterom mačke pojavit će se drugi zvuk nazvan *snimanje1*.
+
+ |8| Vratite se na karticu *Code* i umjesto snimanja odaberite *snimanje1*. Ako kliknete na zelenu zastavu, mačka će izgovoriti rečenicu koju ste snimili.
+
+ |9| Dodajte još dva bloka |play_until| pa u njih dodajte snimke druge dve rečenice koje izgovara mačak.
+
+ |10| Povežite blokove u snop |clicked_flag| i stavite na vrh. Spremite ovaj projekt pod nazivom "Hello World2".
+
+.......
+
+Vježba 6 - Upotreba ekstenzije *Tekst za govor*  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Napomena**. Ovu vježbu možete izvesti samo ako je vaše računalo spojeno na Internet!
+
+Proučite priručnik *Stvorite animacije koji razgovaraju*, pa pokušajte stvoriti projekt u kojem će lik reći "Pozdrav svijetu" pomoću bloka |speak|. Ova vježba koristi i naredbe koje ćemo uvesti u sljedećim lekcijama, tako da možete preskočiti i vratiti se kasnije.
+ 
+.. level:: 3
+
+.. infonote::
+
+ |1| Pokrenite Scratch.
+
+ |2| Pritisnite gumb |extensions| na dnu palete blokova. Pojavit će se grupa blokova *Extension*.
+  
+ |3| Iz grupe *Extension* trebate izabrati |voices_extension|.Tri nova bloka pojavit će se u paleti blokova, omogućujući vam znakove na jeziku koji odredite sa naredbom |set_language|. Recite tekst koji upišete u polje za unos naredbe |speak|. Također možete postaviti glas koji se izgovara: ženski (sopran ili alt) ili muški (tenor ili bas). Ovo se zadaje naredbom |set_voice|.
+  
+ |4| Povucite blok |set_language| u područje skripti. 
+  
+ |5| Povucite blok |set_voice| u područje skripti i izaberite kakvim će glasom lik govoriti.
+  
+ |6| Povucite blok |speak| u područje skripti i u polje upišite Hello World.
+
+ |7| Dodajte još dva bloka |speak| pa u njih upišite druge dvije rečenice koje izgovara mačka.
+
+ |8| Povežite blokove u snop, a na vrh stavite |clicked_flag|.
+
+ |9| Spremite ovaj projekt pod nazivom “Hello World 3”.
+
+|bug| Ispravi greške!
+----------------------
+
+Greška 1
+~~~~~~~~
+
+Učenik je želio napraviti svoju verziju projekta “Hello World”. U njemu lik treba izgovarati rečenicu za rečenicom: *Hello World, My name is Mike, I like programming*. Liku je pridružio sljedeću skriptu:
+
+.. image:: ../_images/1/bug1_1.png
+     :width: 160px   
+     :align: center
+
+Ali, poslije klika na zelenu zastavicu, lik je izgovorio samo *I like programming*. U čemu je greška?
+
+|book| Što smo naučili
+------------------------
+
+U prvoj lekciji upoznali smo se s glavnim dijelovima sučelja programskog jezika Scratch i napisali, izveli i upamtili prvi program - projekt Hello World. Kroz vježbe smo pokazali kako na Scratchu možemo likovima doista izgovoriti poruke koje snimamo sami pomoću uređivača zvuka ili ih izgovoriti pomoću proširenja Text to Speech (tekst na govor) (ako je vaše računalo spojeno na Internet).
+
+**Primjeri projekta**: 1Studio_
+
+.. _1Studio: https://scratch.mit.edu/studios/25119438/
+
+**Novi pojmovi**:  interface, Scratch project, active object, sprites, costumes, stage, backdrop, scripts, blocks.
+
+**Nove naredbe**: |events_blocks| - |clicked_flag|; |looks_blocks| - |say_sec|,  |say|; |sound_blocks| - |*| 
+|play_until|; |voices_extension| -  |*| |set_language|,  |*| |set_voice|,  |*| |speak|.
+
+Napomena. Naredbe označene znakom |*| biti će obrađene u narednim lekcijama.
+
+|project| Napravi neki od sljedećih projekata
+-------------------------------------------------
+
+Projekt 1 – “To sam ja”
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Kreiraj projekt koji će te predstaviti. Izaberi lik dječaka ili djevojčice iz biblioteke likova i pridruži mu skriptu koja omogučava da izgovara tri rečenice: “Ja se zovem…”, “Imam…godine” i “Idem u školu…”. Umjesto točkica stavi svoje podatke.
+

@@ -1,0 +1,651 @@
+Idemo crtati – Grafika kornjača
+===============================
+
+.. include:: blocks.txt
+
+.. include:: icons.txt
+
+.. infonote::
+
+ |intro4|
+
+U prethodnim lekcijama naučili ste kako kontrolirati kretanje znaka pomoću tipki miša i tipkovnice. Sada ćemo pokazati kako lik ostavlja trag pri kretanju. Kroz primjere projekata upoznat ćete se sa značajkama Pen grupe koja svakom liku ostavlja trag pri kretanju. Ovaj način oblikovanja crteža naziva se grafikom kornjače. Također ste vidjeli kako se postiže usklađivanje ponašanja znakova umetanjem blokova čekanja. U ovoj lekciji pokazat ćemo učinkovitiji način - sinkronizaciju znakova u projektu slanjem poruka.
+
+.. topic:: Grafika kornjača
+
+ Scratch je jedan od modernih programskih jezika koji uključuje grafičke mogućnosti kornjače, prvi put predstavljene na *Logou* prije pedesetak godina.
+
+ *Logotip* je omogućavao upravljanje kornjačinim uređajem, vrstom robota, koji je bio povezan s računalom. Kornjača se mogla kretati po vodoravnoj površini naprijed-natrag i mijenjati smjer i smjer. Ako bi se ispod kornjače stavio komad papira, on bi mogao ostaviti trag, tvoreći grafiku koja se zove *grafika kornjače*.
+  
+ Ovakav način postavljanja slike kao zbirke figura, zajedno s njihovim podacima (parametrima) koji određuju kako će se slika crtati i gdje će se nalaziti, naziva se **vektorska grafika**.
+
+ Suprotno tome, u *rasterskoj grafici* slika se pamti kao pravokutna mreža piksela - bitmape. Bitmape se tehnički određuju širinom i visinom znaka u pikselima i brojem bitova potrebnim za pamćenje boje piksela. Na primjer, ako imamo samo 16 boja, potrebno je 4 bita po pikselu za pamćenje boje. Rasterska grafika ovisi o razlučivosti. Rastrinske slike nije moguće povećati bez gubitka kvalitete slike.
+
+ Na Scrtachu svaki lik ima mogućnost djelovanja kao Logo kornjače: njima se može dati položaj, smjer i smjer kretanja te mogu ostaviti trag pri kretanju. Pri tome, veličina, oblik i boja samog lika ne utječu na trag koji ostavlja, kao što likovi crtaju olovkom. Lik također može biti nevidljiv ili se sastoji od jedne točke, ali to ne utječe na njegov crtež.
+ 
+   
+
+.. topic:: Funkcije blokova iz gupe *Pen*
+
+ Među dodacima je i grupa *Pen*, čiji blokovi omogućavaju likovima da ostave trag pri kretanju ili da podrže grafike kornjača.
+
+ Za upotrebu blokova iz ove grupe morate:
+
+ 1. Kliknuti na ikonu |extensions| u donjem lijevom kutu palete naredbi.
+
+ 2. Izabrati proširenje *Pen* iz izbornika koji će se otvoriti
+
+ 3. Zatim će se u paleti naredbi pojaviti ikona ove grupe is vi blokovi koji se u njoj nalaze. 
+  
+ .. image:: ../_images/4/fig4_1.png
+     :width: 740px   
+     :align: center
+
+ U grupi naredbi *Olovka* (Pen) nalaze se sljedeći blokovi:
+ 
+ .. hlist::
+    :columns: 2
+
+    * |erase_all| - briše sve što je nacrtano
+    * |stamp| - ostavlja žig lika
+    * |pen_up| - podiže olovku
+    * |pen_down| - spušta olovku
+    * |set_color| - postavlja boju olovke
+    * |set_pen|- postavlja parametre crtanja
+    * |change_pen| - mijenja parametre crtanja
+    * |set_pen_size| - postavlja debljinu olovke
+    * |change_pen_size| - nuhebha debljinu olovke
+    
+ Ako se znaku pridruži naredba |pen_down| za olovku, on će i dalje pratiti prilikom pomicanja. Kad im se pridruži naredba za olovku, znak neće ostaviti trag u daljnjem kretanju dok se ne obnovi naredba za olovku. Koji će trag dat parametrima crtanja. Parametri crteža su debljina, boja, zasićenost, svjetlina i prozirnost traga koji je ostavio olovku.. 
+ 
+ Napomena.  |erase_all| |!=| |hide|. Prva naredba odnosi se na crtež, a druga na likove.
+
+
+.. topic:: Sinkronizacija korištenjem poruka
+
+ Ponašanje uvijek pokreće događaj, koji može biti akcija ili dobivanje poruke. U projektima s više karaktera koje smo kreirali ranije koristili smo blok ``čekanja`` da bismo odgovarali ponašanju likova. Tako smo u projektu Proračun omogućili djevojčici i dječaku da sinkronizirano razgovaraju - dok djevojčica govori, dječak sluša i obrnuto.
+ 
+ Sada ćemo pokazati kako se postupci likova (i pozornice) mogu koordinirati ovisno o tome je li se dogodio događaj najave poruke.
+ Primijetite da nismo rekli da se poruka **šalje**, već da se **emitira**. To je zato što se na Scratch šalju poruke svim objektima, a ne samo jednom objektu. Najava i primanje poruka na Scratchu postiže se blokovima |broadcast|, |broadcast_wait| and |when_receive| iz grupe *Events*
+ 
+
+|study| Prouči sljedeće primjere projekata
+-------------------------------------------
+
+Primjer 1 - Projekt „Drawing a Line”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Napravit ćemo projekt u kojem lik crta liniju debljine 10 i dužinu od 300 piksela. Za lik crtanja odabiremo Olovku iz biblioteke znakova i brišemo mačji lik. Da bismo olovkom ostavili trag na vrhu, pomaknemo sredinu kostima na vrh. To postižemo na sljedeći način. Otvorimo najprije karticu *Kostim*. Lijeva strana platna za crtanje prikazuje alate, u našem slučaju vektorske alate jer je lik vektor (1). Pomoću alata za odabir |v_select| označite cijeli znak (2) i povucite ga tako da vrh olovke bude iznad središta |center| oznake zaslona (3).
+
+.. image:: ../_images/4/fig4_2.png
+   :width: 900px   
+   :align: center
+
+U početku izbrišite sve što je prethodno nacrtano naredbom |erase_all| stavite olovku tamo gdje će se početi crtati, postavite boju i debljinu olovke, tako da naredba tako da naredba ``pen up`` olovke za dolje omogućuje olovci da ostavi svoj trag pri kretanju. Na kraju, naredba olovke ``pen up``  bi trebala spriječiti da znak ostavi trag pri postavljanju na početni položaj prilikom izvođenja programa.
+
+Dva su načina za određivanje boje crteža:
+
+- pomoću postavljanja uzoraka boje naredbom |set_color|
+
+- postavljanje broja boje naredbom |set_pen| 
+
+U ovom projektu koristimo prvi način.
+
+.. image:: ../_images/4/fig4_3.png
+   :width: 750px   
+   :align: center
+
+Klikom na ulazno polje referentnog bloka boja otvara se padajući izbornik koji sadrži klizače s komponentama u boji: broj povezan s bojom, zasićenjem i svjetlinom, a ispod njih je pipeta alat za uzorkovanje boje (1). Željenu boju možemo postaviti pomicanjem klizača ili klikom na pipetu. Klik na pipetu osvjetljava pozornicu lupom s krugom u sredini (2). Za odabir željene boje trebamo staviti sredinu povećala iznad pozornice na kojoj se nalazi boja i kliknuti. Dobit ćemo rezultat kao na slici (3).
+
+Napomena. O HSB modelu prikaza boja koji koristi atribute: nijansu boje, zasićenost i svjetlinu, više detalja možete pronaći u *lekciji 11* ovog praktičnog programa. 
+
+Rezultat izvršavanja skripte i sama skripta prikazani su na sljedećoj slici. 
+
+.. image:: ../_images/4/fig4_4.png
+   :width: 470px   
+   :align: center
+
+......
+
+Primjer 2 – Projekt “Free-hand Drawing”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+Ovaj bi projekt trebao ilustrirati kako se koriste naredbe za crtanje i pokazati da trag ne ovisi o veličini znaka, niti o tome je li lik vidljiv ili skriven. Crtež je formiran olovkom, tako da nije važno koji lik ga drži. Ovaj put odabrali smo *Ladybug 1* iz knjižnice likova za lik koji ostavlja trag.
+
+Skripta, koja se pokreće klikom na zelenu zastavu, upućuje bubamare da cijelo vrijeme nadzire pokazivač miša. Na samom početku ove skripte brišu se svi tragovi koji su ostali od prethodnih izvršenja i podiže se olovka. Naredba za ``olovku dolje`` povezana je sa *strelicom prema dolje i pritisnutim događajem*, a naredba ``olovke gore`` događa se kada pritisnete *strelicu prema gore*. Na ovaj način, pomicanje znaka ne ostavlja traga sve dok se ne klikne tipka *strelice prema dolje*. Ako se klikne tipkom *strelicom prema gore*, ostavlja se trag.
+
+Skripte pridružene bubamari prikazane sun a sljedećoj slici. Crtanje bi se obavljalo na isti način i ako be se na mjesto označeno strelicom umetnuo blok |hide|, ali se tada lik koji crta nebi video i izgledalo bi kao da crtež formira pokazivač miša.
+ 
+.. image:: ../_images/4/fig4_5.png
+   :width: 380px   
+   :align: center
+
+Naravno, bilo bi prirodnije kada ne bismo morali pritiskati tipke na tipkovnici da spustimo i podignemo olovku, ali kretanje pritisnutom tipkom miša ostavilo bi traga, a da nije pritisnut gumb, pomicanje će biti bez ostavljanja traga. Takav crtež pruža sljedeća skripta.
+
+.. image:: ../_images/4/fig4_6.png
+   :width: 195px   
+   :align: center
+
+Prikazat ćemo učinak naredbe ``if then else`` u lekciji 6 ovog priručnika. Za sada, recimo samo da će se izvršiti naredbe |goto|, i ``pen down`` iz gornjeg utora ili ``pen up`` iz donjeg utora za ovu skriptu E-bloka. Koje naredbe će se izvesti ovisi o tome je li pritisnut gumb miša ili ne, a to se određuje vrijednošću koju vraća blok |mouse_down|. Ovaj blok pripada skupini *Sensing *i vraća vrijednost true ili false. Šesterokutni funkcionalni blokovi koji vraćaju samo istinske* ili *lažne* vrijednosti nazivaju se *logičkim blokovima*.
+
+.......
+
+Primjer 3 – Projekt “Follow my trace”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+U ovom se projektu kretanje bubice upravlja pomoću tipki sa strelicama, kao u primjeru 3 *Koordinatnog koraka*. Staza koju bubamara ostavlja prekinuta je linija koja se sastoji od vodoravne i okomite duljine. Sljedeća slika prikazuje projektne skripte i izgled faze nakon jedne izvedbe projekta.
+
+.. image:: ../_images/4/fig4_7.png
+   :width: 415px   
+   :align: center
+
+.. sidebar:: Kodiranje u boji brojevima
+
+  Svaki od cijelih brojeva u intervalu [0,199] odgovara jednoj od boja. Na primjer, 0 je crvena, 30 je žuta, 70 je zelena, 130 je plava, a 170 je magenta. Numeracija boja na Skrecu temelji se na redoslijedu boja u spektru. 
+
+  |krug_boje|
+
+.. |krug_boje| image:: ../_images/4/fig4_8.png
+
+**Poboljšanje projekta**
+
+Projekt ćemo izmijeniti tako da se lik koji ostavlja trag slobodnije kreće kao u primjeru 4 *Koordinatne pozornice*. Također ćemo dodavati promjenu boje i debljine olovke svakih 5 sekundi nasumičnim putem i staza će biti atraktivnija. Da bismo slučajno postavili boju, umjesto da specificiramo boju olovke kao u prethodnom primjeru, upotrijebit ćemo naredbu |set_pen|  u kojem je boja zadana brojem.
+
+Sljedeća ilustracija prikazuje skriptu koja postavlja početne vrijednosti (aktivirane klikom na zelenu zastavu) i izgled pozornice nakon izvedbe tako izmijenjenog projekta. Blok ``zauvijek`` sadrži naredbe koje na "nasumičan" način postavljaju boju i debljinu olovke.
+
+.. image:: ../_images/4/fig4_9.png
+   :width: 265px   
+   :align: center
+
+.......
+
+Sljedeći primjer prikazuje kako pomoću naredbe ponavljanja za određivanje broja puta u sljedećem poglavlju možemo crtati crte za podvlačenje različitih stilova.
+
+Primjer 4 – Projekt “Lines”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 2
+
+Projekt *Lines* crta liniju ljubičaste boje, dužine 400 i debljine 2 piksela počevši od točke (-200,0) na jedan od 5 sljedećih načina.
+
+.. image:: ../_images/4/fig4_10.png
+   :width: 150px   
+   :align: center
+
+Crtež likova nije vidljiv. Tek nakon što nacrtate crtu, pojavljuje se u gornjem lijevom kutu pozornice i naznačuje kako se crta crta.
+Izvlačenje pokreću događaji s |clicked_key| bloka naredbi, s tim da se prvi pridruži tipki broj 1, tipki broj 2 druga i tako dalje.
+
+Klikom na zelenu zastavu briše se sve što je prethodno bilo na pozornici, postavljaju vrijednosti za boju i debljinu olovke, a pojavljuje se znak koji daje upute kako započeti projekt.
+
+Svaka od skripti povezanih s tipkama tipkovnice 1-5 prvo briše sve što je prethodno nacrtano, sakrije lik, nacrta crtu na određeni način, a zatim u gornjem lijevom kutu prikazuje znak koji kaže kako je crta bila crta.
+
+Prvi način je crtanje kontinuirane crte. To se može učiniti trenutačno pomoću jedne naredbe "korak 400 koraka", ali za prvi način potrebno bi nam otprilike preostalo da izvučemo 400 točaka crtajući lik 40 puta u 10 koraka.
+
+Drugi način: lik ponavlja uzorak 100 puta: ide 1 korak s olovkom prema dolje, a zatim 3 koraka s podignutim.
+
+Treći način: lik ponavlja uzorak 50 puta: ide 3 koraka s olovkom prema dolje, zatim 5 koraka s podignutim.
+
+Četvrti način: lik ponavlja 40 puta: ide 6 koraka s olovkom spuštenom, a zatim 4 koraka s podignutom.
+
+Peti način: lik ponavlja 25 puta uzorak: ide 6 koraka s olovkom spuštenom, 4 koraka s podignutom olovkom, 2 koraka s olovkom niskom i 4 koraka s podignutom olovkom.
+
+Sljedeća slika prikazuje skripte za događaje kada se klikne *zelena zastava*, kad se pritisne *1 tipka* i kad se pritisne *2 tipka*.
+
+.. image:: ../_images/4/fig4_11.png
+   :width: 470px   
+   :align: center
+
+Naredbe za ponavljanje ne skraćuju vrijeme izvođenja programa, već samo dopuštaju programeru da lakše i jasnije piše programe.
+
+
+.......
+
+Primjer 5 – Projekt “The Family”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 2
+
+U ovom projektu, jedno pile predstavlja svoju obitelj: mama kokoš, tata pijetao i brata i sestru. Na početku se mogu vidjeti samo kokoši kojima smo dali ime Lisa, a svi ostali likovi su skriveni. Pile prvo predstavlja mamu Marge. Kad izgovori svoje ime, mama se pojavljuje i najavljuje da se pojavila. Tada Lisa upozna tatu s Homerom. I tata se pojavi kad "čuje" njegovo ime i "odgovori" porukom s njegovim imenom. Brat Bart i sestra Maggie pojavljuju se slično. Usklađivanje izgleda i oglašavanja likova postiže se upotrebom poruka. Kad Lisa nekoga predstavi, ona najavljuje poruku. Likovi "slušaju", a kad dobiju odgovarajuću poruku, pojavljuju se i šalju poruku sa svojim imenom. Kad Lisa primi tu odgovor, nastavlja s upoznavanjem sljedećeg člana obitelji.
+
+Sljedeća slika pokazuje kako se izgled likova sinkronizira s porukama.
+
+.. image:: ../_images/4/fig4_12.png
+   :width: 600px   
+   :align: center
+
+**Priprema likova**
+
+.. sidebar:: Layout of the Sprites on the Stage
+    
+ .. image:: ../_images/4/fig4_13.png
+   :width: 400px   
+   :align: center
+  
+|1| 1.	Za ovu prezentaciju potrebni su vam sljedeći likovi: Lisa, Marge, Homer, Bart i Maggie. Za Lisa, Barta i Maggie koristit ćemo lik *Chick*, za mamu *Hen* i za tatu *Rooster* iz knjižnice likova. Nakon učitavanja znakova preimenujte ih onako kako su u našem projektu.
+
+.. image:: ../_images/4/fig4_14.png
+   :width: 400px   
+   :align: center
+
+|2| Učitajte pozadinu *Farm* iz biblioteke pozadina.
+
+|3| Postavite Lisa na sredinu pozornice.
+
+|4| Lik Marge odlazi lijevo, a pokraj nje Maggie, koju trebate izrezati.
+
+|5| Stavite Homera dolje udesno i okrenite ga da pogleda lijevo. Barta povećajte, stavi ga između Maggie i tate i okrene se da pogleda lijevo.
+
+
+Skripte povezane s likovima prikazane su na sljedećoj slici.
+
+.. image:: ../_images/4/fig4_15.png
+   :width: 850px   
+   :align: center
+
+
+|ask| Odgovori na sljedeća pitanja
+-----------------------------------
+
+Pitanje 1
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: turtle1
+   :answer_a: da
+   :answer_b: ne
+   :correct: b
+   :feedback_a: Programski jezik Logo-a predstavio je grafiku kornjača.
+   :feedback_b: Točno.
+   
+   Scratch je jezik programiranja u koji su po prvi put uključene mogućnosti grafika kornjače.
+
+
+Pitanje 2
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: turtle2
+   :answer_a: da
+   :answer_b: ne
+   :correct: b
+   :feedback_a: Ne, prvi se odnosi na crteže, a drugi na lika.
+   :feedback_b: Točno.
+
+   Blok ``erase all`` iz grupe *Pen* ima sličnu funkciju kao blok ``hide`` iz grupe *Looks*.
+   
+   
+Pitanje 3
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: turtle3
+   :answer_a: da
+   :answer_b: ne
+   :correct: a
+   :feedback_a: Točno. 
+   :feedback_b: 
+   
+   Ako blok ``pen down`` pridružite skripti za neki lik, on će nadalje prilikom kretanja ostavljati trag.
+   
+
+Pitanje 4
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: commands_pen1
+   :multiple_answers:
+   :answer_a: 
+   :answer_b: 
+   :answer_c: 
+   :answer_d: 
+   :correct: c,d
+   :feedback_a: 
+   :feedback_b: 
+   :feedback_c: 
+   :feedback_d: 
+
+   Koji od blokova pripada grupi naredbi *Pen*?
+   (Izaberi sve točne odgovore)  
+
+   .. image:: ../_images/4/q4_4.png
+      :width: 600px   
+      :align: center
+
+Pitanje 5
+~~~~~~~~~~
+      
+.. level:: 1
+
+.. mchoice:: commands_pen2
+   :multiple_answers:
+   :answer_a: 
+   :answer_b: 
+   :answer_c: 
+   :answer_d: 
+   :correct: a,c
+   :feedback_a: 
+   :feedback_b:
+   :feedback_c: 
+   :feedback_d: 
+
+   Svaki od ovih blokova nešto mijenja. Koji od njih će promijenit trag koji ostavlja olovka pri crtanju?
+   (Izaberi sve točne odgovore)
+
+   .. image:: ../_images/4/q4_5.png
+      :width: 705px   
+      :align: center
+
+Pitanje 6
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: pen1
+   :multiple_answers:
+   :answer_a: nije aktiviran blok spusti olovku 
+   :answer_b: aktiviran je blok podigni olovku 
+   :answer_c: lik je skriven 
+   :answer_d: aktiviran je blok obriši
+   :correct: a, b
+   :feedback_a:  
+   :feedback_b: 
+   :feedback_c: 
+   :feedback_d: 
+
+   U nekom program se lik kreće, ali ne ostavlja trag. U čemu je problem?
+   (Izaberi sve točne odgovore)  
+
+   
+Pitanje 7
+~~~~~~~~~~
+   
+.. level:: 1
+
+.. dragndrop:: pen2
+    :feedback: Pokušaj ponovo
+    :match_1: hide|||Looks
+    :match_2: erase all|||Pen
+    :match_3: ask_and wait|||Sensing
+    :match_4: point towards|||Motion
+    
+    Upari blokove sodgovarajućom grupom naredbi.
+
+Pitanje 8
+~~~~~~~~~~
+   
+.. level:: 2
+
+.. dragndrop:: pen3
+    :feedback: Pokušaj ponovo
+    :match_1: red|||0
+    :match_2: yellow|||30
+    :match_3: green|||70
+    :match_4: blue|||130
+    
+    Svakom od cijelih brojeva iz interval [0,199] odgovara neka od boja. 
+    Upari boje s brojem koji se kodiraju.
+
+
+|try| Pokušaj!
+----------------
+
+Vježba 1
+~~~~~~~~~~
+
+.. level:: 1
+
+
+.. infonote::
+
+  Što crta sljedeći program? 
+ 
+  .. image:: ../_images/4/ex4_1.png
+     :width: 390px   
+     :align: center
+
+.. reveal:: answer1
+     :showtitle: Show the Answer
+     :hidetitle: Hide the Answer
+ 
+     **Odgovor:**
+
+     .. image:: ../_images/4/ans4_1.png
+        :width: 300px   
+        :align: center
+
+.......
+
+Vježba 2
+~~~~~~~~~~
+
+.. level:: 2
+
+.. infonote::
+
+  Napišite skriptu koja će pružiti sljedeći crtež.
+
+  Prebacite lik na položaj (-50.30), spustite olovku i napišite naredbe koje omogućuju sljedeće relativno kretanje:
+
+  1 |right|, 1 |down|, 2 |right|, 1 |up|, 1 |right|, 2 |down|, 4 |left|, 2 |up|.
+
+  Zapis 5 |right| znači da biste trebali ići 5 koraka udesno 5 puta i zabilježiti 1 |up| zapis da morate jednom ići 10 koraka.
+  Za postavljanje gibanja koristit ćemo |left| i |right| oznake.
+
+.......
+
+Vježba 3
+~~~~~~~~~~
+
+.. level:: 2
+
+.. infonote::
+
+  Napišite skriptu koja koristi samo apsolutne naredbe za kretanje (i spuštanje olovke) za crtanje slike koju je nacrtao program u vježbi 2.
+
+.......
+
+Vježba 4
+~~~~~~~~~~
+
+.. level:: 2
+
+.. infonote::
+  
+  **Grafički diktat 1**
+
+ Ovo je prva vježba *grafičkog diktiranja*. Na početku morate malo programirati i unijeti puno podataka s tipkovnice. 
+ Kasniji zadatci ove vrste zahtijevat će više programiranja i manje rada na unosu podataka.
+  
+  Napravite projekt koji omogućuje da se lik usmjeri strelicama kao u primjeru 3 ovog poglavlja:
+
+  - strelica desno vodi lik 10 koraka udesno,
+
+  - lijeva strelica vodi lik 10 koraka ulijevo,
+  
+  - strelica prema gore vodi lik 10 koraka gore,
+  
+  - strelica prema dolje vodi lik 10 koraka prema dolje.
+  
+  Provjerite je li lik skriven, a pozornica izbrisana.
+
+ 
+  Stavite znak na položaj (-50,30), to je polazna točka, spustite olovku, a zatim upišite sljedeći niz strelica:
+
+  1 |right|, 1 |down|, 2 |right|, 1 |up|, 1 |right|, 2 |down|, 5 |right|, 2 |up|, 1 |left|, 1 |up|,
+
+  2 |right|, 8 |down|, 1 |left|, 2 |up|, 1 |left|, 2 |down|, 1 |left|, 2 |up|, 3 |left|, 2 |down|,
+  
+  1 |left|, 2 |up|, 1 |left|, 2 |down|, 1 |left|, 3 |up|, 1 |left|, 4 |up|.
+
+  Ako ste dobro slijedili upute, trebali ste se vratiti na početnu točku.
+  
+  Što si nacrtao?
+
+  .. reveal:: answer4
+     :showtitle: Show the Answer
+     :hidetitle: Hide the Answer
+ 
+     **Odgovor:**
+
+     .. image:: ../_images/4/ans4_4.png
+        :width: 130px   
+        :align: center
+
+.. |left| unicode:: 0x2190
+   
+.. |up| unicode:: 0x2191
+
+.. |right| unicode:: 0x2192
+
+.. |down| unicode:: 0x2193
+
+.........
+
+Vježba 5
+~~~~~~~~~~
+
+.. level:: 2
+
+.. infonote::
+  
+ **Grafički diktat 2**
+
+ Primjenjuje sve postavke kao i za Grafički diktat 1, a algoritam za crtanje je sljedeći.
+
+ Dovedite likk do početne točke (-60,40), spustite olovku i nacrtajte:
+
+ 3 |right|, 1 |up|, 1 |right|, 4 |down|, 6 |right|, 1 |up|, 1 |right|, 1 |down|, 1 |left|, 
+  
+ 7 |down|, 1 |left|, 3 |up|, 5 |left|, 3 |down|, 1 |left|, 7 |up|, 3 |left|, 3 |up|.
+
+ Ako ste dobro slijedili upute, trebali ste se vratiti na početnu točku.
+  
+ Što si nacrtao?
+
+  .. reveal:: answer5
+     :showtitle: Show the Answer
+     :hidetitle: Hide the Answer
+ 
+     **Odgovor:**
+
+     .. image:: ../_images/4/ans4_5.png
+        :width: 135px   
+        :align: center
+
+|bug| Ispravi greške!
+-------------------------
+
+Greška 1
+~~~~~~~~
+
+.. level:: 1
+
+:Question:
+   Učenik je napisao program koji bi trebao crtati crtu ukupne duljine od 300 piksela tako da je prvih 100 crveno, sljedećih 100 zeleno, a zadnjih 100 plavo.
+   
+   Kad je izveo scenarij, ništa se nije dogodilo. U čemu je problem?
+ 
+
+.. image:: ../_images/4/bug4_1.png
+   :width: 190px   
+   :align: center
+
+.. reveal:: hiding21
+   :showtitle: Show the Answer
+   :hidetitle: Hide the Answer
+ 
+   **Odgovor:**
+     
+   Nema naredbe|pen_down|.
+
+Greška 2
+~~~~~~~~
+
+.. level:: 1
+
+:Question:
+   The pupil has written a program which is supposed to draw a blue line 300 pixels long, where the first 100 pixels are 10 pixels wide, second 100 pixels are 20 pixels wide, and the last 100 are 30 pixels wide.
+   When he first ran the program everything was fine, but every time after that when he would run the programme the line was alway 30 pixels wide. What is the problem?
+
+.. image:: ../_images/4/bug4_2.png
+   :width: 205px   
+   :align: center
+
+.. reveal:: hiding22
+   :showtitle: Show the Answer
+   :hidetitle: Hide the Answer
+ 
+   **Answer:**
+     
+   Na kraju prvog izvođenja programa, debljina olovke je postavljena na 30, olovka se nalazi na kraju crte na položaju (200.0) i nije podignuta. 
+   Stoga se u sljedećem izvođenju vraća u početni položaj ostavljajući trag debljine 30 piksela, tako da se crtanje preko tog traga manje debljine iste boje ne može vidjeti. 
+   Pogreška se ispravlja podizanjem olovke prije postavljanja u početni položaj. 
+   
+Greška 3
+~~~~~~~~
+
+.. level:: 2
+
+:Question:
+   Pitanje: Učenik je napisao program koji crta linije plave boje ukupne duljine od 300 piksela tako da je prvih 100 debljine 10, sljedećih 100 debljine 20, a zadnjih 100 debljine 30 piksela. Svako pokretanje programa davalo je isti trag, ali ne s potrebnim povećanjem debljine, ali puno većim. U čemu je problem? 
+  
+.. image:: ../_images/4/bug4_3.png
+   :width: 205px   
+   :align: center
+
+.. reveal:: hiding23
+   :showtitle: Show the Answer
+   :hidetitle: Hide the Answer
+ 
+   **Odgovor:**
+    
+   Nije trebao korstiti naredbu |change_pen_size| s parametrima 20 i 30, već s povećanjem debljine za 10, ili umjesto te naredbe postaviti blok |set_pen_size| s parametrima 20 i 30.
+
+
+  
+|book| Što smo naučili
+------------------------
+
+Grafika kojom smo se bavili u ovoj lekciji naziva se grafikom kornjača i primjer je vektorske grafike. Na Scratchu svaki lik ima virtualnu olovku koju može crtati dok se kreće po pozornici. Virtualna olovka ima oblik okrugle četke koja se može postaviti na debljinu, boju, zasićenost, svjetlinu i prozirnost. Kroz primjere projekata i vježbi pokazali smo kako povezivanjem blokova iz Motion and Pen grupa možemo stvoriti različite crteže. Također smo pokazali da se pomoću naredbi ponavljanja mogu stvoriti kraće i učinkovitije skripte. Komande ponavljanja bit će detaljnije obrađene u sljedećem poglavlju. U posljednjem smo primjeru objasnili kako se usklađivanje znakovnog ponašanja može postići porukama poruka. Mehanizam za slanje poruka može se koristiti i za provođenje postupaka, kao što ćemo pokazati u sljedećoj lekciji.
+
+**Primjeri projekta**: 4Studio_
+
+.. _4Studio: https://scratch.mit.edu/studios/25119442/
+
+**Novi pojmovi**:  turtle graphics, vector and raster graphics, color coding, broadcasting and receiving messages.
+
+**Nove naredbe**: |pen_extension| - |erase_all|, |pen_up|, |pen_down|, |set_color|, |change_pen|, |set_pen|, |change_pen_size|,| |set_pen_size|; |sensing_blocks| - |*| |mouse_down|; 
+
+|looks_blocks| - |hide|, |show|; |events_blocks| - |when_receive|, |broadcast|, |broadcast_wait|;
+
+|control_blocks| - |*| |if_then_else|, |*| |repeat|.
+
+Napomena. Naredbe označene znakom |*| biti će odrađene u narednim lekcijama.
+
+|project| Napravite neke od sljedećih projekta
+-----------------------------------------------
+
+Projekt 1 – “Munja”
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Napravite projekt u kojem će se lik *Munje* crtati svojim vrhom. Nakon preuzimanja znaka iz biblioteke znakova preimenujte ga u Lightning i postavite sredinu kostima na vrh. Pridružite mu skriptama koje definiraju način kretanja i parametre crtanja.
+
+Projekt 2 – “Crno-bijeli svijet”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Napravite projekt po uzoru na primjer "Crtanje slobodnim rukama". Pozornica bi trebala imati crnu pozadinu. Možete stvoriti crnu pozadinu dodavanjem crne boje u zadanu pozadinu pomoću alata |r_fill| u načinu za uređivanje rastera. Crtež s znakovima ne smije se vidjeti, a boja crteža treba biti bijela. 
+
+Projekt 3 – “Moja obitelj”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 2
+
+Započnite novi projekt nazvat ćete *Moja obitelj*. To bi trebala biti animacija u kojoj zastupate članove svoje obitelji. Ova prezentacija zahtijeva sljedeće znakove: menadžer (vi), mama, tata, brat, sestra (ovisno o tome tko čini vašu obitelj). Upotrijebite fotografiju ili odaberite slike likova koji će igrati uloge članova vaše obitelji i prilagodite ih projektu (prema potrebi povećajte, smanjite, zakrenite i postavite). Nakon što klikne na zelenu zastavu, svaki od znakova trebao bi se sakriti i pričekati da ga voditelj predstavi, a zatim se pojaviti na pozornici na mjestu koje ste unaprijed odredili. Sinkronizirajte izgled likova pomoću poruka kao u primjeru "Obitelj". Voditelj je jedini lik koji stalno mora biti na pozornici. On se predstavi, a zatim predstavi članovima svoje obitelji.

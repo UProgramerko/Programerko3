@@ -1,0 +1,781 @@
+Nizanje koraka
+=================
+
+.. include:: blocks.txt
+
+.. include:: icons.txt
+
+.. infonote::
+
+ |intro3|
+
+U prethodnoj lekciji ste naučili o naredbama za kretanje, a sada ćete se baviti novim naredbama u grupama *Izgledi* i *događaji*. Pokazat ćemo da povezivanjem naredbi sa skriptama postavljamo ponašanje likova. Projekti u ovoj lekciji sastoje se od skripti u kojima se koraci slijede jedan za drugim. Kažemo da takve skripte imaju **jednostavnu strukturu linija**.  
+
+.. topic:: The Terminology and the Visual Grammar of the Scratch Language
+
+ Likovi mogu izvršiti više od 100 naredbi. Blokovi koji odgovaraju naredbama tvore vokabular jezika Scratch, a pravila po kojima su oni povezani u cijelosti odgovaraju gramatici jezika. Blokovi su pohranjeni u paleti blokova i raspoređeni su u 10 skupina različitih boja: 
+
+ .. hlist::
+    :columns: 5
+
+    * |motion_blocks| Motion,
+    * |looks_blocks| Looks, 
+    * |sound_blocks| Sound, 
+    * |events_blocks| Events,
+    * |control_blocks| Control, 
+    * |sensing_blocks| Sensing,
+    * |operator_blocks| Operators,
+    * |variables_blocks| Variables, 
+    * |my_blocks| My Blocks 
+    * |extensions| Extensions.  
+
+ Blokovi su grupirani kako bi programerima olakšali navigaciju prilikom stvaranja skripti. Bez obzira koliko je složeno ponašanje likova, scenarij koji ga opisuje sastoji se od niza elementarnih operacija ovih 10 vrsta. Ako znate vrstu radnje koju bi lik trebao učiniti, lako možete odabrati pravu grupu i izdvojiti potreban blok.
+
+ Postoje samostalni i funkcionalni blokovi.
+
+ **Samostalni** blokovi odgovaraju jezičnim naredbama, tj. Koracima algoritma. Neki od njih imaju polja u koja se može postaviti vrijednost.
+
+ **Funkcijski** blokovi blokirjau povratne vrijednosti. Ne mogu stajati sami u skripti, već se umeću u blokove blokova koji primaju vrijednosti i određuju svoje radnje.
+
+Blokovi su dizajnirani tako da se mogu povezati samo oni koji mogu oblikovati ispravne konstrukcije jezika, odnosno Scratch ima vizualnu gramatiku koja ne dopušta da nastanu sintakse.
+
+ .. image:: ../_images/3/fig3_1.png
+   :width: 300px   
+   :align: center
+
+ **Samostalni blokovi**
+
+ Blokovi koji odgovaraju fazama obrade nazivat će se **blokovi snopa**. Svaki blok snopa odgovara jednoj radnji, odnosno odgovoru na pitanje ŠTO. Na primjer, blok |move_steps| naređuje liku da ide naprijed 10 koraka. Oblik ovog bloka podsjeća na Lego kocku, a cijela skripta kao kocka sklopljena u snop.
+
+ Zadani broj koraka se upisuje u bijeli kružić – **ulazno polje bloka.**
+
+ U blok |say_sec| jedno ulazno polje ima oblik zaobljenog pravokutnika, a drugo kruga. Pravokutni ulazi prihvaćaju i tekstualne i brojne, a kružni samo brojne vrijednosti.
+
+ Blok |glide_xy| ima čak tri ulaza.
+
+ Neki blokovi imaju šesterokutno ulazno polje, na primjer upravljački blok |wait_until|. Oni prihvaćaju logičke vrijednosti (točno ili netočno).
+
+ U *Control skupini postoje blokovi u obliku slova C, koje nazivamo **C-blokovima**. Utor unutar C bloka je posebna vrsta ulaza koji skriptu prima kao ulaz. Blok |repeat| ima dva ulaza, jedan za broj i jedan za skriptu.
+
+ Postoji i jedan kontrolni blok E-oblika koji ima tri ulaza, jedan za uvjet (logička vrijednost) i dva za skripte. Od ova dva ulaza skripte, prvi pita što učiniti ako se uvjet ispuni, a drugi pita što učiniti ako uvjet nije ispunjen.
+
+ **Početni blokovi** (blokovi šešira) odgovaraju početnom koraku algoritma. Odgovaraju na pitanje KADA bi se scenarij trebao pokrenuti. Ova vrsta blokova ima zaobljeni vrh i postavlja se na vrh snopa, a povezuje se s naknadnim blokovima pomoću ispupčenja na dnu. Početni blokovi definiraju koji se događaj treba dogoditi kako bi se izveo snop blokova ispod njih. Taj bi događaj mogao biti, na primjer, klikom na zelenu tipku zastave ili pritiskom na tipkovnicu.
+
+ **Završni blokovi** odgovaraju završnom koraku algoritma. Imaju udubljenje na vrhu, ali nemaju ispupčenje na dnu. Budući da se više skripti koje se mogu paralelno izvesti može biti vezano za jedan objekt, krajnji blok može prekinuti izvršenje svih pokrenutih skripti.
+
+ **Function blocks** 
+
+ Funkcijski blokovi pohranjuju podatke za ostale blokove. Često ih nazivaju **reporteri** jer informiraju o trenutnoj vrijednosti varijable. Reporteri blokova koji zadrže trenutne koordinate i orijentaciju znakova predstavljeni su u prethodnom poglavlju. Na primjer, pojedini reporteri s blokova imaju ulazna polja kružnog ili pravokutnog oblika poput |plus| i |join|.
+
+ **Logički blokovi** blokovi pohranjuju logičke vrijednosti (true ili false). Imaju oblik šesterokuta i mogu se postaviti samo u ulazna polja odgovarajućeg oblika (šesterokutna ili pravokutna). Takav je blok |equal|. Na Scratchu se složeni logički uvjeti mogu lako izgraditi umetanjem logičkih blokova u ulazna polja drugih logičkih blokova.	
+
+
+.. sidebar:: Programiranje vodećih događaja     
+    
+  Ponekad gledanje programa koji se izvode je poput gledanja crtića. To su programi koji se uvijek izvode na isti način, to jest izvođenje ne ovisi o korisniku. Međutim, postoje programi koji ovise o događajima koje je stvorio korisnik ili o objektima projekta - likovi i pozornica. Na primjer, korisnik može kliknuti mišem ili pritisnuti jednu od tipki na tipkovnici, dok likovi i pozornica mogu slati i primati poruke. Blokovi koji aktiviraju skripte povezane s ovim vrstama **akcija** i **poruka** nalaze se u grupi blokova *Događaji*.
+
+.. topic:: Funkcije blokova iz grupe Izgledi i događaji
+ Blokovi iz grupe *Motion* s kojima smo se susreli u prethodnoj lekciji mogli su se primijeniti samo na likove. Za razliku od njih, blokove *Looks* (Izgledi) možete koristiti i za kontrolu izgleda likova i za upravljanje pozadinama ili scenskim nastupima. Ali to se ne odnosi na sve blokove ove grupe. Među njima su oni koji se odnose samo na likove i oni koji se odnose samo na pozornicu. Blokovi u grupi *Događanja* pokreću izvršavanje skripte
+
+ U prethodnim lekcijama već smo učili o učincima nekih blokova poput *Izgleda* i *Događaji*, na primjer, ``reci`` i ``pritisnite tipku``. U ovoj ćemo lekciji detaljnije predstaviti blokove koji omogućuju jednostavnu animaciju s primjenom ugrađenih grafičkih efekata i proširiti vokabular Scratch pomoću novih naredbi. 
+
+|study| Prouči sljedeće primjere projekta
+-------------------------------------------
+
+Društvo možemo zabaviti pričajući viceve, ali i matematičkim trikovima. Sljedeći projekt ilustrira jedan od njih. Ima samo jednu jednostavnu skriptu retka strukture.
+
+Primjer 1 – Projekt “Math Trick”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+- Korak 1: Zamislite troznamenkasti broj čiji su svi brojevi jednaki, npr. 111, 222.
+
+- Korak 2: zbrojite sve znamenke tog broja.
+
+- Korak 3: Podijelite troznamenkasti broj prema dobivenom zbroju.
+
+- Korak 4: Rezultat je broj 37.
+
+Scenariji ovg projekta je sasvim jednostava. Lik naredbama |say_sec| zadaje korisniku prva tri zahtjeva, a naredbom |say| priopćava rezultat
+
+Koristit ćemo lik Avery girl iz biblioteke likova koji ima dva kostima (kliknite karticu *Kostimi* da biste ih vidjeli) i između svaka dva zahtjeva odredite promjenu kostima pomoću naredbe |next_costume|.
+
+Kako bi korisnik imao vremena izračunati što se od njega traži u prve dvije naredbe stavićemo da je tekst koji izgovara lik vidljiv 3 sekunde, a u trećoj 5 sekundi. Naredba |say| ostavlja posljednji tekst na ekranu dok ne zaustavimo izvršavanje programa klikom na oznaku *stop* - crveni osmerokut iznad gornjeg desnog ugla pozornice.
+
+Scenarij ovog projekta prikazan je na sljedećoj slici.
+
+.. image:: ../_images/3/fig3_2.png
+   :width: 435px   
+   :align: center
+
+.......
+
+Primjer 2 – Projekt “Conversation”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 2
+
+Ovaj je projekt nadogradnja projekta "Math Trick". U njoj djevojčica Avery i dječak Devin predstavljaju isti matematički trik kroz razgovor u kojem Devin "zamisli" broj 222 i izvrši potrebne proračune, te na kraju pita: "Kako ste pogodili?". Ponašanje obaju likova određeno je skriptama strukture slobodnih linija. Kako bi izgledalo kao da stvarno razgovaraju, popisu čekanja treba dodati scenarij za djevojčicu dok dječak razmišlja, a dječakov scenarij za čekanje dok djevojka postavlja pitanja.
+  
+Sljedeća slika prikazuje scenarij projekta.
+
+.. image:: ../_images/3/fig3_3.png
+   :width: 980px   
+   :align: center
+
+**Dizajn projekta**
+
+|1| Otvorite projekt *Math Trick*.
+
+|2| Spremite ovaj projekt pod novim nazivom *Razgovor*.
+
+**Savjet. Kada kreirate novu verziju projekta, spremite pod promijenjenim imenom na samom početku. Na taj način nećete izgubiti staru verziju.**
+ 
+|3| Iz biblioteke likova odaberite dječaka *Devina*.
+
+|4| Dječaka postavite na desni rub pozornice i u znakovima promijenite orijentaciju na -90 tako da gleda prema djevojčici.
+
+|5| Priložite sljedeće skripte likovima.
+
+.. image:: ../_images/3/fig3_4.png
+   :width: 695px   
+   :align: center
+
+U projektu *Math Trick* djevojka izgovara 4 rečenice i mijenja kostim 3 puta (postoje 2 kostima). To znači da se u dva uzastopna izvođenja projekta djevojčica u početku neće pojaviti u istom kostimu. Kako bi se djevojka predstavila na isti način (da se pojavi u prvom kostimu) pri svakoj izvedbi projekta, na početku scenarija dodali smo odgovarajuću naredbu.
+
+**Savjet. Na početak projekta stavite naredbe koje inicijaliziraju likove (odredite gdje se i u kostimu trebaju pojaviti), posebno ako se likovi kreću tijekom projekta.**
+
+Usklađivanje ponašanja znakova postigli smo umetanjem naredbi čekanja u skripte oba znaka.
+
+.. image:: ../_images/3/fig3_5.png
+   :width: 800px   
+   :align: center
+
+|6| Spremite izmjenjen projekt.
+
+Ako želite odgovoriti na dječakovo pitanje "Kako ste pogodili?", Kliknite gumb *Prikaži upute*
+
+.. reveal:: instruction
+     :showtitle: Show the instruction
+     :hidetitle: Hide the instruction
+ 
+     **Upustva:**
+
+     Djevojku je zamolio da smisli troznamenkasti broj s istim znamenkama. Označimo znamenku koja se ponavlja s x. Tada je imaginarni broj jednak 111x, a zbroj znamenki je 3x. Rezultat operacije dijeljenja broja na zbroj njegovih znamenki jednak je 111/3 = 37, bez obzira na zamišljeni broj.
+
+.......
+
+.. sidebar:: Arithmetic Expressions in Scratch
+
+ Grupa *Operatori* sadrži blokove koji omogućuju obavljanje aritmetičkih operacija. Na primjer, naredba |plus| omogućuje dodavanje. Ako unesete brojeve u ulazna polja ovog bloka, izračunat će se njihov zbroj. Operatori ne mogu biti samostalni u skripti, trebaju ih umetnuti u polje za unos neovisnog bloka. Na primjer, ako ih umetnete u polje za unos bloka ``recite'' ili ``think``, bit će prikazana vrijednost koju izračunavaju.
+
+Primjer 3 – “Projekt Calculation”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 3
+
+I sljedeći je projekt nadogradnja prethodnog. U njemu, umjesto fiksnog broja 222, dječak zamisli proizvoljni troznamenkasti broj sa sve tri jednake znamenke i na njemu izvršava potrebne operacije. To možemo programirati zahvaljujući sposobnosti generiranja slučajnog broja iz određenog intervala.
+
+.. infonote::
+
+ **Generiranje slučajnih brojeva** 
+
+ U grupi blokova *Operacije* nalazi se naredba |pick_random|. Stvaranje slučajnog broja znači slučajnim odabirom broja iz intervala. Najmanji i maksimalni broj ovog intervala naveden je u poljima ovog izvjestitelja. Dakle, ako su brojevi 1 i 10, odabrao bi se bilo koji broj iz intervala [1,10], a na primjer, ako je -100 i 100, tada bi se generirao neki broj iz intervala [-100,100]. 
+
+U našem primjeru prvo polje treba upisati broj 1, a drugo broj 9.
+
+U ovom su projektu korištene **varijable** koje ćemo upoznati tek u osmoj lekciji. Zbog toga je označen kao težak. Možete ga preskočiti, pa mu se vratite kasnije.
+
+Ako volite izazove, recimo nešto unaprijed. Pod varijablom mislimo na područje računalne memorije u kojem program pohranjuje trenutne vrijednosti podataka s kojima radi. Naziv varijable je naziv područja, a vrijednost varijable je ono što je pohranjeno u tom području.
+
+**Izrada projekta**
+
+.. sidebar:: Part of the script added to the boy
+
+ |Devin|
+ 
+
+.. |Devin| image:: ../_images/3/fig3_6.png
+
+|1| Otvorite projekt *Razgovor* i spremite ga pod novim nazivom *Proračun*.
+
+|2| Napravite varijablu *x* koja odgovara znamenkama troznamenkastog broja i dodijelite slučajni broj iz intervala [1,9] kao početnu vrijednost.
+
+|3| Napravite varijabilni *broj* i dodijelite vrijednost 111 * x kao početnu vrijednost.
+
+|4| U prvi blok skripte ``Think`` Boy postavljen je izvjestitelj s promjenjivim *brojem* umjesto 222.
+
+|n1| |!=| |n2|
+
+.. |n1| image:: ../_images/3/n1.png
+
+.. |n2| image:: ../_images/3/n2.png
+
+|5| Napravite varijabilni *zbroj* i dodijelite vrijednost izraza x + x + x kao njegove početne vrijednosti. Budući da zbirni blok ima samo 2 ulazna polja, umetnut ćemo jedan blok dodavanja u polje drugog bloka dodavanja. (Naravno, mi bismo to mogli učiniti i s jednim blokom za množenje, jer je x + x + x = 3 * x) 
+
+.. image:: ../_images/3/fig3_7.png
+   :width: 350px   
+   :align: center
+
+|6| U drugi blok skripte Think Boy smjestio se izvjestitelj s promjenjivom *sumom* umjesto teksta 2 + 2 + 2.
+
+|7| Stvorite varijablu *rezultata* i dodijelite vrijednost broja / zbroja izraza kao njegove početne vrijednosti.
+
+|8| U trećem bloku scenarija razmišljanja, zamjenjivač varijable *rezultata* zamjenjuje se brojem 37.
+
+|9| Izvršite projekt više puta kako biste provjerili da li on stvara različite troznamenkaste brojeve.
+
+|10| Sjetite se projekta tako modificiranog.
+
+.......
+
+Primjer 4 – Projekt “Spitite Effects”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+Sljedeći projekt ilustrira kako naredba |change_effect| iz grupe *Looks* može utjecati na prikaz likova. Također pokazuje blok događaja *kada se klikne ovaj lik* može pokrenuti skriptu.
+
+**Project Script**
+
+Na pozornici je 7 primjeraka istog lika. Klikom na jedan od njih mijenja se lik koristeći jedan od sedam grafičkih efekata. To je omogućeno naredbom |change_effect|. Lik također izgovara o kojem se efektu radi.
+
+.. sidebar:: Graphic Effects
+    
+    By clicking on the white triangle in the input field
+    you will open the drop-down list containing the following
+    7 different effects.
+
+    |efekti|
+
+.. |efekti| image:: ../_images/3/fig3_8.png
+  
+**Izrada projekta**
+
+|1| Započni novi projekt
+
+|2| Obriši lik mačka i iz biblioteke likova izaberi *Singer1*
+
+|3| Liku pridruži sljedeću skriptu
+
+.. image:: ../_images/3/fig3_9.png
+   :width: 240px   
+   :align: center 
+
+|4| Sada desnim klikom na znak na popisu znakova otvorite izbornik prečaca i odaberite opciju *duplikata*. Popis znakova prikazat će *Singer2*, kojem će se pridružiti isti scenarij kao i lik iz kojeg je stvoren.
+
+|5| Promjenite učinak u naredbi |change_effect| *fisheye*, a u naredbi |say_sec| prepravi tekst u *fisheye*.
+
+|6| Ponovi ovu operaciju još 5 puta i svaki put izmjeni efekt i poruku koju lik priopćava kada se klikne na njega.
+
+|7| Ravnomjerno rasporedite likove na pozornici i provjerite radi li projekt ono što se namjeravalo klikom na svaki od likova.
+
+|8| Svaki put kada kliknete na isti lik, odgovarajući učinak će se povećavati.
+
+|9| Stoga treba u fazu dodati skriptu koja će pritiskom na zelenu zastavicu po naredbi poništiti promjene |clear_effects| 
+
+Sljedeća slika prikazuje izgled znakova nakon jedne ili više primjena odgovarajućeg efekta
+
+.. image:: ../_images/3/fig3_10.png
+   :width: 435px   
+   :align: center 
+
+........
+ 
+Primjer 5 – Projekt “Stage Effects”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+Za razliku od blokova iz grupe *Motion*, blokovi iz grupe *Looks* mogu se primijeniti i na pozornicu. Na sceni su pridružene sve skripte ovog projekta. Svrha projekta je prikazati kako naredba |change_effect| može utjecati na izgled vaše pozadine i dati vam ideje tako da ih sami možete koristiti u svojim projektima. Da bi se sve vratilo u normalu, događaj *kada se klikne zelena zastava* povezan je sa brisanjem svih grafičkih efekata.
+
+**Projektni scenarij**
+
+Mačka je usred pustinje. Korisnik može promijeniti izgled pozadine pritiskom na jednu od tipki s brojevima od 1 do 3. Svaki od tih događaja odgovara jednom od grafičkih efekata u pozadini. Sljedeća slika pokazuje kako izgleda pozornica na početku (0) i nakon nekoliko pritiska utrke: 1 - efekt boje, 2 - efekt ribljeg oka, 3 - vrtložni učinak i 4 - pikselatni učinak.  
+
+.. image:: ../_images/3/fig3_11.png
+   :width: 735px   
+   :align: center 
+
+
+|ask| Odgovori na sljedeća pitanja
+-----------------------------------
+Pitanje 1
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: commands_looks
+   :multiple_answers:
+   :answer_a: 
+   :answer_b: 
+   :answer_c: 
+   :answer_d: 
+   :correct: b,d
+   :feedback_a: 
+   :feedback_b: 
+   :feedback_c: 
+   :feedback_d: 
+
+   Koji od blokova pripada grupi *Looks?* (Izaberi sve točne odgovore)
+   (Select all correct answers)
+
+   .. image:: ../_images/3/q3_1.png
+     :width: 410px   
+     :align: center
+
+Pitanje 2
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: commands_events
+   :multiple_answers:
+   :answer_a: 
+   :answer_b: 
+   :answer_c: 
+   :answer_d:
+   :correct: a,b
+   :feedback_a: 
+   :feedback_b: 
+   :feedback_c: 
+   :feedback_d:  
+  
+   Koji od blokova pripadaju grupi *Events*?
+   (Izaberi sve točne odgovore)   
+
+   .. image:: ../_images/3/q3_2.png
+      :width: 520px   
+      :align: center
+
+Pitanje 3
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: commands_control
+   :multiple_answers:
+   :answer_a: 
+   :answer_b: 
+   :answer_c: 
+   :answer_d: 
+   :correct: a,c
+   :feedback_a: 
+   :feedback_b: 
+   :feedback_c: 
+   :feedback_d: 
+
+   Koji od blokova pripada grupi *Control*? 
+   (Izaberi sve točne odgovore)
+   
+
+   .. image:: ../_images/3/q3_3.png
+      :width: 505px   
+      :align: center
+
+Pitanje 4
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: blocks2
+   :answer_a: da
+   :answer_b: ne
+   :correct: b
+   :feedback_a:  
+   :feedback_b: Točno.
+   
+   Može li jedna skripta imati više početnih blokova?
+
+Pitanje 5
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: blocks3
+   :answer_a: reporter blocks
+   :answer_b: stack blocks
+   :answer_c: hat blocks
+   :answer_d: cap blocks
+   :correct: b
+   :feedback_a:  
+   :feedback_b: Točno.
+   :feedback_c: 
+   :feedback_d: 
+   
+   Kojoj vrsti pripadaju blokovi koji imaju udubljenje na gornjoj i ispučenje na donjoj strani.
+   
+
+Pitanje 6
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: blocks4
+   :answer_a: reporter blocks
+   :answer_b: stack blocks
+   :answer_c: hat blocks
+   :answer_d: C-blocks
+   :correct: a
+   :feedback_a: Točno. 
+   :feedback_b: 
+   :feedback_c: 
+   :feedback_d: 
+   
+   Kojoj vrsti pripadaju blokovi kaoji čuvaju vrijednost i ne mogu stajati samostalno u skripti, već se stavljaju u ulazna polja drugih blokova.
+
+
+Pitanje 7
+~~~~~~~~~~
+
+.. level:: 1
+
+.. dragndrop:: groups_commands
+    :feedback: Pokušaj ponovo
+    :match_1: hat|||define WHEN the script will run
+    :match_2: reporters|||hold values
+    :match_3: C-blocks|||receive the script as input
+    :match_4: stack blocks|||define WHAT should be done
+            
+    Upari oblik blokova s njihovom ulogom u Scratchu.
+
+
+Pitanje 8
+~~~~~~~~~~
+
+.. level:: 1
+
+.. |q3_8a| image:: ../_images/3/q3_8a.png
+      
+.. |q3_8b| image:: ../_images/3/q3_8b.png
+
+.. mchoice:: аi01
+   :answer_a: da
+   :answer_b: ne
+   :correct: b
+   :feedback_a:  
+   :feedback_b: Točno. 
+   
+   Imaju li izrazi |q3_8a| i |q3_8b| istu vrijednost?   
+  
+Pitanje 9
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: аi02
+   :answer_a: nijedan
+   :answer_b: prvi
+   :answer_c: drugi
+   :answer_d: oba
+   :correct: c
+   :feedback_a: Netočno. Drugi ima vrijednost 10/(-1)=-10 
+   :feedback_b: Netočno. Prvi ima vrijednost 5-3=2
+   :feedback_c: Točno.
+   :feedback_d: Netočno. Prvi ima vrijednost 2.
+
+   Koji od izraza |q3_9a| i |q3_9b| imaju negativnu vrijednost?
+   
+.. |q3_9a| image:: ../_images/3/q3_9a.png
+
+.. |q3_9b| image:: ../_images/3/q3_9b.png
+  
+
+Pitanje 10
+~~~~~~~~~~~
+
+.. level:: 2
+
+.. |q3_10| image:: ../_images/3/q3_10.png
+
+.. fillintheblank:: ai03
+
+      Kolika je vrijednost izraza   |q3_10| ? |blank|
+
+      -   :19: Točno.
+          :x: Netočno. (7+(8*2))-4 = (7+16)-4 = 23-4 = 19
+
+    
+
+Pitanje 11
+~~~~~~~~~~~
+
+.. level:: 2
+
+.. mchoice:: ai04
+   :answer_a: 45
+   :answer_b: 11
+   :answer_c: 15
+   :correct: b
+   :feedback_a: Netočno. 5+(2*(7-4)) = 5+2*3 = 5+6 = 11 
+   :feedback_b: Točno.
+   :feedback_c: Netočno. 5+(2*(7-4)) = 5+2*3 = 5+6 = 11
+  
+   Kolika je vrijednost izraza    |q3_11|?
+
+.. |q3_11| image:: ../_images/3/q3_11.png
+      
+
+Pitanje 12
+~~~~~~~~~~~
+
+.. level:: 2
+
+.. mchoice:: ai05
+   :answer_a: 3
+   :answer_b: 11
+   :answer_c: 6
+   :correct: c
+   :feedback_a: Netočno. ((2+1)*(9-5))/2 = 3*4/2 = 6 
+   :feedback_b: Netočno. ((2+1)*(9-5))/2 = 3*4/2 = 6
+   :feedback_c: Točno.
+   
+   Kolika je vrijednost izraza    |q3_12|?
+
+.. |q3_12| image:: ../_images/3/q3_12.png
+            
+
+
+|try| Pokušaj!
+----------------
+
+Vježba 1- Uvećanje
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+.. infonote::
+
+  Napravite projekt koji omogućuje liku na pozornici da se povećava i smanji. Uvećanje bi trebalo pokrenuti *strelicom gore*, a smanjenje  sa strelicom za dolje*. Provjerite je li lik vratio svoju prirodnu veličinu klikom na zelenu zastavu.
+
+.. reveal:: exercise 3_1
+   :showtitle: Show the Instruction
+   :hidetitle: Hide the Instruction
+ 
+   **Uputstvo:**
+
+   Liku treba dodati sljedeće skripte:: |ex3_1| 
+
+.. |ex3_1| image:: ../_images/3/ex3_1.png
+
+.......
+
+Vježba 2 – Okretanje
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+.. infonote::
+
+  Pored mačjeg lika, prenesite još dva lika iz biblioteke likova: djevojčicu *Avery* i dječaka *Devina*. Djevojku postavite s lijeve strane, a dječaka s desne strane mačke. Napravite projekt koji omogućuje mački na pozornici da skrene lijevo prema djevojci, a desno prema dječaku. Okretanje ulijevo trebalo bi pokrenuti utrku s *lijevom strelicom*, a skretanje desno s *desnom strelicom*. Pazite da se mačka ne okrene naopako kada se okrene ulijevo.
+
+.. reveal:: exercise 3_2
+   :showtitle: Show the Instruction
+   :hidetitle: Hide the Instruction
+ 
+   **Uputstva:**
+
+   Liku mačke treba dodati sljedeće skripte:: |ex3_2| 
+
+.. |ex3_2| image:: ../_images/3/ex3_2.png
+
+.......
+
+Vježba 3 – Promjena boje pozadine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+.. infonote::
+
+  Napravite projekt koji omogućava pozadini da promijeni boju nakon svakog klika na pozornici. Koristi se efektom boje kako bi se osiguralo da klikom na zelenu zastavu uklone grafičke efekte.
+
+.. reveal:: exercise 3_3
+   :showtitle: Show the Instruction
+   :hidetitle: Hide the Instruction
+ 
+   **Uputstvo:**
+
+  Pozornici treba sljedeće skripte:: |ex3_3| 
+
+.. |ex3_3| image:: ../_images/3/ex3_3.png
+  
+.......
+
+Vježba 4 – Kodiranje aritmetičkog izraza sa zagradama (1)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 2
+
+.. infonote::
+
+  Na Scratchu se formira aritmetički izraz koji odgovara sljedećem matematičkom izrazu: (5 * (5 + 4)) - (2 * (2 + 3)). Postavljanjem odgovarajućeg izvještača u polje za unos naredbe say, provjerite da li ste dobili njegovu ispravnu vrijednost: (5 * (5 + 4)) - (2 * (2 + 3)) = 5 * 9-2 * 5 = 45-10 = 35.
+
+.. reveal:: exercise 3_4
+   :showtitle: Show the Answer
+   :hidetitle: Hide the Answer
+ 
+   **Uputstvo:**
+
+   |ex3_4|
+   
+.. |ex3_4| image:: ../_images/3/ex3_4.png
+
+.......
+
+Vježba 5 – Kodiranje aritmetičkog izraza sa zagradama (2)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 2
+
+.. infonote::
+
+  Na Scratchu oblikujte aritmetički izraz koji odgovara sljedećem matematičkom izrazu: (8 / (4-2)) * (8- (6/2)) Postavljanjem odgovarajućeg izvjestitelja u polje unosa naredbe say, provjerite da li ste dobili njegovu ispravnu vrijednost: (8 / ( 4-2)) * (8- (6/2)) = 8/2 * (8-3) = 4 * 5 = 20.
+
+
+.. reveal:: exercise 3_5
+   :showtitle: Show the Answer
+   :hidetitle: Hide the Answer
+ 
+   **Odgovor:**
+
+   |ex3_5|
+
+.. |ex3_5| image:: ../_images/3/ex3_5.png
+
+|bug| Ispravi greške!
+---------------------
+
+Greška 1
+~~~~~~~~
+
+.. level:: 1
+
+:Pitanje:
+   Je li sljedeći razgovor dobro sinkroniziran?
+
+.. image:: ../_images/3/bug3_1.png
+   :width: 650px   
+   :align: center
+
+.. reveal:: bug3_1
+   :showtitle: Show the Answer
+   :hidetitle: Hide the Answer
+ 
+   **Odgovor:**
+     
+   Nije dobro postavljeno vrijeme. Instrukcije ``wait`` i ``say`` trebaju imati isto vrijeme da bi razgovor bio dobro sinkroniziran.
+
+
+Greška 2
+~~~~~~~~
+
+.. level:: 2
+
+:Pitanje:	
+   Učenik voli sve raditi po pravilima i zato želi da svakom program dodaje i naredbu za zaustavljanje programa. Tako je in a kraju skripte za projekt Math Trick postavio naredbu |stop|. Međutim, takst posljednje naredbe |say| nije bio vidljiv. Kako će učenik to ispraviti, a da na kraju ipak ostane naredba koja ga zaaustavlja?
+
+.. image:: ../_images/3/bug3_2.png
+   :width: 430px   
+   :align: center
+
+.. reveal:: bug3_2
+   :showtitle: Show the Answer
+   :hidetitle: Hide the Answer
+ 
+   **Odgovor:**
+    
+   Naredba ``say the result is 37``  trenutno se izvršava i odmah slijedi naredba ``stop all``, tako da praktično ne uspijevamo vidjeti učinak naredbe ``say``. Stoga ovu naredbu treba zamijeniti naredbom ``say__for__seconds`` i postaviti na prikaz na primjer 5 sekundi.
+   
+
+Greška 3
+~~~~~~~~
+
+.. level:: 2
+
+:Pitanje:	
+   Učenik želi da se njegov lik rotira kada pritisnemo tipku razmaknica. Ali lik se ne okreće. Učemu je greška?
+
+.. image:: ../_images/3/bug3_3.png
+   :width: 180px   
+   :align: center
+
+.. reveal:: bug3_3
+   :showtitle: Show the Answer
+   :hidetitle: Hide the Answer
+ 
+   **Odgovor:**
+     
+    Lik se vrti, ali prebrzo, brzinom kojom računalo izvršava naredbe, pa ga ljudsko oko ne može vidjeti. Da biste vidjeli zaokret lika, naredbe za čekanje moraju biti smještene između naredbi ``turn right``, recimo u desetini sekunde. Na ovaj način moći ćemo pratiti okret lika.
+
+
+|book| Što smo naučili
+-----------------------
+
+U ovoj lekciji upoznali smo se sa skupinama i blokovima iz palete blokova kojima su dane naredbe programskog jezika Scratcha. Scratch vizualni rječnik sadrži više od 100 blokova podijeljenih u 10 skupina. Vizualna gramatika Scratcha ostvaruje se kroz oblik blokova: ne dopušta povezivanje blokova čije funkcije nisu primjerene. Samostalni blokovi povezani su u skripte koje specificiraju ponašanje objekata i funkcionalno postavljaju potrebne vrijednosti za njih.
+
+**Scratch projekti**: 3Studio_
+
+.. _3Studio: https://scratch.mit.edu/studios/25119441/
+
+**Novi pojmovi**:  events, actions, arithmetic operators, random numbers, linear structure of the script.
+
+**Nove naredbe**: |events_blocks| - |clicked_sprite|, |clicked_stage|; |control_blocks| - |wait_sec|, |stop|; 
+
+|looks_blocks| - |think_sec|, |next_costume|, |change_effect|, |clear_effects|, |set_size|, |change_size|; 
+
+|operator_blocks| - |plus|, |minus|, |multiply|, |divide|, |pick_random|; |variables_blocks| - |*| |set_var|.
+
+Napomena. Naredbe označene znakom * biti će u narednim lekcijama.
+
+|project| Napravi neki od sljedećih projekta
+----------------------------------------------
+
+Projekt 1 – “Genije”
+~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+Napravite ovaj projekt po uzoru na *Math Trick*.
+
+Započnite novi projekt koji ćete nazvati *Genije*. Odaberite glavni lik iz biblioteke likova i pozadinu iz biblioteke pozadina. Lik treba postaviti sljedeće zadatke.
+
+1. "Zamislite bilo koji troznamenkasti broj."
+
+2. "Ako usporedimo njegove brojeve od većih i manjih, to je prvo."
+
+3. "Usporedba njegovih brojeva od manjih i većih je drugi broj."
+
+4. "Oduzmi drugi broj od prvog."
+
+5. "Upamtite rezultat, a zatim prebacite njegove brojeve."
+
+6. "Dodajte taj broj rezultatu kojeg pamtite."
+
+7. "Dobio si broj 1089."
+
+
+Projekt 2 – “Čokoladni kolač”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 2
+
+Započnite novi projekt koji ćete nazvati *Choco Cake*. To bi trebala biti animacija u kojoj kuhar objašnjava recept (algoritam) za izradu čokoladnih kolačića.
+
+Za ovu animaciju trebat će vam sljedeći znakovi: kuhar, jaja, brašno, šećer, čokolada, zdjela, mikser, štednjak, kolačići. Pronađite prave slike na računalu ili Internetu i prilagodite ih vašem projektu (očistite pozadinu, povećajte, umanjite ...).
+
+Ona se brine za sinkronizaciju skripte za svaki znak umetanjem naredbe trajanja ``čekanja``. Jedini lik koji cijelo vrijeme treba biti na pozornici je kuhar. Čita recept (algoritam) i utvrđuje pojavu i nestanak drugih znakova.
+
+1.	Kuhar je sam na pozornici. Kaže: "Evo ALGORITMA za pravljenje kolača!" (2 sekunde)
+
+2.	Kuhar izgovara sljedeće: "Uzmi jaja, brašno, šećer i čokoladu." U tom se trenutku na pozornici pojavljuju jaja, brašno, šećer i čokolada. Prizor traje 2 sekunde.
+
+3.	Kuhar kaže: "Stavite sve u zdjelu i pomiješajte mikserom." U tom trenutku jaja, brašno, šećer i čokolada nestaju s pozornice, a pojavljuju se posuda i mikser. Prizor traje 2 sekunde.
+
+4.	Kuhar kaže: "Stavite posudu u vruću pećnicu." U tom trenutku zdjela i mikser nestaju s pozornice i pojavljuje se pećnica. Prizor traje 2 sekunde.
+
+5.	Kuhar kaže: "Pecite tortu pola sata." Na pozornici se ništa ne mijenja. Prizor traje 2 sekunde.
+
+6.	Kuhar izgovara sljedeće: "Poslužite kolačiće." U tom trenutku peć nestaje sa pozornice i pojavljuju se kolači. Prizor traje 2 sekunde.
+

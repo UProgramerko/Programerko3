@@ -1,0 +1,716 @@
+Da ili ne - naredba grananja
+============================
+
+.. include:: blocks.txt
+
+.. include:: icons.txt
+
+.. infonote::
+
+ |intro6|
+
+
+U ovoj lekciji naučit ćemo kako koristiti blokove grana koji omogućuju grananje i kako izgraditi složene uvjete donošenja odluka. Sistematiziraćemo blokove koji omogućuju realizaciju osnovnih elemenata programske logike na Scratchu. Upoznat ćemo više blokova iz grupe Sensing (Očitanja) i pokazati kako koristiti uređivač vektorskih slika.
+
+
+.. topic:: Naredbe za grananje
+
+ U projektima s jednostavnom linijskom strukturom, svaka se naredba izvršava točno jednom.
+ U prethodnoj lekciji upoznali smo se sa Opisnim blokovima C-bloka koji omogućuju da se naredbe koje su umetnute u njih izvršavaju više puta - Blokovi grupe upravljanje. Pored blokova koji upravljaju skriptama, blokovi grananja imaju i unos skripte. Ovisno o tome je li ispunjen uvjet grananja, uneseni nalozi će se izvršavato ili se ne izvršavaju.
+ 
+ Naredba grane kojoj C-blok odgovara, pored ulaza za logički izraz, ima jedan ulaz za skripte, a onaj koji odgovara bloku E - dva ulaza za skriptu. Prva naredba omogućuje vam izvršavanje naredbi uloženih u *ako… onda* „usta“ kada je ispunjen uvjet grananja, a ako ne, onda se neće jednom izvršiti i nastavit će se s izvršenjem prve naredbe slijedeći naredbu za uvjetno prebacivanje.      
+
+ .. image:: ../_images/6/fig6_1.png
+   :width: 500px   
+   :align: center
+
+ Druga uvjetna naredba grane preskače neke naredbe je li ispunjen uvjet grane ili ne. Ako je ispunjen uvjet grane, iz naredbe ELSE se neće izvršavati naredbe, a ako uvjet nije ispunjen, neće se izvršavati naredbe iz THEN grane.
+ 
+ Dakle, za razliku od jednostavnih linijskih programa u kojima se svaka naredba izvršava točno jednom, ciklično u kojem postoje naredbe koje se mogu ponavljati (unutar tijela ciklusa), u programima s razgranatom strukturom postoje naredbe koje se neće izvršiti niti u jednom trenutku.
+
+ .. image:: ../_images/6/fig6_2.png
+   :width: 520px   
+   :align: center
+
+.. topic:: Osnovni elementi programske logike na Scratchu
+
+ Kao što smo rekli, skripte opisuju ponašanje objekata za koje su vezane. Svi scenariji ponašanja objekata, koliko god složeni bili, sastoje se od kombinacije osnovnih elemenata programske logike, naime:
+  
+ * slijed koraka,
+
+ * ponavljanje i
+
+ * grananje.
+ 
+ U računalnoj znanosti umjesto riječi *skripta* koristi se termin *algoritam*. Koncept algoritma poznat je stoljećima, ali je poseban značaj dobio tek pojavom računala. Možemo reći da je svaki niz razumljivih i preciznih uputa o tome kako riješiti postavljeni zadatak algoritam.   
+
+ Prelazak ulice, priprema hrane na recept, telefoniranje, rješavanje problema matematike - sve se to svodi na obavljanje nekih osnovnih operacija zadanim redoslijedom. Elementarnim se operacijama u algoritmima nazivaju **naredbe**, **koraci** ili **naredbe**.
+ 
+ Algoritam može biti više ili manje precizan u riječima. Međutim, puno bolji uvid u strukturu i redoslijed izvršavanja uputa daje grafički zapis algoritma. Grafička shema koja svojim simbolima označava prirodu pojedinih algoritamskih koraka naziva se **blok dijagram**. Blok dijagrami koriste posebne simbole za snimanje određenih vrsta algoritamskih koraka. 
+
+.. sidebar:: Symbols of Certain Types of Algorithmic Steps
+
+    |simboli|
+
+.. |simboli| image:: ../_images/6/fig6_3.png
+
+Osnovni cilj blok dijagrama je navesti redoslijed izvršavanja pojedinih algoritamskih koraka. Omogućuje jasnu vezu između detalja i čitavog algoritma i olakšava otkrivanje pogrešaka u njegovoj strukturi.
+
+Algoritmi mogu imati jednostavnu linearnu, razgranatu i cikličku strukturu. Za jednostavne algoritme linearne strukture, koraci se izvode jedan za drugim od početka do kraja. S algoritmima s razgranatom strukturom postoji nekoliko alternativnih ruta izvršavanja. Prema tome, neki se koraci, ovisno o podacima, uopće neće izvoditi. Za algoritme s cikličkom strukturom, neki se koraci mogu izvesti više puta.
+
+Sljedeća slika prikazuje blok dijagrame za izračunavanje vrijednosti x na temelju zadane ulazne vrijednosti pomoću tri vrste algoritma: s jednostavnom linearnom, razgranatom i cikličkom strukturom. 
+
+.. image:: ../_images/6/fig6_4.png
+   :width: 600px   
+   :align: center
+
+Primjeri su preuzeti iz udžbenika matematike za drugi razred osnovne škole. Pokušajte odgovoriti na sljedeća pitanja na temelju njih.
+
+* Kolika će biti vrijednost *x* nakon izvršenja svakog od algoritama ako je ulazna vrijednost *a=5*, a koliko ako je *a=16*?
+* Koji se korak u algoritmu s razgranatom strukturom neće izvesti ako je *a=5*, a koji ako je *a=16*?
+* Koliko će se puta zadatak x = x + 3 izvesti u algoritmu s cikličkom strukturom ako je *a=5*, a koliko puta ako je *a=16*?
+ 
+Zapis ovih algoritama na Scratchu prikazan je na sljedećim slikama. 
+
+Prvi algoritam jednostavne strukture retka podudara se korak po korak.
+
+.. image:: ../_images/6/fig6_5.png
+   :width: 690px   
+   :align: center
+
+Drugi algoritam grananja podudara se sa skriptom za grananje. 
+
+.. image:: ../_images/6/fig6_6.png
+   :width: 950px   
+   :align: center
+
+Algoritam strukture trećeg ciklusa usklađuje se s ponavljajućom skriptu. 
+
+.. image:: ../_images/6/fig6_7.png
+   :width: 755px   
+   :align: center
+ 
+
+**Skripte u Scratchu izgledaju kao zapis algoritma blok dijagrama.**
+
+
+.. topic:: Funkcije blokova iz grupe **Sensing** (Očitanja)
+
+ Grupa **Sensing** sastoji se od blokova koji projektu omogućuju prihvaćanje unosa s različitih uređaja, poput ljudskih osjetila koja prikupljaju informacije iz svoje okoline. Dakle, postoje blokovi u kojima se pohranjuju podaci koji odgovaraju podacima koje osoba prikuplja osjetom dodira, osjetila vida ili sluha. Neki blokovi u ovoj grupi omogućuju pokretanje različitih radnji, ovisno o položaju lika, ovisno o vremenu, datumu i slično. U ovoj lekciji predstavit ćemo blokove koji:
+
+ * pohranjuju informacije o položaju lika u odnosu na pokazivač miša i druge predmete,
+ * omofućiti ulaz sa tipkovnice,
+ * pohranite podatke o tekućim operacijama miša i tipkovnice.
+
+ Preostali blokovi iz **Sensing** grupe predstavit će se u sljedećim lekcijama, a cjelovit pregled njihovih funkcija dat je u **11. lekciji** ovog praktičnog programa.
+
+
+|study| Prouči sljedeće primjere projekta
+------------------------------------------
+
+Primjer 1 - Projekt "Selection"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+U ovom projektu stari čarobnjak treba izabrati pomoćnike. 
+
+.. image:: ../_images/6/fig6_8.png
+   :width: 300px   
+   :align: center
+   
+Samo nemože odlučiti koga, pa traži korisnika da mu pomogne tako što će unijeti redni broj kandidata za pomoćnika. 
+
+.. image:: ../_images/6/fig6_9.png
+   :width: 475px   
+   :align: center
+   
+Ova se vrijednost uspoređuje s uvjetnom naredbom prijenosa s brojem kandidata. Ako je korisnik upisao broj 1, čarobnjak skreće lijevo prema kandidatu 1, a  u suprotnom, desno prema kandidatu 2.
+
+.. image:: ../_images/6/fig6_10.png
+   :width: 400px   
+   :align: center
+
+Kompletna skripta koja opisuje ponašanje čarobnjaka prikazana je na sljedećoj skripti. 
+
+.. image:: ../_images/6/fig6_11.png
+   :width: 300px   
+   :align: center
+
+
+
+Primjer 2 – Projekt “Dangerous Snowflakes”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 2
+
+*Dangerous Snowflakes* je jednostavna igra u kojoj korisnik pokušava spasiti Snjeguljicu od velikih opasnih pahulja koje neprestano padaju.
+Korisnik pomoću tipki sa strelicama na tipkovnici vodi Snjeguljicu s lijeve na desnu stranu i pokušava izbjeći pahulje koje padaju različitim brzinama i kutovima s vrha zaslona.
+Ako pahulja dodirne Snijeg, napuše se i deformira i igra je gotova.
+
+**Likovi i pozadina**
+
+Kad pokrenete novi projekt, u knjižnicu učitajte slike *Pozadine* i likove *Snowflake* i *Snowman*.
+Stavite Snješka u donji desni kut pozornice i možete započeti s programiranjem..
+
+**Ponašanje snježne pahulje**
+
+Da bi se uvela nesigurnost, potrebno je da se pahuljice pojavljuju na različitim mjestima i padaju različitim brzinama i različitim smjerovima.
+Sve ove nesigurnosti postižemo korištenjem bloka |pick_random|.
+
+Snježna pahulja trebala bi se pojaviti na vrhu pozornice i kliznuti prema njenom dnu. Sljedeći blok naredbi opisuje njegovo kretanje.
+
+.. image:: ../_images/6/fig6_12.png
+   :width: 600px   
+   :align: center
+
+Prva naredba postavlja pahuljicu na mjesto čija je x koordinata nasumično stvorena. Treća naredba postavlja točku u kojoj pahuljica klizi između 0,5 i 3,5 sekunde i nestaje.
+
+Umetnut ćemo ovaj naredbeni blok u petlju koja će se ponavljati dok snježna pahuljica ne dotakne Snješka. Kada ga dodirne, igra se završava.
+
+.. image:: ../_images/6/fig6_13.png
+   :width: 620px   
+   :align: center
+
+**Ponašanje Snješka**
+
+Na snježnoj kuglici nalaze se 3 skripte - reakcije na klik na zelenu zastavicu i pritiskanje strelica lijevo i desno. 
+Na početku Snješko daje upute za igru i u Forever petlji provjerava je li ga dotaknula pahulja.
+U tom slučaju najavljuje da je igra gotova i zaustavlja sve skripte.
+
+.. image:: ../_images/6/fig6_14.png
+   :width: 650px   
+   :align: center
+
+Kako bismo igru učinili atraktivnijom, dodaćemo i posebne efekte koji se mogu postići blokovima iz grupe *Looks*. 
+
+Kao što smo vidjeli u primjeru 2 lekcije Nizanje koraka, naredba |change_effect| promjena učinka može promijeniti lik na više načina. 
+
+Kad pahulja dodirne Snješka, promijenit ćemo ga i primijeniti efekte ribljeg oka i boje. Ponovit ćemo ove promjene 5 puta s kratkom pauzom nakon svake promjene (Sl. A).
+Kako ne bismo deformirali program prilikom ponovnog pokretanja programa, mi ćemo u početku ukloniti sve grafičke efekte i veličinu postaviti na 100%. (Sl. B).
+
+.. image:: ../_images/6/fig6_15.png
+   :width: 490px   
+   :align: center
+
+Primjer 3 – Projekt “Day and Night”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 3
+
+U ovom se projektu dva lika, pas i mačka, ponašaju različito ovisno o tome je li dan ili noć.
+
+Na pozornici su dvije kuće, od kojih jedna pripada mački, a druga pesu. Povezuju ih dvije pozadine - *dan* i *noć*.
+
+Pozadina *dana* pokazuje sunce, svijetlo plavo nebo i travu.
+U pozadini *noći* sve osim kuća tamnoplave boje, a na nebu su vidljive zvijezde i mladi mjesec. Dnevne i noćne pozadine mijenjaju se na svakih 5 sekundi.
+
+Kad je dan, mačka i pas izlaze iz svojih domova i love se. Mačka trči u krug, a pas  ide prema mački i pokušava joj se približiti.
+
+Kad je noć, mačka i pas odlaze svojim kućama i miruju.
+
+.. image:: ../_images/6/fig6_16.png
+   :width: 500px   
+   :align: center
+
+**Stvaranje likova**
+
+Izbrišite *Sprite1* i izaberite likove *psa (Dog2)* i *mačka (Cat2)* iz biblioteke. 
+Pas ima 3 kostima, od kojih ćemo koristiti samo prva dva, pa izbrišite treću. Mačka ima samo jedan kostim, pa trebamo nacrtati još jedan kako bismo mogli napraviti animaciju o kretanju. 
+Za izradu još mačjeg kostima koristit ćemo uređivač vektorskih slika. Desnom tipkom miša kliknite kostim maččke kako biste otvorili izbornik prečaca i odabrali duplikate. 
+
+Dobivamo novi kostim *(Cat3)* koji ćemo izmijeniti u koracima ilustriranim na sljedećoj slici. 
+ 
+.. image:: ../_images/6/fig6_17.png
+   :width: 380px   
+   :align: center
+
+**Kreiranje pozadine**
+
+Klikni na tipku *Choose a Backdrop* (desno od liste likova), pa izaberi opciju *Paint*
+Iz palate vektorskih alata izaberi |v_rectan|, a način cratanja neka bude bez popunjavanja. Nacrtaj kučicu kao što je prikazana na sljedećoj slici
+
+.. image:: ../_images/6/fig6_18.png
+   :width: 380px   
+   :align: center
+
+Alatom |v_group| smo grupirali predmete kojim smo napravili kućicu, korištenjem alata |copy| pomnožite okvir i kopiju premjestite u donji desni kut pozornice, a original u gornji lijevi kut. 
+Zatim prilagodite veličinu znakova kako bi se mogli uklopiti u okvire.
+
+Sаdа prеlаzimо nа bојanjе аlаtom |v_fill|. Primjena ovog alata razlikuje se od mape bitova pri popunjavanju područja.
+Naime, ako područje nije zatvoreno, u mapi bitova boja "curi" na cijeloj slici. U vektorskom načinu se to ne događa - ne možete uopće obaviti bojenje.
+Stoga na povećanoj slici prvo treba prvo zatvoriti područje. 
+To se radi pomoću alata |v_select| kliknite na sliku, a zatim odaberite dio nepovezane slike (2) i povežite ga s ostatkom slike (3). Zatim pomoću alata možete obojiti unutrašnjost (4) i linije koje čine područje (5).
+
+.. image:: ../_images/6/fig6_19.png
+   :width: 500px   
+   :align: center
+
+Kako smo koristili alat |v_rectan| pri crtanju kućice , ne bi trebalo biti problema priliokm bojenja.
+Sljedeća slika prikazuje način i rezultat punjenja dijelova kućice. 
+
+.. image:: ../_images/6/fig6_20.png
+   :width: 380px   
+   :align: center
+
+Budući da ste obojali kućice, duplicirajte ovu pozadinu.
+
+Dopunit ćemo prvu pozadinu da predstavlja noć, a drugu da predstavlja dan.
+
+**Stvaranje noćne pozadine**
+
+Nacrtajte ispunjeni plavo-plavi pravokutnik preko cijele pozornice, a zatim pomoću alata *Back* |v_back| postavite ovaj pravokutnik iz oba okvira. Isto se muže učiniti s *povratnim* alatom |v_backward| ali morat ćete kliknuti na pozornicu onoliko slojeva koliko ima slika.
+Kad su oba okvira vidljiva, prijeđite na crtanje mjeseca i zvijezda
+ 
+Mladi mjesec može se nacrtati najprije crtanjem ispunjenog žutog kruga (1), a zatim djelomično crtanjem većeg kruga ispunjenog bojom pozadine (2).
+
+Da biste oblikovali zvjezdicu, nacrtajte trokut bijelom bojom (3), zatim pomnožite i zakrenite ga (4) i na kraju cijeli oblik ispunite bijelom bojom (5).
+
+.. image:: ../_images/6/fig6_21.png
+   :width: 400px   
+   :align: center
+
+Na kraju kopirajte gotove zvijezde, rasporedite ih po pozadini, neke povećajte, a neke smanjite i noćna je pozadina gotova. 
+
+.. image:: ../_images/6/fig6_22.png
+   :width: 380px   
+   :align: center
+
+**Kreiranje pozadine Dan**
+
+Nacrtajte sunce alatom |v_circle|, a zrake |v_line|. Zatim nacrtajte veliko nebo plavim pravokutnikom širinu pozornice kako biste nacrtali nebo i pošaljite ga koliko je slojeva ispod potrebno da biste vidjeli sve detalje.
+(Ako biste prvo nacrtali nebo, a nakon što bi sunce brže postavilo nebeski sloj, ovo biste trebali staviti iza svih sunčevih zraka).
+
+Zatim nacrtajte pravokutni pravokutnik ispunjen zelenom travom i pošaljite ga na pozadinu slike.
+
+Postupak stvaranja dnevne pozadine ilustriran je sljedećom slikom.
+
+.. image:: ../_images/6/fig6_23.png
+   :width: 500px   
+   :align: center
+
+Budući da smo gotovi s pozadinom dana, možemo početi pisati skriptu za ponašanje likova.
+
+**Dan i noć sinkronizacija događaja**
+
+U ovom je projektu osnovno ponašanje diktirano pozadinom. Objavljuje *dnevne* i *noćne* poruke na koje oba lika reagiraju.
+
+.. image:: ../_images/6/fig6_24.png
+   :width: 250px   
+   :align: center
+
+Sljedeće slike prikazuju skripte pripojene znakovima kako biste vidjeli kako reagiraju na te poruke. 
+
+.. image:: ../_images/6/fig6_25.png
+   :width: 680px   
+   :align: center
+
+.. image:: ../_images/6/fig6_26.png
+   :width: 680px   
+   :align: center
+
+
+|ask| Odgovori na sljedeća pitanja.
+-----------------------------------
+
+Pitanje 1
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: if01
+   :answer_a: da
+   :answer_b: ne
+   :correct: a
+   :feedback_a: Točno.
+   :feedback_b: Uvjet 1=1 nije potpuni.
+
+   Hoće li lik izgovoriti Hello po izvršenju naredbe uvjetnog prelaska?
+   
+   .. image:: ../_images/6/q6_01.png
+      :width: 250px   
+      :align: center
+   
+
+Pitanje 2
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: if02
+   :answer_a: da
+   :answer_b: ne  
+   :correct: b
+   :feedback_a: Budući da je vrijednost izraza 1=2 uvijek lažna, naredba iz DA-ove grane nikada se neće izvoditi. 
+   :feedback_b: Točno.
+   
+    Hoće li lik izgovoriti Hello po izvršenju naredbe uvjetnog prelaska?
+   
+   .. image:: ../_images/6/q6_02.png
+      :width: 255px   
+      :align: center
+   
+Pitanje 3
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: if03
+   :multiple_answers:
+   :answer_a: 5
+   :answer_b: -5
+   :answer_c: 0
+   :answer_d: 10
+   :correct: b,c
+   :feedback_a: Netočno 5<5
+   :feedback_b: Točno.
+   :feedback_c: Točno.
+   :feedback_d: Netočno 10<5.
+
+   Koji od odgovora korisnika će omogućiti izvršenje naredbe u THEN grani?
+
+   .. image:: ../_images/6/q6_03.png
+      :width: 215px   
+      :align: center
+
+Pitanje 4
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: if04
+   :answer_a: Ponesi kišobran 
+   :answer_b: ništa neće izgovoriti
+   :correct: a
+   :feedback_a: Točno 
+   :feedback_b: U tom slučaju je uvjet za grananje ispunjen.
+   
+   Što će izgovoriti lik ako korisnik ns pitanje Is it raining odgovori s *yes*? 
+
+   .. image:: ../_images/6/q6_04.png
+      :width: 310px   
+      :align: center
+   
+Pitanje 5
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: if05
+   :answer_a: Uvjet je ispunjen.
+   :answer_b: Uvjet nijeje ispunjen.
+   :correct: a
+   :feedback_a: Točno. 
+   :feedback_b: Kako je vrijednost izraza A=A uvijek istinita, naredba iz grane DA će se izvršiti.
+   
+   Što će izgovoriti lik po izvršenju naredbe uvjetnog prelaska?
+   
+   .. image:: ../_images/6/q6_05.png
+      :width: 315px   
+      :align: center
+   
+Pitanje 6
+~~~~~~~~~~
+
+.. level:: 1
+
+.. mchoice:: if06
+   :answer_a: da
+   :answer_b: ne
+   :correct: b
+   :feedback_a: Kako je vrijednost izraza A=B uvijek lažna, naredba iz grane NE izvršit će se. 
+   :feedback_b: Točno.
+   
+   Hoće li se lik prikazati po izvršenju naredbe uvjetnog prelaska?
+
+   .. image:: ../_images/6/q6_06.png
+      :width: 165px   
+      :align: center
+
+Pitanje 7
+~~~~~~~~~~
+
+.. level:: 2
+
+.. mchoice:: if07
+   :answer_a: različiti bez obzira na poziciju lika
+   :answer_b: isti bez obzira na poziciju lika 
+   :answer_c: različiti ako je y različito od 0
+   :answer_d: različiti ako je x različito od 0
+   :correct: b
+   :feedback_a: U oba slučaja uvjet koji mora biti ispunjen za rečenicu "Vi ste u središtu pozornice" je isti.  
+   :feedback_b: Točno.
+   :feedback_c: U ovom slučaju, uvjet nije ispunjen ni u jednom od blokova (A) ili (B), a "Vi ste u središtu pozornice" neće biti rečeno.
+   :feedback_d: U ovom slučaju, uvjet nije ispunjen ni u jednom od blokova (A) ili (B), a "Vi ste u središtu pozornice" neće biti rečeno.
+
+   Kakav je rezultat izvršavanja blokova naredbi (A) i (B)?
+
+   .. image:: ../_images/6/q6_07.png
+      :width: 600px   
+      :align: center
+
+Pitanje 8
+~~~~~~~~~~
+
+.. level:: 2
+
+.. mchoice:: if08
+   :multiple_answers:
+   :answer_a: 
+   :answer_b: 
+   :answer_c: 
+   :correct: a
+   :feedback_a: Izričito određuje da su х=0 i у=0. 
+   :feedback_b: Ovo su koordinate nekih točaka na dijagonali koordinatnog sustava, mogu biti (0,0), ali ne moraju biti. 
+   :feedback_c: Ovo su koordinate nekih točaka na osi x ili y. Također može biti točka na kojoj se presijecaju, ali to ne mora biti.
+
+   Koja od naredbi uvjetnog prelaska ima ispravan ubjet tvrdnje da su kordinate pozicije lika (0,0), odnosno da se lik nalazi u centru pozornice? 
+
+   .. image:: ../_images/6/q6_08.png
+      :width: 1020px   
+      :align: center
+   
+Pitanje 9
+~~~~~~~~~~
+
+.. level:: 2
+
+.. mchoice:: if09
+   :multiple_answers:
+   :answer_a:
+   :answer_b: 
+   :answer_c: 
+   :answer_d: 
+   :correct: a,d
+   :feedback_a: Ostatak je, nakon što je broj podijeljen sa 6, 0.
+   :feedback_b: Brojevi 2 i 3 zadovoljavaju ovaj uvjet, ali ne mogu se podijeliti sa 6.
+   :feedback_c: Broj 11 zadovoljava ovaj uvjet, ali ne može biti podijeljen sa 6.
+   :feedback_d: Broj se može podijeliti s oba glavna faktora broja 6.
+   
+   U projektu *Choice* pokazano je kako se operacije *mod* koriste za provjeru je li broj djeljiv s 2.
+   Koji od sljedećih uvjeta omogućuje da se provjeri da li je unijeti broj djeljiv s 6? (Izaberi sve točne odgovore)
+  
+   .. image:: ../_images/6/q6_09.png
+      :width: 640px   
+      :align: center
+
+|try| Pokušaj!
+-----------------
+
+  
+Vježba 1
+~~~~~~~~~~
+.. level:: 1
+
+.. infonote::
+
+  Kada se očekuje da korisnik unese neke podatke, treba postaviti pitanje koje predlaže oblik odgovora, na primjer: "Unesite datum rođenja (dd.mm.gggg)".
+  Formulirajte kako trebaju biti ulazna pitanja:
+
+  а) Broj između 1 i 10
+
+  b) Broj između -1,0 i 2,25
+  
+  c) Imena i prezimena
+
+  d) težina
+
+  e) visina 
+  
+Vježba 2
+~~~~~~~~~~
+.. level:: 2
+
+.. infonote::
+
+ Idealan kalkulator težine zahtijeva da korisnik unese njihovu težinu (u kg) i visinu (u cm).
+ Napišite dijelove programa koji provjeravaju je li korisnik unijeo ispravne podatke o težini, npr. od intervala [40, 160] i visine, npr. [140,210].
+  
+Vježba 3
+~~~~~~~~~~
+.. level:: 2
+
+.. infonote::
+
+ Zapišite koji bi argumenti operacije trebali biti |pick_random| za generiranje brojeva iz skupa:
+
+ а) {0, 1}
+
+ b) {0, 1, 2, 3, ... , 10}
+
+ c) {–2, 0, 2, 4, 6, 8}
+
+ d) {0, 10, 20, 30, ... , 100}
+
+ e) {0, 0.1, 0.15, 0.26, 0.38, ... , 1.0}
+
+ Provjerite svoje odgovore testiranjem za svaki primjer u ponovljenom ciklusu 5 puta koliko se vraća odgovarajuća operacija.
+ 
+ .. reveal:: упутство11
+   :showtitle: Show the instruction
+   :hidetitle: Hide the instruction
+ 
+   **Upute:**
+
+   Na primjer a) dat je cijeli blok naredbi, za ostale kaže samo onaj dio s generiranjem brojeva koji trebate staviti u blok ``say``.
+   
+   Na primjeru e) možete vidjeti da je dovoljno odrediti jednu granicu s decimalnom točkom za generiranje decimalnih brojeva.  
+
+   .. image:: ../_images/6/ex6_3.png
+      :width: 400px   
+      :align: center 
+
+Vježba 4
+~~~~~~~~~~
+.. level:: 3
+
+.. infonote::
+
+ Napišite naredbu za uvjetni skok s složenim uvjetima ekvivalentnim sljedećim sastavima naredbe za uvjetni skok:
+
+ .. image:: ../_images/6/ex6_4.png
+     :width: 530px   
+     :align: center
+  
+ Provjerite svoje odgovore testiranjem svojih odgovora u okruženju Scratch.
+ 
+Vježba 5
+~~~~~~~~~~
+.. level:: 2
+
+.. infonote::
+
+ Napravite mini projekt pod nazivom *Greater* u kojem lik traži od korisnika da upiše broj između 1 i 100. 
+ Zatim zamisli (koristeći operaciju slučajnim brojem) broj od 1 do 100 i kaže korisniku čiji je broj veći.
+ Dijalog treba započeti klikom na znak.
+ 
+ .. reveal:: упутство12
+   :showtitle: Show the instruction
+   :hidetitle: Hide the instruction
+ 
+   **Instruction:**
+
+   .. image:: ../_images/6/ex6_5.png
+      :width: 390px   
+      :align: center   
+
+
+|bug| Ispravi greške!
+-----------------------
+
+Bug 1
+~~~~~
+.. level:: 1
+
+:Question:
+   Pitanje: Učenik je želio stvoriti skriptu koja je omogućila kretanje lika pomoću strelica. Napisao je program prikazan na slici s lijeve strane.
+   Tada je primijetio da se naredba |move_steps| ponavlja 4 puta pa je preradio skriptu u program prikazan na slici desno. Međutim, njegovo izvršenje nije postiglo željeno ponašanje lika. Što je pogreška?
+ 
+.. image:: ../_images/6/bug6_1.png
+   :width: 500px   
+   :align: center
+
+.. reveal:: сакривање13
+   :showtitle: Show the answer
+   :hidetitle: Hide the answer
+ 
+   **Odgovor:**
+   U prepravljenom program naredba |move_steps| će se stalno izvršavati i lik će ići u smjeru u koji je posljednji put bio izabran, bez obzira jeli pritisnuta ili ne tipka s tim smjerom.
+   
+Greška 2
+~~~~~~~~~
+
+.. level:: 2
+
+:Question:
+   Pitanje: Učenik je želio izmijeniti ponašanje kandidata za čarobnjaka za pomoć u projektu Choice. Kada čarobnjak odabere djevojčicu za pomoćnicu, dječak bi trebao pomisliti: "Zašto si je izabrao?". Tako se pridružio dječaku sljedećim scenarijem. Ali dječak je to zamislio na samom početku, prije nego što je čarobnjak odlučio. Kako uravnotežiti postupke čarobnjaka i dječaka?
+      
+.. image:: ../_images/6/bug6_2.png
+   :width: 220px   
+   :align: center
+
+.. reveal:: сакривање16
+   :showtitle: Show the answer
+   :hidetitle: Hide the answer
+ 
+   **Odgovor:**
+     
+   Jedan je od načina da se čarobnjaku objavi poruka da je napravio izbor i da dječak odgovara tek kad primi tu poruku. Naravno, ako želimo da dječak ne reagira ako ga je čarobnjak izabrao, tada ovu komunikaciju poruka treba proširiti provjerom tko je odabran. 
+   
+   .. image:: ../_images/6/ans6_2.png
+       :width: 595px   
+       :align: center  
+
+Greška 3
+~~~~~~~~~
+
+.. level:: 2
+
+:Question:
+   Učenik je želio da njegov lik bude usmjeren strelicama lijevom i desnom, zajedno s pokretom da izgovori riječ „lijevo“ dok je na lijevoj polovini pozornice, a riječ „desno“ kada na desnoj polovici. Pridružio se liku sljedećeg scenarija, ali lik uopće nije promijenio riječ koju bi izgovorio na početku, bez obzira na to što je prelazio drugu stranu pozornice. Što treba promijeniti u skriptu?
+      
+.. image:: ../_images/6/bug6_3.png
+   :width: 510px   
+   :align: center
+
+.. reveal:: сакривање17
+   :showtitle: Show the answer
+   :hidetitle: Hide the answer
+ 
+   **Odgovor:**
+     
+   Provjera strane pozornice vrši se tek nakon što je projekt pokrenut. Potrebno je umetnuti test u beskonačni ciklus. 
+   
+   .. image:: ../_images/6/ans6_3.png
+       :width: 240px   
+       :align: center       
+   
+
+|book| Što smo naučili
+------------------------
+
+U ovoj lekciji smo se obratili naredbama grananja koje vam omogućuju stvaranje skripti grananja. Predstavili smo blokove iz grupe *Sensing* i pokazali kako se naredba za unos podataka s tipkovnice izvršava na Scratch. Također smo naučili kako se ponašanje karaktera može sinkronizirati putem poruka. Pokazali smo kako koristiti alate u vektorskom načinu ugrađenog uređivača slika.
+
+**Novi pojmovi**:  algoritmi, vrste algoritamskih koraka, atruktura algoritama, uvjetno izvršavanje, složeni uvjeti, očitanja kao način prenošenja informacija, vektorski alati uređivača slike.
+
+**Nove naredbe**: |control_blocks| - |if_then|, |if_then_else|, |wait_until|; |looks_blocks| - |switch_backdrop|, |backdrop|; |sensing_blocks| - |touching|; |operator_blocks| - |equal|
+
+
+|project| Napravi neki od sljedećih projekta
+---------------------------------------------
+
+Projekt 1 – “Padaju jabuke”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 1
+
+Napravite igru čiji je scenarij sličan scenariju projekta *Dangerous Snowflakes*. Glavni lik ovog projekta je biti dječak kojeg korisnik može voditi s lijeva na desno s tipkama tipkovnice. Treba izbjegavati jabuke koje se pojavljuju slučajnim položajem u gornjem dijelu pozornice i klizne na slučajni položaj u donjem dijelu pozornice. Ako dodirnu dječaka, igra je gotova, a ako ne, sakriju se i ponovno pojavljuju na vrhu pozornice i kliznu prema dolje. Brzinu klizanja također treba odrediti nasumično, kao što je između 1 i 3 sekunde. Da biste igru učinili uzbudljivijom, jer stvarate pravu skriptu za jednu jabuku, pomnožite ovaj lik tako da, na primjer, tri jabuke ponove odgovarajuće ponašanje.
+
+
+Projekt 2 – “Gladni morski pas”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 2
+
+Napravite projekt u kojem će glavni lik - morski pas loviti ribe. Morski pas bi trebao neprestano kretati ulijevo i udesno, a kada se klikne na tipku razmaknicu trebao bi se pomicati prema gore. Ako morski pas dodirne ribu, riba nestaje, ali se ponovo pojavljuje nakon 3-5 sekundi na nasumičnom mjestu. Različito trajanje pauze između dva pojavljivanja riba i različitog mjesta na kojem će se one dogoditi daju *slučajni broj* pomoću operacije. Morski pas (Shark2) ima tri kostima, tako da promjena kostima može pokazati reakciju kad dodirne ribu. Ribe, rakovi i meduze pridružuju se različitim pokretima, na primjer, pustite meduze da se penju gore i dolje, rakovi se okreću ulijevo i udesno, a ribe plivaju različitom brzinom. Preuzmite sve likove: morski pas, različite ribe, rakove, meduze i pozadinu iz biblioteka likova i pozadina. Možete dobiti različitu ribu koristeći različite *Riblje* kostime.
+
+Projekt 3 – “Pas i Mačka”
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. level:: 3
+
+Napravite projekt u kojem ćete koristiti dva lika - psa i mačku, te dvije pozadine. Mačka u početku polako hoda lijevo i desno između rubova pozornice, a njegove bi se misli trebale pojaviti u bloku ``ideja``. Nakon deset sekundi izlazi pas koji laje i plaši mačku. Mačka pobjegne, a kad s prvom pozadinom dođe do ruba pozornice, trebala bi se pojaviti druga pozadina. Kad mačka pređe čitavu pozornicu s ovom pozadinom, ona bi trebala nestati - uspio se sakriti. Tek tada se pas pojavljuje, zaustavlja, a u oblaku ideja pojavljuje se upitnik.
+
+Za realizaciju ovog projekta potrebno je:
+
+- pisati skripte koje opisuju ponašanje mačaka,
+
+- iz pozadinske knjižnice uvezete psećeg lika kojem ćete priložiti zvučnu datoteku i skripte za lajanje koje opisuju njegovo ponašanje,
+
+- uvezete dvije pozadine, *Playng Field* i *Garden-rock*: prvo gdje mačka upozna psa, a drugo mačka pobjegne kad čuje lajanje psa
+
+- sinkronizirate pseći lavež i reakciju mačke na njega - bježanje,
+
+- sinkronizirate "ponašanje" dviju pozadina, tj. trenutka njihove zamjene.
+
+ 

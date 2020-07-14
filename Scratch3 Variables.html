@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Varijable &#8212; Block-based programming in Scratch - practice lessons</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/activecode.css" />
+    <link rel="stylesheet" type="text/css" href="_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="_static/clickable.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pytutor.css" />
+    <link rel="stylesheet" type="text/css" href="_static/modal-basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/datafile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/dragndrop.css" />
+    <link rel="stylesheet" type="text/css" href="_static/fitb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/matrixeq.css" />
+    <link rel="stylesheet" type="text/css" href="_static/parsons.css" />
+    <link rel="stylesheet" type="text/css" href="_static/lib/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="_static/poll.css" />
+    <link rel="stylesheet" type="text/css" href="_static/showEval.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabbedstuff.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="_static/karel.css" />
+    <link rel="stylesheet" type="text/css" href="_static/notes.css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-4.0.0-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flatly.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/petlja.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/CLDRPluralRuleParser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.messagestore.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.fallbacks.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.language.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.parser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script type="text/javascript" src="_static/activecode-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/mchoice-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/dragndrop-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/fitb-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/matrixeq.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/parsons-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/showEval.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="_static/runestonevideo.js"></script>
+    <script type="text/javascript" src="_static/karelCorner.js"></script>
+    <script type="text/javascript" src="_static/karelRobot.js"></script>
+    <script type="text/javascript" src="_static/karelWorld.js"></script>
+    <script type="text/javascript" src="_static/karelRobotDrawer.js"></script>
+    <script type="text/javascript" src="_static/karelUI.js"></script>
+    <script type="text/javascript" src="_static/karel.js"></script>
+    <script type="text/javascript" src="_static/karel-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/notes.js"></script>
+    <script type="text/javascript" src="_static/pygamelib-init.js"></script>
+    <script type="text/javascript" src="_static/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/python_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/msg-sr.js"></script>
+    <script type="text/javascript" src="_static/blockpy/utilities.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_errors.js"></script>
+    <script type="text/javascript" src="_static/blockpy/ast_node_visitor.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter.js"></script>
+    <script type="text/javascript" src="_static/blockpy/pytifa.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter_definitions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_to_blockly.js"></script>
+    <script type="text/javascript" src="_static/blockpy/imported.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/class.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comment.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comprehensions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/dict.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/if.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/io.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/lists.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/sets.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/loops.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/parking.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/tuple.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/turtles.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/text.js"></script>
+    <script type="text/javascript" src="_static/blockpy-modal.js"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Kako programirati brže – Procedure" href="Scratch3 Procedures.html" />
+    <link rel="prev" title="Da ili ne - naredba grananja" href="Scratch3 Branching.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'Scratch_eng';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = false;
+  eBookConfig.basecourse = 'Scratch_eng';
+  eBookConfig.runestone_version = '3.1.1';
+  eBookConfig.imagesDir = '_images/';
+  eBookConfig.staticDir = '_static/';
+  if(typeof(Sk) != "undefined")
+      Sk.imgPath = eBookConfig.imagesDir;
+</script>
+
+<div id="fb-root"></div>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+
+<nav id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     <img src="_static/img/logo.png" style="width:80px; height: 80px;"> 
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-top: 10px; margin-left: 25px;">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="./">Block-based programming in Scratch - practice lessons</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container col-md-12" id="continue-reading"></div>
+
+<div class="container col-md-8 col-md-offset-2" id="main-content">
+  
+  <div class="section" id="varijable">
+<h1>Varijable<a class="headerlink" href="#varijable" title="Permalink to this headline">¶</a></h1>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p><img alt="intro7" src="_images/intro7.png" /></p>
+
+    </p></div></div>
+<p>Varijable su jedan od najvažnijih koncepata u programiranju. U ovoj lekciji predstavit ćemo različite vrste varijabli i pokazati kako se promjene njihovih vrijednosti mogu pratiti na pozornici. Kroz primjere projekata čije skripte imaju složenu strukturu, pokazat ćemo kako se mogu stvoriti konkurentne igre u kojima se igrači prate i kako se formiraju složeni izrazi za izračunavanje vrijednosti varijabli.</p>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p><strong>Što je varijabla?</strong></p>
+<p>Varijabla je područje računalne memorije. Možemo reći da je varijabla poput imenovanog okvira u kojem program privremeno pohranjuje podatke s kojima radi.</p>
+<a class="reference internal image-reference" href="_images/fig7_1.png"><img alt="_images/fig7_1.png" class="align-center" src="_images/fig7_1.png" style="width: 250px;" /></a>
+<p>Slika varijable je nazvana <em>X</em>, a njena trenutna vrijednost je 15.</p>
+<p>Varijable mogu pohraniti jednu vrijednost, kao što su broj ili slovo. Ovo su <strong>jednostavne varijable</strong>.
+Međutim, postoje i <strong>složene varijable</strong> koje pohranjuju više vrijednosti, na primjer niz, niz brojeva, niz riječi … U Scratchu se ovaj niz naziva <em>popisom</em>.</p>
+
+    </p></div></div>
+<p>U prethodnim smo projektima koristili neimenovane vrijednosti. “Pozdrav Svijet” tekst i svi ostali koje stavimo u <em>say</em> i <em>think</em> blokovi su nizovi podataka.</p>
+<p>Brojevi koje unosimo kao argumente u naredbama pokreta (idite, izravni, promijenite za) su također vrijednosti koje se mogu smjestiti u varijable.</p>
+<p>Uvjet ponavljanja i uvjet grananja mogu imati dvije vrijednosti - istinsku i lažnu, tako da je ovo vrijednost, <strong>logička</strong> vrijednost.</p>
+<p>Za složenije programe koje pišemo trebat ćemo imenovati neke vrijednosti, odnosno uvesti <strong>varijable</strong>.</p>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p><strong>Kako se stvaraju varijable?</strong></p>
+<p>U naredbenoj grupi <em>Variables</em> postoji samo moja varijabla na početku (Sl. A). Nova varijabla se stvara klikom na gumb <em>Make a Variable</em>.</p>
+<a class="reference internal image-reference" href="_images/fig7_2.png"><img alt="_images/fig7_2.png" class="align-center" src="_images/fig7_2.png" style="width: 680px;" /></a>
+<p>Klikom na ovaj gumb otvara se dijaloški okvir za stvaranje nove varijable (B).</p>
+<p>Varijabla može biti <strong>globalna</strong> ili <strong>lokalna</strong>, samo za skripte povezane s aktivnim objektom (likom ili fazom).</p>
+<p>Globalne varijable mogu koristiti svi objekti projekta. Upisom imena varijable i klikom na gumb <strong>U redu</strong> u paleti blokova pojavljuje se reporter s imenom varijable pored potvrdnog okvira (C).</p>
+<p>Blokovi koji predstavljaju varijable nazivaju se <em>izvještači</em> jer informiraju o trenutnoj vrijednosti varijable.
+Izvještači dolaze u dva oblika i mogu se postaviti samo u otvore istog oblika na zapovjednim blokovima.</p>
+<p>Izvještači elipse sadrže brojeve ili nizove i mogu se postaviti u blokove koji imaju zaobljene bijele krugove.</p>
+<p>Šesterokutni izvještači sadrže logičke podatke (istinite ili lažne) i mogu se postaviti u blokove s odgovarajućim otvorom.</p>
+<p>Neki blokovi reportera također imaju potvrdni okvir. Ako kliknete potvrdni okvir, na pozornici se prikazuje monitor koji prikazuje trenutnu vrijednost varijable.
+Monitor može prikazati promjenjive vrijednosti u više različitih formata prikazanih na sljedećoj slici.</p>
+<a class="reference internal image-reference" href="_images/fig7_3.png"><img alt="_images/fig7_3.png" class="align-center" src="_images/fig7_3.png" style="width: 240px;" /></a>
+<ol class="upperalpha simple">
+<li><p>mali prikaz vrijednosti s nazivom varijable,</p></li>
+<li><p>veliki prikaz vrijednosti bez pravog imena,</p></li>
+<li><p>s klizačem koji omogućuje promjenu vrijednosti varijable.</p></li>
+</ol>
+<p>Prijelaz iz jednog formata u drugi postiže se dvostrukim klikom na monitor. Format klizača može se koristiti samo za varijable koje kreiraju korisnici. Desnim klikom na klizaču prilagođavaju se minimalne i maksimalne vrijednosti.</p>
+
+    </p></div></div>
+<div class="section" id="study-prouci-sljedece-primjere-projekta">
+<h2><img alt="study" src="_images/study.png" /> Prouči sljedeće primjere projekta<a class="headerlink" href="#study-prouci-sljedece-primjere-projekta" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="primjer-1-projekt-hunt">
+<h3>Primjer 1 – Projekt “Hunt”<a class="headerlink" href="#primjer-1-projekt-hunt" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+<p>Ovaj projekt je igra za dva igrača. Svaki od njih tipkama s tastature vodi svog mačka u lovu na miša koji se pojavljuje na slučajnom mjestu na pozornici.
+Igrač čija mačka prvi dodirne miša dobije bod. Kad jedna od mačaka dodirne miša ona nestaje i pojavljuje se drugdje.
+Prvi igrač vodi žutu mačku sa strelicama, a drugi igrač vodi sivu mačku s tipkama W, A, S, D.</p>
+<p>Uvodimo kompleksne uvjete i logičke operacije.</p>
+<p><strong>Stvaranje pozadina i znakova</strong></p>
+<p>U ovom projektu imamo tri znaka - <em>Cat1</em>, <em>Cat2</em> i <em>Mouse</em> i po jednu pozadinu. Napravili smo pozadinu malu izmjenu pozadine <em>polja sijena</em> iz knjižnice Scratch.</p>
+<a class="reference internal image-reference" href="_images/fig7_4.png"><img alt="_images/fig7_4.png" class="align-center" src="_images/fig7_4.png" style="width: 480px;" /></a>
+<p>Lik <em>Cat1</em> stvoren je iz lika <em>Cat 2</em> iz biblioteke likova dodavanjem drugog kostima, a <em>Cat2</em> lik je stvoren umnožavanjem <em>Cat1</em> lika, što smo zatim promijenili u boji.
+Treći lik preuzet je s interneta i ima samo jedan kostim jer nema potrebe animirati njegov pokret u projektu.</p>
+<a class="reference internal image-reference" href="_images/fig7_5.png"><img alt="_images/fig7_5.png" class="align-center" src="_images/fig7_5.png" style="width: 230px;" /></a>
+<p><strong>Ponašanje lika Cat1</strong></p>
+<p>Prvo smo napisali skripte povezane s likom <em>Cat1</em> i testirali ih, a zatim taj lik pomnožili i minimalno izmijenili pridružene skripte.</p>
+<a class="reference internal image-reference" href="_images/fig7_6.png"><img alt="_images/fig7_6.png" class="align-center" src="_images/fig7_6.png" style="width: 500px;" /></a>
+<p>Na samom početku lik pokazuje mišem i dovoljno je da ga igrač vodi trkom ↑ da osvoji prvi bod. U daljnjem toku igre potrebno je da igrač usmjeri mačku prema mišu pomoću tipki ← i → koje lik rotiraju za 15 stupnjeva lijevo i desno. Također može koristiti utrku ↓ za vraćanje lika.
+Za <em>Cat2</em> lik, skripte za trčanje su iste, samo su tipke izmijenjene. W vodi znak naprijed, S natrag, a A i D okreću znak lijevo i desno za 15 stupnjeva. I skripta za početak je gotovo ista, jedina je razlika što drugi znak ide u donji lijevi kut, odnosno šalje se u točku s koordinatama (-190, -130).</p>
+<p><strong>Ponašanje karaktera miša</strong></p>
+<p>Sljedeća slika prikazuje skriptu priključenu mišu. Na samom početku miš se postavlja na nasumično odabrano mjesto.
+Tada ulazi u beskrajno ponavljanje sljedećih radnji.</p>
+<ol class="arabic simple">
+<li><p>Čeka da jedna od mačaka dodirne miša</p></li>
+</ol>
+<p>2. Miš se sakriva i pojavljuje se na drugom nasumično odabranom mjestu
+(within the loop, the mouse can appear both near the top and the bottom edge of the stage because now the interval for the value of the coordinate <em>у</em> is [-150, 150])</p>
+<a class="reference internal image-reference" href="_images/fig7_7.png"><img alt="_images/fig7_7.png" class="align-center" src="_images/fig7_7.png" style="width: 500px;" /></a>
+<p><strong>Formiranje složenog uvjeta</strong></p>
+<p>Uvjet u naredbi <img alt="wait_until" src="_images/wait_until.png" /> je složen od dva uvjeta: Cat1 dodiruje miša ili Cat2 dodiruje miša.</p>
+<p>Složeni uvjet se formira na sljedeći način.</p>
+<ol class="arabic simple">
+<li><p>iz grupe operacija biramo odgovarajuću operaciju – u našem slučaju logičku operaciju <em>or</em> <img alt="or" src="_images/or.png" />.</p></li>
+<li><p>u prazne šesterokute postavljamo odgovarajuće uvjete</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/fig7_8.png"><img alt="_images/fig7_8.png" class="align-center" src="_images/fig7_8.png" style="width: 340px;" /></a>
+<ol class="arabic simple" start="3">
+<li><p>na kraju ovaj složeni uvjet postavljamo u blok “wait until”.</p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/fig7_9.png"><img alt="_images/fig7_9.png" class="align-center" src="_images/fig7_9.png" style="width: 440px;" /></a>
+<p><strong>Nadogradnja projekta</strong></p>
+<p>Projekt ćemo nadograditi uvođenjem 2 varijable: player1 i player2 koji će pohraniti bodove igrača. Svaki dodir miša računat će prema igraču koji upravlja mačkom koji ga je dodirnuo kao točku. To će biti zabilježeno u skriptu miša.
+Bodovi oba igrača moći će se pratiti na zaslonu.
+Također ćemo uvesti tajmer koji prekida igru nakon što protekne određeno vrijeme. Pobjednik je igrač koji nakon isteka vremena ima više bodova.</p>
+<p>Dakle, da biste pratili bodove igrača, treba provjeriti i varijable <em>player1</em> i <em>player2</em> i prikazati njihove monitore u prvom formatu.</p>
+<a class="reference internal image-reference" href="_images/fig7_10.png"><img alt="_images/fig7_10.png" class="align-center" src="_images/fig7_10.png" style="width: 700px;" /></a>
+<p>Na početku skripte miša njihove početne vrijednosti trebaju biti postavljene na 0. Svaki put kada mačka dodirne, bodovi se trebaju povećavati.
+Dakle, sada skripta miša ima sljedeći izgled.</p>
+<a class="reference internal image-reference" href="_images/fig7_11.png"><img alt="_images/fig7_11.png" class="align-center" src="_images/fig7_11.png" style="width: 540px;" /></a>
+<p>Još uvijek imamo vremensko ograničenje za igru.
+To ćemo učiniti postavljanjem vrijednosti varijable u skriptu koja se pokreće klikom na zelenu zastavu na željeno trajanje igre, na primjer 120 sekundi. Tada ćemo naredbu izvršiti 120 puta u ponavljajućoj naredbi <img alt="wait_sec" src="_images/wait_sec.png" /> i smanjivati vrijednost varijable za 1.
+Po izlazku iz ciklusa postavit ćemo naredbu <img alt="stop" src="_images/stop.png" />, i ovu ćemo skriptu pridružiti mišu.</p>
+<a class="reference internal image-reference" href="_images/fig7_12.png"><img alt="_images/fig7_12.png" class="align-center" src="_images/fig7_12.png" style="width: 190px;" /></a>
+</div>
+<hr class="docutils" />
+<div class="section" id="primjer-2-igra-maze">
+<h3>Primjer 2 – Igra “Maze”<a class="headerlink" href="#primjer-2-igra-maze" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+<p>U projektu <em>Maze</em> je zadatak voditi lik <em>miša</em> kroz komplicirani labirint. Izlaz iz labirinta nalazi se na vrhu pozornice, tako da je uvjet da igra bude uspješno dovršena da y koordinata znaka bude veća od 180. Lik se usmjerava strelicama. Ako udari u bilo koji od zidova labirinta koji je crn, vraća se u početni položaj.</p>
+<p>U našem remixu kretanje miša bit će preciznije kontrolirano. Jednim klikom utrke sa strelicom potrebno je samo 3 koraka (ne 10 kao u izvornom projektu).
+Udaranje u zid labirinta neće biti kažnjeno vraćanjem na početak, već samo odbijanjem sa zida poput projekta <em>lansiranja labirinta</em> (ide -2 koraka). Budući da miš vrlo često prilikom okretanja repa udara u zidove, odrezali smo mu rep (u uređivaču slika rep se najprije odabire alatom Reshape, a zatim briše klikom na tipku Del).</p>
+<p>Izmijenjene skripte za miš prikazane su na sljedećoj slici.</p>
+<a class="reference internal image-reference" href="_images/fig7_13.png"><img alt="_images/fig7_13.png" class="align-center" src="_images/fig7_13.png" style="width: 575px;" /></a>
+<p>Međutim, igra nije lakša, jer miš mora izbjegavati neprijatelje: 2 otrovne kugle (Ball1 i Ball2) i duh labirinta (Ghost).</p>
+<a class="reference internal image-reference" href="_images/fig7_14.png"><img alt="_images/fig7_14.png" class="align-center" src="_images/fig7_14.png" style="width: 480px;" /></a>
+<p>Kuglice poput miša odbijaju se od zidova labirinta, dok duh može prolaziti kroz zidove.</p>
+<p>Miš u početku ima 100 jedinica energije, koja se svakim potezom labirinta smanjuje za 5, a neprijateljev dodir još je opasniji.
+Sudar s loptom oduzima 10 jedinica energije, a sudar s duhom 50.</p>
+<p>Igra se uspješno završava ako miš dosegne izlaz iz labirinta, a neuspješno ako mu u labirintu ponesta energije.</p>
+<p><strong>Ponašanje lopte</strong></p>
+<p>Lopta je skrivena na početku igre. Pojavljuje se nakon 1 do 5 sekundi od početka igre, <em>Ball1</em> na (-120,0) i <em>Ball2</em> na (165,55).</p>
+<div class="line-block">
+<div class="line">Dok ne dodirne miš, stalno ponavlja sljedeće pokrete:</div>
+<div class="line">upravljajte nasumično i idite 3 koraka dok ne dotakne zid labirinta;</div>
+<div class="line">kad dodirne zid, ona ide -3 koraka i mijenja kostim;</div>
+<div class="line">Kada dodirne miša, on smanjuje energiju za 10, sakriva se, čeka 3 sekunde,     a zatim ponovo.</div>
+</div>
+<a class="reference internal image-reference" href="_images/fig7_15.png"><img alt="_images/fig7_15.png" class="align-center" src="_images/fig7_15.png" style="width: 400px;" /></a>
+<p><strong>Ponašanje duha</strong></p>
+<p>Duh je također skriven na početku igre. Pojavljuje se nakon 5 do 10 sekundi. Dok ne dotakne miša, klizi 5 sekundi do nasumično odabranog položaja u gornjoj polovici labirinta.
+Ako dodirne miša, oduzima 50 točaka energije, sakriva se, a nakon čekanja pojavljuje se 5 do 10 sekundi i ponavlja prethodno opisano kretanje.</p>
+<a class="reference internal image-reference" href="_images/fig7_16.png"><img alt="_images/fig7_16.png" class="align-center" src="_images/fig7_16.png" style="width: 625px;" /></a>
+</div>
+<hr class="docutils" />
+<div class="section" id="primjer-3-igra-guess-number">
+<h3>Primjer 3 – Igra “Guess Number”<a class="headerlink" href="#primjer-3-igra-guess-number" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+<p>Kralj u osmom kraljevstvu imao je 8 kćeri. Kad je došlo vrijeme da se njegova djevojčica, najmlađa princeza, udala, pitao je kakvog će mladić poželjeti za svog supruga.</p>
+<p>Princeza je odlučila da će za svog budućeg muža odabrati pametnog mladića, koji uspijeva riješiti sve zagonetke s kojima se susreće.</p>
+<p>Prvo od njih bilo je pogađanje sa što je moguće manje pitanja koji je broj od 1 do 100 ona zamislila.</p>
+<p>Kandidat bi odgovorio na pitanje: <em>Moj broj je manji</em>, <em>Moj broj je veći</em> ili <em>Čestitke</em>.</p>
+<a class="reference internal image-reference" href="_images/fig7_17.png"><img alt="_images/fig7_17.png" class="align-center" src="_images/fig7_17.png" style="width: 610px;" /></a>
+<a class="reference internal image-reference" href="_images/fig7_18.png"><img alt="_images/fig7_18.png" class="align-center" src="_images/fig7_18.png" style="width: 370px;" /></a>
+<p><strong>Nadogradnja projekta Guess Number 2</strong></p>
+<p>Princeza je od učitelja matematike rekla da na pametna pitanja mora odgovarati u najviše 7 pokušaja, pa je princeza odlučila ući u uži izbor samo one kandidate koji od najviše 7 pokušaja pogode koji je broj zamislia.</p>
+<p>Da bismo stvorili projekt u kojem se princeza osim provjere da li je utjecao na njen broj i koliko je pokušaja, napravit ćemo još jednu varijablu. Povećat ćemo njegovu vrijednost za 1 svaki put kad preuzmete odgovor korisnika.</p>
+<p>Nakon napuštanja ciklusa pretraživanja, imat ćemo evidenciju koliko pitanja je korisnik uspio pogoditi imaginarni broj.
+Princeza, budući da kaže koliko je pokušaja pogođeno, također će reći da izgledate kao pametni igrač ako je broj pokušaja manji od 8, ili možete bolje ako je broj pokušaja 8 ili veći.</p>
+<a class="reference internal image-reference" href="_images/fig7_19.png"><img alt="_images/fig7_19.png" class="align-center" src="_images/fig7_19.png" style="width: 660px;" /></a>
+<p>Slijedi primjer projekta koji se može koristiti kao obrazovni program za predškolce i učenike nižih razreda osnovne škole koji uče računati s računalnim igrama. Prikladan je jer malo stariji učenici kroz njegov dizajn i nadogradnje mogu dobiti ideje kako riješiti složenije matematičke probleme.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="primjer-4-projekt-math-boy">
+<h3>Primjer 4 – Projekt “Math Boy”<a class="headerlink" href="#primjer-4-projekt-math-boy" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="3" style="display:none">
+
+    </div>
+<p>U čarobnoj zemlji žive mali čarobnjak - <em>Math Boy</em>, <em>Number1</em>, <em>Number2</em> i <em>Sign</em> - znak aritmetičke operacije. Svaki <em>broj</em> ima 3 kostima u obliku brojeva raspoređenih u strogom redoslijedu: 1, 2, 3. <em>Lik</em> ima 2 kostima u obliku znakova aritmetičkih operacija: “*” i “+”.</p>
+<a class="reference internal image-reference" href="_images/fig7_20.png"><img alt="_images/fig7_20.png" class="align-center" src="_images/fig7_20.png" style="width: 490px;" /></a>
+<p><em>Brojevi</em> i lik vole igrati igru <em>Primjeri</em>: Svaki put kada kliknu na gumb <em>Novi zadatak</em>, nasumično, kao kad netko baci novčić, odaberu kostim.
+No, kako se <em>brojevi</em> i <em>lik</em> mijenjaju u primjerima, <em>Math Boy</em> ih prikuplja ili množi bez pogreške.</p>
+<p>Lako možemo omogućiti <em>Math Boyu</em> dijeljenje i oduzimanje. Naime, svaki kostim ima ne samo ime i sliku, već i serijski broj.
+Redni broj kostima je običan broj s kojim se mogu izvoditi matematičke operacije. <em>Math Boy</em> treba upotrijebiti broj narudžbe odabranog kostima u primjeru za svaki <em>broj</em> i <em>lik</em>.
+Budući da smo već vidjeli da reporter sve znaju, <em>Math Boy</em> koristi potrebne izvještače iz <em>Sensing</em> grupe, blok <code class="docutils literal notranslate"><span class="pre">ako</span> <span class="pre">...</span> <span class="pre">onda</span></code> iz <em>Control</em> grupe, operatora logičke jednakosti te matematičke operatore množenja i zbrajanja iz grupe <em>Operators</em>.</p>
+<p>U prvoj verziji projekta korisnik klikne na gumb <em>Novi zadatak</em> i mali čarobnjak to riješi.</p>
+<p><strong>Stvaranje likova</strong></p>
+<p>Za lik matematičara odabrali smo čarobnjaka <em>Wizard Boy</em>, a za <em>Number1</em> lik <em>1-Glow</em> iz biblioteke likova.
+Zatim smo na kartici <em>Kostimi</em> uveli još dva kostima za <em>Broj1</em>, najprije znamenku <em>2-Glow</em>, a zatim znamenku <em>3-Sjaj</em>. Napravili smo <em>Number2</em> duplikat broja1. Oba kostima za lik <em>znaka</em> crtaju se u uređivaču slika (krug množenja i + znak za dopunu). Na <em>gumbu-3</em> stvorili smo gumb <em>Novi zadatak</em> koji bi na prvom kostimu trebao glasiti “Novi zadatak”.</p>
+<div class="sidebar">
+<p class="sidebar-title">The young mathematician is adding numbers</p>
+<p><img alt="matematicar2" src="_images/fig7_21.png" /></p>
+</div>
+<p><strong>Scenarij i skripte za likove</strong></p>
+<p>Na ekranu s lijeve strane stoji dječak matematičara, a desno jedan pored drugog su <em>Broj1</em>, <em>Znak</em> i <em>Broj2</em>. Gumb Novi zadatak nalazi se pri dnu zaslona.
+Program započinje klikom na gumb Novi zadatak koji zatim šalje poruku “zadatak”. Svi ostali likovi odgovaraju na poruku “zadatak”: Math Boy zamišljajući “Hmmm …” i brojeve i karaktere pojavljuju se u nasumično odabranom kostimu. Klik na dječaka prikazuje mjehurić stripa s rezultatom zadate operacije.
+Znakovi <em>Number1</em>, <em>Number2</em> i <em>Sign</em> imaju samo po jednu skriptu - reakcija na događaj <em>kada primim zadatak</em> s jednom naredbom - prebacite kostim da odaberem slučajne brojeve od 1 do 3 (1 do 2 za lik).
+lik gumba Nova zadaća reagira samo kad se na njega klikne. Zatim mijenja kostim (da zna da je kliknut), šalje poruku, čeka pola sekunde i vraća se svom izvornom izgledu.
+Skripte povezane s brojevima, likom i gumbom prikazane su na sljedećoj slici.</p>
+<a class="reference internal image-reference" href="_images/fig7_22.png"><img alt="_images/fig7_22.png" class="align-center" src="_images/fig7_22.png" style="width: 800px;" /></a>
+<p>Skripte koje opisuju ponašanje dječaka matematičara kada primi poruku “zadatka” i kad se na nju klikne prikazane su na sljedećoj slici.</p>
+<a class="reference internal image-reference" href="_images/fig7_23.png"><img alt="_images/fig7_23.png" class="align-center" src="_images/fig7_23.png" style="width: 600px;" /></a>
+<p>Zaustavimo se na drugom scenariju dječaka matematičara. Kad klikne na njega, zamisli rezultat, a evo kako do njega dolazi. Kao što smo rekli, Sign se može pojaviti u dva kostima. Prvi kostim - Kostim s brojem 1 odgovara množenju, pa ako je slučajno generiran broj 1, matematičar bi trebao množiti brojeve.
+Ako za lik ne nastane broj 1, tada matematičar treba zbrojiti brojeve. Slično tome, redni brojevi kostima za Number1 i Number2 odgovaraju brojevima s kojima matematičar treba izvesti navedenu operaciju. U tekstu koji se pojavljuje u opisima stripa koristili smo operaciju spajanja. Operacija <img alt="join" src="_images/join.png" /> jedna je od operacija koja se može izvesti na string podacima.
+Jedan od dva lika čini jedinstven, koji sadrži sve likove prvog, na koji su svi likovi drugog. Na primjer, korištenje blokova lika na lijevo dati će slijedeći rezultat. Ako je odgovor na pitanje “Kako se zoveš?” “Nikola”, lik mačke će odgovoriti “Pozdrav Nikola”.</p>
+<a class="reference internal image-reference" href="_images/fig7_24.png"><img alt="_images/fig7_24.png" class="align-center" src="_images/fig7_24.png" style="width: 580px;" /></a>
+<p><strong>Kako se funkcionalni blokovi ubacuju u funkcionalne blokove?</strong></p>
+<p>U našem scenariju povezujemo matematičara s naredbom <em>pridruživanja</em> <em>misli</em> operacije u polju argumenta. U prvo polje operacije veze upisali smo tekst “Odgovor je”, a u drugo polje operacija * (množenje) i + (dodavanje).
+Tada smo u prvo polje aritmetičke operacije upisali <em>broj</em> kostima broja Number1, a u drugo broj kostima broj <em>Number2</em>. Je li to objašnjenje jasno?</p>
+<p>Ako niste sigurni kako to učiniti, pogledajte detaljnije objašnjenje</p>
+
+    <div data-component="reveal" id="објашњење"   data-showtitle="Show the explanation" data-hidetitle="Hide the explanation">
+    <p>U lekciji <em>Nizanje</em> koraka napravili smo klasifikaciju blokova koji se koriste na Scratchu i naznačili da je tzv. <em>Funkcijski blokovi</em> umetnuti su u tzv <em>Komandne blokove</em>. Kako pravimo složenije projekte, tako koristimo i sve složenije funkcijske blokove koji su formirani iz mnogih drugih funkcionalnih blokova, kao u primjeru koji upravo opisujemo. Dakle, ovom prilikom ćemo vam pokazati korak po korak kako formirati složenu <em>misaonu</em> naredbu. Pri tome idemo unatrag, od  kraja do početka. Trebali bismo dobiti:
+Trebali bismo dobiti:</p>
+<p>We should get <img alt="expr1" src="_images/fig7_21.png" /></p>
+<ol class="arabic simple">
+<li><p>Kako dobijemo <img alt="expr2" src="_images/fig7_26.png" /> i <img alt="expr3" src="_images/fig7_27.png" />?</p></li>
+</ol>
+<p>а) Uzmemo blok <img alt="expr4" src="_images/fig7_28.png" /> iz grupe <em>Sensing</em>.</p>
+<ol class="loweralpha simple" start="2">
+<li><p>1.2.      S popisa likova koji dobivamo klikom na trokut pored drugog polja odaberite <em>Broj1</em> (ili <em>Broj2</em>)</p></li>
+<li><p>1.3.      S popisa varijabli koje su povezane s ovim likom koje dobivamo kad kliknemo na trokut s varijablom <em>pozicijom x</em> odaberite <em>“kostim #”</em></p></li>
+</ol>
+<a class="reference internal image-reference" href="_images/fig7_29.png"><img alt="_images/fig7_29.png" class="align-center" src="_images/fig7_29.png" style="width: 615px;" /></a>
+<ol class="arabic simple" start="2">
+<li><p>Kako dobijemo <img alt="expr6" src="_images/fig7_30.png" /></p></li>
+</ol>
+<p>а) Uzmemo blok <img alt="multiply" src="_images/multiply.png" /> izgrupe blokova <em>Operators</em></p>
+<ol class="loweralpha simple" start="2">
+<li><p>Postavimo prvi argument koji smo dobili po opus 1 u prvo polje <img alt="expr7" src="_images/fig7_31.png" /></p></li>
+</ol>
+<ol class="loweralpha simple" start="3">
+<li><p>Postavimo drugi argument kji smo dobili po opisu u drugo polje</p></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>Kako dobijemo <img alt="expr8" src="_images/fig7_32.png" /></p></li>
+</ol>
+<p>а) Uzmemo blok <img alt="join" src="_images/join.png" /> iz grupe blokova <em>Operators</em></p>
+<p>b)Upišemo tekst “Answer is” u prvo polje <img alt="expr9" src="_images/fig7_33.png" /></p>
+<ol class="loweralpha simple" start="19">
+<li><p>Postavimo argument koji smo formirali po opisu 2 u drugo polje</p></li>
+</ol>
+<ol class="arabic simple" start="4">
+<li><p>Konačno , ovako formiran argument postavimo u poilje bloka  <img alt="think" src="_images/think.png" /></p></li>
+</ol>
+
+    </div>
+    <p><strong>Prva nadogradnja</strong></p>
+<p>Ako u projektu želimo raditi s brojevima od 1 do 9, tada moramo dodati kostime s rednim brojevima 4 do 9 (redoslijedom znamenki od <em>4-Glow</em> do <em>9-Glow</em>) brojevima <em>Switch1</em> do <em>Number 9</em> i njihovim skriptama u kostimu naredbenog prekidača za odabir slučajnih postavite “1 do 9” umjesto “1 do 3”.</p>
+<p><strong>Druga nadogradnja</strong></p>
+<p>Projekt možemo nadograditi tako da Math Boy korisniku odgovori na <em>pitanje</em>, a zatim nam kaže je li odgovor točan ili ne. U ovoj verziji projekta nije potrebno upravljati događajem kada se <em>klikne ovaj lik</em>.
+Treba dodati i objašnjenje kako se program koristi. To možemo regulirati uvođenjem drugog gumba na kojem piše <em>Naputak</em>. Kada se klikne ovaj gumb, šalje se upute s uputama na koje pozadina i dječak reagiraju. Pozadina se mijenja u <em>Backdrop2</em>, koja prikazuje priručnik s uputama programa, a Math Boy smanjuje se na 30% svoje veličine kako ne bi prikrivao upute. Sljedeća slika prikazuje reakcije na različita događanja u projektu “Math Boy3”.</p>
+<a class="reference internal image-reference" href="_images/fig7_34.png"><img alt="_images/fig7_34.png" class="align-center" src="_images/fig7_34.png" style="width: 625px;" /></a>
+<p><strong>Treća nadogradnja</strong></p>
+
+    <div data-level="3" style="display:none">
+
+    </div>
+<p>Ako se dodatkom i množenjem želimo pozabaviti operacijama oduzimanja i dijeljenja, projekt postaje značajno složeniji. Da biste nadogradili, trebate dodati još dva kostima znaku <em>Sign</em> <code class="docutils literal notranslate"><span class="pre">-</span></code> za oduzimanje i <code class="docutils literal notranslate"><span class="pre">:</span></code> za dijeljenje. Skripta koja opisuje ponašanje matematičara kad se klikne na njega također bi trebala biti izmijenjena.</p>
+<a class="reference internal image-reference" href="_images/fig7_35.png"><img alt="_images/fig7_35.png" class="align-center" src="_images/fig7_35.png" style="width: 625px;" /></a>
+<p>Podrazumijeva se da korisnik zna što su negativni brojevi. Prilikom dijeljenja osigurajte da je rezultat cijeli broj i izbjegavajte dijeljenje s nulom.
+Da ne bi došlo do problema s dijeljenjem, ako se tijekom generiranja operacije ustanovi da je riječ o podjeli, izjavit ćemo poruku o <em>podjeli</em>, a u svim ostalim slučajevima raditi ćemo kao što je riješeno u prethodnim verzijama projekta.</p>
+<a class="reference internal image-reference" href="_images/fig7_36.png"><img alt="_images/fig7_36.png" class="align-center" src="_images/fig7_36.png" style="width: 625px;" /></a>
+<p>Kada se klikne gumb <em>Nova zadaća</em>, ona šalje poruku “zadatak” na koju <em>Math Boy</em> i <em>Sign</em> odgovaraju.
+Math Boy misli “Hmmm …”, a Sign generira slučajni broj od 1 do 4 i prikazuje se u odgovarajućem kostimu (1 - množenje, 2 - zbrajanje, 3 - oduzimanje, 4 - podjela).</p>
+<p>Za sve operacije osim dijeljenja, <em>Sign</em> šalje poruku “jednostavno”. U slučaju podjele deklarira poruku „podijeli“ koja aktivira skriptu za izračunavanje kvocijenta dva broja i završava slanjem poruke „dividing“. <em>Broj1</em> i <em>Broj2</em> odgovaraju na poruke poslane od strane <em>znaka</em>.</p>
+<p>Brojke <em>Number1</em> i <em>Number2</em> odgovaraju na poruku „jednostavno“ kao u prethodnim verzijama projekta, odnosno prikazuju se u jednom od nasumično odabranih kostima 1 do 9.
+Međutim, ako se radi o razdijeljenosti, način postavljanja zadatka prilično je različit, to ide od rezultata do brojevi koji ga obrazuju.
+Konkretno, u slučajnoj <em>podjeli</em> generiraju se dva slučajna broja iz intervala [1,9]. Prvi od njih dodjeljuje se <em>kvocijentnoj</em> varijabli, a drugi varijabli <em>divisior</em>. Rezultat njihova množenja je <em>dividend</em> varijabla.</p>
+<p>Vrijednost varijable <em>dividend</em> dodjeljuje se <em>Number1</em>, a vrijednost varijable <em>djelitelju</em> <em>Number2</em>.
+Tako matematičar dijeljenjem djelitelja od djelitelja sigurno dobiva cjelobrojnu vrijednost kvocijenta od intervala [1,9].</p>
+<a class="reference internal image-reference" href="_images/fig7_37.png"><img alt="_images/fig7_37.png" class="align-center" src="_images/fig7_37.png" style="width: 700px;" /></a>
+<p>Pomoću ove metode generiranja zadataka od rezultata do operanda koristit ćemo se u drugim projektima. Na taj način možemo osigurati da je korisnik dobio zadatak koji može riješiti, na primjer, da kada oduzme ne dobije negativan rezultat ili je rezultat množenja do 50, te da faktori mogu biti veći brojevi i slično.</p>
+<p>Kao novi problem u takvom rješenju problema pojavljuje se da će djelitelj vjerojatno biti dvoznamenkasti broj, a može završiti znamenkom 0 koja nije bila uključena u kostime <em>Number1</em> u prethodnim projektima.
+Ovaj problem rješavamo uvođenjem drugog znaka, produkta znaka <em>Number1</em> kojeg smo nazvali (znamenka) <em>Deset</em> znamenki i dodavanjem znaka <em>Number1</em> u nulu kao 10. kostimom. Nepotrebno je da znak <em>desetaka</em> znamenki nije vidljiv, pojavljuje se samo kad <em>znak</em> pošalje podijeljenu poruku, a prethodno izračunati djelitelj je dvoznamenkasti broj (što je utvrđeno pomoću varijable broja znamenke).
+Zatim se lijevo od broja 1 prikazuje <em>desetak</em> znamenki koja prima vrijednost broja jedinice djelitelja.</p>
+<p>Koristimo operaciju za vođenje dijeljenja znamenki <img alt="letter" src="_images/letter.png" />, koji odvaja znak s navedenim rednim brojem od niza.</p>
+<p>Kako Scratch vrši automatsku pretvorbu podataka iz numeričkih u nizu i obrnuto, znamenke višecifrenih brojeva jednostavno su razdvojene ovom operacijom i nije potrebno objašnjavati što je cjelobrojna podjela ili bilo koja operacija da bi se ostatak vratio u cjelobrojnu podjelu.
+Sljedeće slike prikazuju skripte povezane s brojevima <em>Number1</em>, <em>Number2</em>, i <em>Signs</em>.</p>
+<a class="reference internal image-reference" href="_images/fig7_38.png"><img alt="_images/fig7_38.png" class="align-center" src="_images/fig7_38.png" style="width: 550px;" /></a>
+</div>
+</div>
+<div class="section" id="ask-odgovori-na-sljedeca-pitanja">
+<h2><img alt="ask" src="_images/ask.png" /> Odgovori na sljedeća pitanja<a class="headerlink" href="#ask-odgovori-na-sljedeca-pitanja" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pitanje-1">
+<h3>Pitanje 1<a class="headerlink" href="#pitanje-1" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+        <div class="course-box course-box-question course-content">
+        <div data-component="fillintheblank" id="ai11">
+            <a class="reference internal image-reference" href="_images/q7_1.png"><img alt="_images/q7_1.png" class="align-center" src="_images/q7_1.png" style="width: 150px;" /></a>
+<p>Kolika je vrijednost varijable <em>a</em> po izvršenju naredbi: <input type="text"></p>
+
+        <script type="application/json">
+            [[{"number": [4, 4], "feedback": "<p>To\u010dno</p>\n"}, {"regex": "^ *x *$", "regexFlags": "", "feedback": "<p>Naredba koja dodaje vrijednost 5 varijabli izvr\u0161ava se bez obzira na to je li ispunjen uvjet grananja ili ne.</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            </div>
+<div class="section" id="pitanje-2">
+<h3>Pitanje 2<a class="headerlink" href="#pitanje-2" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+        <div class="course-box course-box-question course-content">
+        <div data-component="fillintheblank" id="ai13">
+            <a class="reference internal image-reference" href="_images/q7_2.png"><img alt="_images/q7_2.png" class="align-center" src="_images/q7_2.png" style="width: 180px;" /></a>
+<p>Kolika je vrijednost varijable a po izvršenju naredbi <input type="text"></p>
+
+        <script type="application/json">
+            [[{"number": [0, 0], "feedback": "<p>To\u010dno</p>\n"}, {"regex": "^ *x *$", "regexFlags": "", "feedback": "<p>Naredba koja dodaje vrijednost 5 varijabli izvr\u0161ava se bez obzira na to je li ispunjen uvjet grananja ili ne.</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            </div>
+<div class="section" id="pitanje-3">
+<h3>Pitanje 3<a class="headerlink" href="#pitanje-3" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+        <div class="course-box course-box-question course-content">
+        <div data-component="fillintheblank" id="ai14">
+            <a class="reference internal image-reference" href="_images/q7_3.png"><img alt="_images/q7_3.png" class="align-center" src="_images/q7_3.png" style="width: 190px;" /></a>
+<p>Kolika je vrijenost varijable y po izvršenju naredbi: <input type="text"></p>
+
+        <script type="application/json">
+            [[{"number": [-2, -2], "feedback": "<p>To\u010dno</p>\n"}, {"regex": "^ *x *$", "regexFlags": "", "feedback": "<p>Naredba koja dodaje vrijednost 5 varijabli izvr\u0161ava se bez obzira na to je li ispunjen uvjet grananja ili ne.</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            </div>
+<div class="section" id="pitanje-4">
+<h3>Pitanje 4<a class="headerlink" href="#pitanje-4" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+        <div class="course-box course-box-question course-content">
+        <div data-component="fillintheblank" id="ai15">
+            <a class="reference internal image-reference" href="_images/q7_4.png"><img alt="_images/q7_4.png" class="align-center" src="_images/q7_4.png" style="width: 190px;" /></a>
+<p>Kolika je vrijednost varijable y po izvršenju naredbi: <input type="text"></p>
+
+        <script type="application/json">
+            [[{"number": [180, 180], "feedback": "<p>To\u010dno</p>\n"}, {"regex": "^ *x *$", "regexFlags": "", "feedback": "<p>Naredba koja dodaje vrijednost 5 varijabli izvr\u0161ava se bez obzira na to je li ispunjen uvjet grananja ili ne.</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            </div>
+<div class="section" id="pitanje-5">
+<h3>Pitanje 5<a class="headerlink" href="#pitanje-5" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="ai16">
+            <p>Q-83: Koji od sljedećih nizova naredbi razmjenjuje vrijednost varijabli a i b?</p>
+<a class="reference internal image-reference" href="_images/q7_5.png"><img alt="_images/q7_5.png" class="align-center" src="_images/q7_5.png" style="width: 500px;" /></a>
+
+            <li data-component="answer" data-correct id="ai16_opt_a"></li><li data-component="feedback" id="ai16_opt_a">с je pomoćna varijabla.</li>
+            
+            <li data-component="answer"  id="ai16_opt_b"></li><li data-component="feedback" id="ai16_opt_b">а je pomoćna varijabla, b i C razmjenjuju vrijednosti.</li>
+            
+            <li data-component="answer"  id="ai16_opt_c"></li><li data-component="feedback" id="ai16_opt_c">Ako je b=0, podjela nije definirana.</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-6">
+<h3>Pitanje 6<a class="headerlink" href="#pitanje-6" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="for10a">
+            <p>Q-84: Što izgovara lik po izvršenju niza a) a to po izvršenju niza b) naredbi?</p>
+<a class="reference internal image-reference" href="_images/q7_6.png"><img alt="_images/q7_6.png" class="align-center" src="_images/q7_6.png" style="width: 450px;" /></a>
+
+            <li data-component="answer"  id="for10a_opt_a">6 and 6</li><li data-component="feedback" id="for10a_opt_a">Netočno</li>
+            
+            <li data-component="answer"  id="for10a_opt_b">3 and 3</li><li data-component="feedback" id="for10a_opt_b">Uvjet grananja je ispunjen; prema tome, početna vrijednost varijable se povećava.</li>
+            
+            <li data-component="answer" data-correct id="for10a_opt_c">6 and 3</li><li data-component="feedback" id="for10a_opt_c">Točno</li>
+            
+            <li data-component="answer"  id="for10a_opt_d">3 and 6</li><li data-component="feedback" id="for10a_opt_d">Netočno</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-7">
+<h3>Pitanje 7<a class="headerlink" href="#pitanje-7" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+<a class="reference internal image-reference" href="_images/q7_7.png"><img alt="_images/q7_7.png" class="align-center" src="_images/q7_7.png" style="width: 200px;" /></a>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="if08a">
+            <p>Q-85: Za koje vrijednosti varijable <em>a</em> će varijabla <em>b</em> dobiti vrijednost 1? (Izaberi sve točne odgovore)</p>
+
+            <li data-component="answer"  id="if08a_opt_a">a=5</li><li data-component="feedback" id="if08a_opt_a">To je netočno 5<5, uvjet grananja nije ispunjen.</li>
+            
+            <li data-component="answer" data-correct id="if08a_opt_b">a=0</li><li data-component="feedback" id="if08a_opt_b">Točno 0<5.</li>
+            
+            <li data-component="answer"  id="if08a_opt_c">a=10</li><li data-component="feedback" id="if08a_opt_c">To je netočno 10<5, uvjet grananja nije ispunjen.</li>
+            
+            <li data-component="answer" data-correct id="if08a_opt_d">a=4</li><li data-component="feedback" id="if08a_opt_d">Točno 4<5.</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-8">
+<h3>Pitanje 8<a class="headerlink" href="#pitanje-8" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="true"  id="if09a">
+            <p>Q-86: Za koje vrijednosti varijabli <em>a</em> i <em>b</em> varijabla min dobiti vrijednost varijabli <em>a</em>?</p>
+<a class="reference internal image-reference" href="_images/q7_8.png"><img alt="_images/q7_8.png" class="align-center" src="_images/q7_8.png" style="width: 200px;" /></a>
+
+            <li data-component="answer" data-correct id="if09a_opt_a">a=5 b=10</li><li data-component="feedback" id="if09a_opt_a">Točno 5<10.</li>
+            
+            <li data-component="answer"  id="if09a_opt_b">a=0 b=-1</li><li data-component="feedback" id="if09a_opt_b">Od 0>-1, uvjet grananja nije ispunjen.</li>
+            
+            <li data-component="answer"  id="if09a_opt_c">a=10 b=5</li><li data-component="feedback" id="if09a_opt_c">Od 10>5, uvjet grananja nije ispunjen.</li>
+            
+            <li data-component="answer"  id="if09a_opt_d">a=4 b=4</li><li data-component="feedback" id="if09a_opt_d">Od 4=4, uvjet grananja nije ispunjen.</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-9">
+<h3>Pitanje 9<a class="headerlink" href="#pitanje-9" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+
+        <div class="course-box course-box-question course-content">
+        <div data-component="fillintheblank" id="if11a">
+            <a class="reference internal image-reference" href="_images/q7_9.png"><img alt="_images/q7_9.png" class="align-center" src="_images/q7_9.png" style="width: 200px;" /></a>
+<p>Koja će vrijednost imati varijabla <em>a</em> poslije izvršenja neredbe uvjetnog prelaska ako su prethodno vrijednosti varijabli <em>a</em> i <em>b</em> bile: a=4 i b=2?:   <input type="text"></p>
+
+        <script type="application/json">
+            [[{"regex": "^ *\u0434\u0430 *$", "regexFlags": "", "feedback": "<p>To\u010dno</p>\n"}, {"regex": "^ *x *$", "regexFlags": "", "feedback": "<p>Naredba koja dodaje vrijednost 5 varijabli izvr\u0161ava se bez obzira na to je li ispunjen uvjet grananja ili ne.</p>\n"}]]
+        </script>
+
+        </div>
+        </div>
+            </div>
+<div class="section" id="pitanje-10">
+<h3>Pitanje 10<a class="headerlink" href="#pitanje-10" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="if12">
+            <p>Q-87: Obavljaju li ove dve naredbe uvjetnog grananja uvijek isti posao?</p>
+<a class="reference internal image-reference" href="_images/q7_10.png"><img alt="_images/q7_10.png" class="align-center" src="_images/q7_10.png" style="width: 500px;" /></a>
+
+            <li data-component="answer"  id="if12_opt_a">yes</li><li data-component="feedback" id="if12_opt_a">Za а=0 prva naredba daje vrijednost 5 varijabli b, a druga naredba vrijednost 2.</li>
+            
+            <li data-component="answer" data-correct id="if12_opt_b">no</li><li data-component="feedback" id="if12_opt_b">Točno</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-11">
+<h3>Pitanje 11<a class="headerlink" href="#pitanje-11" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+<a class="reference internal image-reference" href="_images/q7_11.png"><img alt="_images/q7_11.png" class="align-center" src="_images/q7_11.png" style="width: 200px;" /></a>
+
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="if13a">
+            <p>Q-88: Koju će vrijednost imati varijabla <em>b</em> poslije izvršenja naredbi uvjetnog prelaska ako je prethodno vrijednost varijable <em>b</em> bila b=2?</p>
+
+            <li data-component="answer" data-correct id="if13a_opt_a">b=5</li><li data-component="feedback" id="if13a_opt_a">Točno</li>
+            
+            <li data-component="answer"  id="if13a_opt_b">b=2</li><li data-component="feedback" id="if13a_opt_b">Uvjet grananja je ispunjen; povećava se početna vrijednost varijable.</li>
+            
+            <li data-component="answer"  id="if13a_opt_c">b=6</li><li data-component="feedback" id="if13a_opt_c">Netočno</li>
+            
+            <li data-component="answer"  id="if13a_opt_d">b=3</li><li data-component="feedback" id="if13a_opt_d">Netočno</li>
+            
+
+            </ul>
+            </div>
+            
+            <div class="course-box course-box-question course-content">
+            <ul data-component="multiplechoice" data-multipleanswers="false"  id="if13b">
+            <p>Q-89: Koju će vrijednost imati varijabla <em>b</em> poslije izvršenja naredbe uvjetnog prelaska ako je prethodno vrijednost varijable <em>b</em> bila b=3?</p>
+
+            <li data-component="answer"  id="if13b_opt_a">b=5</li><li data-component="feedback" id="if13b_opt_a">Netočno</li>
+            
+            <li data-component="answer"  id="if13b_opt_b">b=2</li><li data-component="feedback" id="if13b_opt_b">Netočno</li>
+            
+            <li data-component="answer"  id="if13b_opt_c">b=6</li><li data-component="feedback" id="if13b_opt_c">Uvjet grananja nije ispunjen; prema tome, početna vrijednost varijable se ne mijenja.</li>
+            
+            <li data-component="answer" data-correct id="if13b_opt_d">b=3</li><li data-component="feedback" id="if13b_opt_d">Točno</li>
+            
+
+            </ul>
+            </div>
+            </div>
+<div class="section" id="pitanje-12">
+<h3>Pitanje 12<a class="headerlink" href="#pitanje-12" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="3" style="display:none">
+
+    </div>
+<a class="reference internal image-reference" href="_images/q7_12.png"><img alt="_images/q7_12.png" class="align-center" src="_images/q7_12.png" style="width: 300px;" /></a>
+
+<div class="course-box course-box-problem course-content">
+<ul data-component="dragndrop" id="if16">
+    <span data-component="question">Q-90: Upari početne vrijednosti varijabli s vrijednostima po izvršenju naredbe uvjetnog prelaska.</span>
+	<span data-component=feedback>Pokušaj ponovo</span>
+
+    <li data-component="draggable" id="if16_drag1">a=2 b=1</li>
+    <li data-component="dropzone" for="if16_drag1">a=2 b=5</li>
+
+    <li data-component="draggable" id="if16_drag2">a=2 b=-2</li>
+    <li data-component="dropzone" for="if16_drag2">a=-5 b=-2</li>
+
+    <li data-component="draggable" id="if16_drag3">a=-2 b=1</li>
+    <li data-component="dropzone" for="if16_drag3">a=-2 b=5</li>
+
+    <li data-component="draggable" id="if16_drag4">a=-2 b=-1</li>
+    <li data-component="dropzone" for="if16_drag4">a=-5 b=-1</li>
+</ul></div></div>
+</div>
+<div class="section" id="try-pokusaj">
+<h2><img alt="try" src="_images/try.png" /> Pokušaj!<a class="headerlink" href="#try-pokusaj" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vjezba-1">
+<h3>Vježba 1<a class="headerlink" href="#vjezba-1" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p>Write a series of commands that:</p>
+<ol class="arabic simple">
+<li><p>razmjenjuje vrijednost 2 varijable;</p></li>
+<li><p>određuje koji je broj veći od dva broja koja se unose s ulaza;</p></li>
+<li><p>određuje minimalno 3 broja koji se unose s ulaza.</p></li>
+</ol>
+
+    </p></div></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="vjezba-2">
+<h3>Vježba 2<a class="headerlink" href="#vjezba-2" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p>Provjeri u Scratchu da li sljedeći nizovi nardbi razmjenjuju vrijednost varijabli <strong>x</strong> i <strong>y</strong> bez obzira koje su njihove početne vrijednosti.</p>
+<a class="reference internal image-reference" href="_images/ex7_2.png"><img alt="_images/ex7_2.png" class="align-center" src="_images/ex7_2.png" style="width: 400px;" /></a>
+<p>What happens if х=0 or у=0?</p>
+
+    </p></div></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="vjezba-3">
+<h3>Vježba 3<a class="headerlink" href="#vjezba-3" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p>Napiši program ukome se ponavlja sljedeći niz koraka:</p>
+<ul class="simple">
+<li><p>lik traži od korisnika da unese prirodan broj i zatim izgovara</p></li>
+<li><p>koji broj je prethodnik</p></li>
+<li><p>koji broj je sljedbenik,</p></li>
+<li><p>koji broj je dvostruko veći</p></li>
+<li><p>koji broj je dvostruko manji od zadanog broja.</p></li>
+</ul>
+<p>Ponavljanje prekinuti kada korisnik unese broj 0.</p>
+
+    </p></div></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="vjezba-4">
+<h3>Vježba 4<a class="headerlink" href="#vjezba-4" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p>Napišite program koji ponavlja sljedeći niz koraka:</p>
+<ul class="simple">
+<li><p>lik traži da korisnik upiše dva cjelobrojna broja <strong>x</strong> i <strong>y</strong> različita od nule, a zatim izgovori</p></li>
+<li><p>zbroj brojeva “х” i “у” je “х+у”,</p></li>
+<li><p>razlika između brojeva “x” i “y” je “x-y”,</p></li>
+<li><p>proizvod brojeva “x” i “y” je “x * y” i</p></li>
+<li><p>kvocijent brojeva “x” i “y” je “x / y”.</p></li>
+</ul>
+<p>pri čemu bi umjesto varijabli navedenih pod navodnicima trebalo staviti njihove vrijednosti.</p>
+<p>Prestanite ponavljati kada korisnik upiše broj 0 bilo kao vrijednost <strong>x</strong> ili kao vrijednost <strong>y</strong>.</p>
+
+    </p></div></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="vjezba-5">
+<h3>Vježba 5<a class="headerlink" href="#vjezba-5" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="3" style="display:none">
+
+    </div>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<ol class="arabic simple">
+<li><p>Daje se izraz <strong>16: 8: 4: 2.</strong> Koja je njegova vrijednost? Zapiši to na Scratchu i provjeri.</p></li>
+<li><p>Pisanjem dva para zagrada na različite načine dobivaju se izrazi s različitim vrijednostima. Odredite sve moguće vrijednosti koje se mogu dobiti na ovaj način.</p></li>
+<li><p>Za svaku metodu zapišite izraz na Scratchu i provjerite jeste li dobro izračunali njegovu vrijednost.</p></li>
+</ol>
+<p><strong>Pomoć.</strong> Uglate zagrade daju sljedeće izraze: <code class="docutils literal notranslate"><span class="pre">((16:</span> <span class="pre">8):</span> <span class="pre">4):</span> <span class="pre">2</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">(16:</span> <span class="pre">(8:</span> <span class="pre">4)):</span> <span class="pre">2</span></code>  <code class="docutils literal notranslate"><span class="pre">(16:</span> <span class="pre">8):</span> <span class="pre">(4:</span> <span class="pre">2)</span></code>  <code class="docutils literal notranslate"><span class="pre">16:</span> <span class="pre">((8:</span> <span class="pre">4):</span> <span class="pre">2)</span></code>  <code class="docutils literal notranslate"><span class="pre">16:</span> <span class="pre">(8:</span> <span class="pre">(4:</span> <span class="pre">2))</span></code></p>
+
+    </p></div></div>
+</div>
+</div>
+<div class="section" id="bug-ispravi-greske">
+<h2><img alt="bug" src="_images/bug.png" /> Ispravi greške!<a class="headerlink" href="#bug-ispravi-greske" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="greska-1">
+<h3>Greška 1<a class="headerlink" href="#greska-1" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+<dl class="field-list simple">
+<dt class="field-odd">Question</dt>
+<dd class="field-odd"><p>Pitanje: Učenik je želio promijeniti ponašanje mačke kada je dodirnula miša u projektu Hunt, tako da je mačka, dok je dodirnula miša, krenula u krugu (360 puta napravila 1 korak i okrenula jedan korak).
+Na mačku je bio pričvršćen skriptama prikazanim na sljedećoj slici, ali prilikom testiranja projekta vidio je da se mačka ne okreće nakon što je miš dodirnuo. Što je pogreška?</p>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="_images/bug7_1.png"><img alt="_images/bug7_1.png" class="align-center" src="_images/bug7_1.png" style="width: 500px;" /></a>
+
+    <div data-component="reveal" id="сакривање15"   data-showtitle="Show the Answer" data-hidetitle="Hide the Answer">
+    <p><strong>Answer:</strong></p>
+<p>Uvjet se provjerava samo neposredno po kliku na zelenu zastavicu. Potrebno je da se provijeri stalno, znači uvjetna naredba treba postaviti u beskončan ciklus.</p>
+
+    </div>
+    </div>
+<div class="section" id="greska-2">
+<h3>Greška 2<a class="headerlink" href="#greska-2" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+<dl class="field-list simple">
+<dt class="field-odd">Question</dt>
+<dd class="field-odd"><p>Učenik je želio napraviti jednostavniju verziju projekta labirint bez varijabli, pa se u slučaju dodira zida labirinta (crni) miš vratio u početni položaj (23, -158). Međutim, miš je udario u zidove labirinta i kad učenik to nije očekivao. Što je pogreška?</p>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="_images/bug7_2.png"><img alt="_images/bug7_2.png" class="align-center" src="_images/bug7_2.png" style="width: 300px;" /></a>
+
+    <div data-component="reveal" id="сакривање1"   data-showtitle="Show the Answer" data-hidetitle="Hide the Answer">
+    <p><strong>Odgovor:</strong></p>
+<p>Lik se okreće prije nego što se usmjeri kamo treba, pa korača u smjeru zadanom prethodno izvršenom naredbom usmjerenja.</p>
+
+    </div>
+    </div>
+<div class="section" id="greska-3">
+<h3>Greška 3<a class="headerlink" href="#greska-3" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+<dl class="field-list simple">
+<dt class="field-odd">Question</dt>
+<dd class="field-odd"><p>I ovaj je program trebao miša vratiti na početak kad god bi dotaknuo zidove labirinta. Međutim, nekada se događalo, ponekad nije. Što je pogreška?</p>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="_images/bug7_3.png"><img alt="_images/bug7_3.png" class="align-center" src="_images/bug7_3.png" style="width: 300px;" /></a>
+
+    <div data-component="reveal" id="сакривање2"   data-showtitle="Show" data-hidetitle="Hide">
+    <dl class="field-list simple">
+<dt class="field-odd">showtitle</dt>
+<dd class="field-odd"><p>Show the Answer</p>
+</dd>
+<dt class="field-even">hidetitle</dt>
+<dd class="field-even"><p>Hide the Answer</p>
+</dd>
+</dl>
+<p><strong>Odgovor:</strong></p>
+<p>Blok <em>ako … onda</em> koji provjerava dodiruje li lik labirint nalazi se unutar bloka koji provjerava je li lijeva strelica pritisnuta i treba li biti iza nje. Ovako se provjerava uvjet dodira samo ako znak ide lijevo.</p>
+
+    </div>
+    </div>
+</div>
+<div class="section" id="book-sto-smo-naucili">
+<h2><img alt="book" src="_images/book.png" /> Što smo naučili<a class="headerlink" href="#book-sto-smo-naucili" title="Permalink to this headline">¶</a></h2>
+<p>U ovoj lekciji smo naučili kako se varijable stvaraju i koriste. Također smo predstavili blokove iz grupe <em>Operators</em> i pokazali kako se grade složeni funkcionalni blokovi. Projekti kojima smo se bavili imaju složenu strukturu - sastavljeni su kombiniranjem osnovnih elemenata programske logike. Pronalaženje logičkih pogrešaka u takvim projektima nije lako. Zbog toga ćemo u sljedećim poglavljima pokazati načine na koje se razvoj i testiranje projekata može olakšati dijeljenjem velikih skripti na postupke - logičke dijelove koji svaki obavljaju jednu funkciju</p>
+<p><strong>Novi pojmovi</strong>: varijabla – jednostavna, složena, lokalna, globalna.</p>
+<p><strong>Nove naredbe</strong>: <img alt="variables_blocks" src="_images/variables.png" /> - <img alt="set_var" src="_images/set_var.png" />, <img alt="change_var" src="_images/change_var.png" />, <img alt="show_var" src="_images/show_var.png" /> , <img alt="hide_var" src="_images/hide_var.png" />; <img alt="sensing_blocks" src="_images/sensing.png" /> - <img alt="touching_color" src="_images/touching_color.png" />, <img alt="parameter_of" src="_images/parameter_of.png" />; <img alt="operator_blocks" src="_images/operators.png" /> - <img alt="or" src="_images/or.png" />, <img alt="mod" src="_images/mod.png" />, <img alt="join" src="_images/join.png" />, <img alt="function" src="_images/function.png" /></p>
+</div>
+<div class="section" id="project-napravi-neki-od-sljedecih-projekta">
+<h2><img alt="project" src="_images/project.png" /> Napravi neki od sljedećih projekta<a class="headerlink" href="#project-napravi-neki-od-sljedecih-projekta" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="project-1-kalkulator">
+<h3>Project 1 - “Kalkulator”<a class="headerlink" href="#project-1-kalkulator" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+<p>Započnite novi projekt koji ćete nazvati <em>Kalkulator</em>, u kojem ćete kreirati kalkulator za 4 osnovne računske radnje - zbrajanje, oduzimanje, množenje i dijeljenje.
+Za ovu vježbu trebat će vam sljedeći likovi: gumb +, tipka -, gumb * i gumb /.</p>
+<p>Pored toga, trebat će vam i sljedeće varijable u aplikaciji: ulazne vrijednosti <em>x</em> i <em>y</em> i <em>Rezultat</em>.</p>
+<p>Formirajte projekt na sljedeći način:</p>
+<ol class="arabic simple">
+<li><p>Za pozadinu nacrtajte pravokutnik u gornjem lijevom kutu na kojem piše “KALKULATOR”</p></li>
+<li><p>Napravite sve potrebne varijable i složite ih na kalkulator</p></li>
+<li><p>Umetnite znakove za 4 gumba za obavljanje izračuna i rasporedite ih na kalkulatoru.</p></li>
+<li><p>Za svaki od gumba stvorite sljedeću skriptu: kad se klikne miš, izvodi se odgovarajuća operacija izračuna.</p></li>
+<li><p>Ispitajte rezultat.</p></li>
+</ol>
+<p>Kalkulator vjerojatno radi dobro, ali nije očito koja je operacija zadnji put izvedena.</p>
+<p>Stoga promijenite kalkulator tako da zadnja pritisnuta tipka promijeni boju u crvenu (što će biti znak da je rezultat koji vidimo rezultat te operacije).</p>
+<p>Upute: Za svaki gumb morate napraviti drugi kostim. Učinite gumb u novom kostimu crvenim. Kada se klikne gumb, skripta bi trebala poslati poruku “Nova radnja”, a zatim promijeniti kostim u crveni.
+Uz to, svaki gumb mora imati jednu skriptu koja sluša poruke i kad primi poruku “Nova operacija” kako bi promijenila svoj kostim u originalni kostim.</p>
+</div>
+<div class="section" id="projekt-2-program-na-osnovu-bloka-dijagrama">
+<h3>Projekt 2 – Program na osnovu bloka dijagrama<a class="headerlink" href="#projekt-2-program-na-osnovu-bloka-dijagrama" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="1" style="display:none">
+
+    </div>
+<p>Napravite program u Scratchu koji odgovara sljedećem algoritmu. Napomena. Uvjet “3 | a” je provjeriti je li broj a djeljiv sa 3.</p>
+<a class="reference internal image-reference" href="_images/algoritam.png"><img alt="_images/algoritam.png" class="align-center" src="_images/algoritam.png" style="width: 490px;" /></a>
+<p>Odredite rezultat izvršenja tog programa s a = 157; a = 342; a = 529.</p>
+<p>Koliko će brojeva biti postignuto izvršavanjem određenog programa?</p>
+<p>Da li broj rezultata ovisi o ulaznoj vrijednosti troznamenkastog broja a?</p>
+<p>Uredite program tako da uvijek dobijete dvoznamenkasti broj.</p>
+</div>
+<div class="section" id="project-3-utrka-automobile">
+<h3>Project 3 - “Utrka automobile”<a class="headerlink" href="#project-3-utrka-automobile" title="Permalink to this headline">¶</a></h3>
+
+    <div data-level="2" style="display:none">
+
+    </div>
+<p>Započnite novi projekt nazvat ćete “Car Racing”, u kojem ćete napraviti igru za dva igrača.
+Na pozornici bi trebala biti tri znaka: 2 automobila i vrata koja glase “Cilj”.
+Svaki se automobil može kretati naprijed-natrag i okretati se u smjeru kazaljke na satu i obrnuto.</p>
+<p>Upravljački gumbi za prvi automobil su:</p>
+<ul class="simple">
+<li><p>Strelica prema gore - Automobil ide ravno naprijed</p></li>
+<li><p>Strelica prema gore - Automobil ide ravno naprijed</p></li>
+<li><p>Strelica lijevo - Automatski se okreće u smjeru suprotnom od kazaljke na satu</p></li>
+<li><p>Strelica desno - Automatski se okreće u smjeru kazaljke na satu</p></li>
+</ul>
+<p>Upravljački ključevi za drugi automobil su:</p>
+<ul class="simple">
+<li><p>W             Automobil ide ravno naprijed</p></li>
+<li><p>S             Kad se Auto vrati ravno natrag</p></li>
+<li><p>А             A Automobil se okreće u smjeru suprotnom od kazaljke na satu</p></li>
+<li><p>D             Automobil se okreće u smjeru kazaljke na satu</p></li>
+</ul>
+<p>Nakon što stvorite skripte za prvi automobil, klonirajte ga i izvršite potrebne promjene u nazivima gumba i izgledu samog automobila.
+Cilj se pojavljuju na pozornici na nasumično odabranom mjestu. Automobili s upravljačkim tipkama voze se do cilja.
+Tko prvi dodirne cilj, dobiva 1 bod. Kada automobil dotakne cilj, cilj nestaje s pozornice i pojavljuje se na novom nasumično odabranom mjestu (uzimajući u obzir dimenzije pozornice i koordinate donje lijeve i gornje desne točke).
+Automobili se sada voze prema novom odredištu. Tko god prvi dotakne cilj dobiva 1 bod. Cilj opet nestaje i pojavljuje se na novom mjestu…. I tako u krug.
+Automobil koji prvi postigne 30 bodova pobjednik je. Utrka se zaustavlja i na “Stage” se ispisuje poruka “Winner is Player 1” ili “Winner is Player 2”.
+Da biste mogli pratiti bodove svakog automobila, potrebno je uvesti varijable Player1 i Player2. Za praćenje koordinata ciljaunesite varijable kx i ky.</p>
+</div>
+</div>
+</div>
+
+
+  
+      <div class="col-md-12">
+<ul class="pager">
+        <li id="relations-prev" title='Previous chapter - Da ili ne - naredba grananja' data-toggle="tooltip"><a href="Scratch3 Branching.html">Previous chapter</a></li>
+    
+        <li id="relations-next" title='Next chapter - Kako programirati brže – Procedure' data-toggle="tooltip"><a href="Scratch3 Procedures.html">Next chapter</a></li>
+</ul>
+
+<!-- <ul class="pager"> -->
+    <!-- -->
+        <!-- <li id="relations-prev" title='Претходно поглавље - Da ili ne - naredba grananja' data-toggle="tooltip"><a href="Scratch3 Branching.html">Претходно поглавље</a></li> -->
+    <!--  -->
+    <!-- -->
+        <!-- <li id="relations-next" title='Следеће поглавље - Kako programirati brže – Procedure' data-toggle="tooltip"><a href="Scratch3 Procedures.html">Следеће поглавље</a></li> -->
+    <!-- -->
+<!-- </ul> -->
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+  
+</div>
+<footer class="footer col-md-12">
+    <div class="container">
+        <div class="text-center">
+            <hr>
+            <p class="text-muted">
+                <span class="text-center">&copy; 2019 <a href="https://petlja.org">Petlja.org</a> 
+                  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; vertical-align: text-bottom" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+                  
+                  (Created using  <a href="https://pypi.org/project/Sphinx/">Sphinx</a>, <a href="http://runestoneinteractive.org/">RunestoneComponents</a> and <a href="https://github.com/Petlja/PetljaDoc">PetljaDoc</a>)</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

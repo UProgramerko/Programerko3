@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Appendix &#8212; Block-based programming in Scratch - practice lessons</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/activecode.css" />
+    <link rel="stylesheet" type="text/css" href="_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="_static/clickable.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pytutor.css" />
+    <link rel="stylesheet" type="text/css" href="_static/modal-basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/datafile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/dragndrop.css" />
+    <link rel="stylesheet" type="text/css" href="_static/fitb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/matrixeq.css" />
+    <link rel="stylesheet" type="text/css" href="_static/parsons.css" />
+    <link rel="stylesheet" type="text/css" href="_static/lib/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="_static/poll.css" />
+    <link rel="stylesheet" type="text/css" href="_static/showEval.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabbedstuff.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="_static/karel.css" />
+    <link rel="stylesheet" type="text/css" href="_static/notes.css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-4.0.0-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flatly.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/petlja.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/CLDRPluralRuleParser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.messagestore.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.fallbacks.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.language.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.parser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script type="text/javascript" src="_static/activecode-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/mchoice-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/dragndrop-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/fitb-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/matrixeq.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/parsons-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/showEval.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="_static/runestonevideo.js"></script>
+    <script type="text/javascript" src="_static/karelCorner.js"></script>
+    <script type="text/javascript" src="_static/karelRobot.js"></script>
+    <script type="text/javascript" src="_static/karelWorld.js"></script>
+    <script type="text/javascript" src="_static/karelRobotDrawer.js"></script>
+    <script type="text/javascript" src="_static/karelUI.js"></script>
+    <script type="text/javascript" src="_static/karel.js"></script>
+    <script type="text/javascript" src="_static/karel-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/notes.js"></script>
+    <script type="text/javascript" src="_static/pygamelib-init.js"></script>
+    <script type="text/javascript" src="_static/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/python_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/msg-sr.js"></script>
+    <script type="text/javascript" src="_static/blockpy/utilities.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_errors.js"></script>
+    <script type="text/javascript" src="_static/blockpy/ast_node_visitor.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter.js"></script>
+    <script type="text/javascript" src="_static/blockpy/pytifa.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter_definitions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_to_blockly.js"></script>
+    <script type="text/javascript" src="_static/blockpy/imported.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/class.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comment.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comprehensions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/dict.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/if.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/io.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/lists.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/sets.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/loops.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/parking.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/tuple.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/turtles.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/text.js"></script>
+    <script type="text/javascript" src="_static/blockpy-modal.js"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Stringovi" href="Scratch3 Strings.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'Scratch_eng';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = false;
+  eBookConfig.basecourse = 'Scratch_eng';
+  eBookConfig.runestone_version = '3.1.1';
+  eBookConfig.imagesDir = '_images/';
+  eBookConfig.staticDir = '_static/';
+  if(typeof(Sk) != "undefined")
+      Sk.imgPath = eBookConfig.imagesDir;
+</script>
+
+<div id="fb-root"></div>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+
+<nav id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     <img src="_static/img/logo.png" style="width:80px; height: 80px;"> 
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-top: 10px; margin-left: 25px;">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="./">Block-based programming in Scratch - practice lessons</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container col-md-12" id="continue-reading"></div>
+
+<div class="container col-md-8 col-md-offset-2" id="main-content">
+  
+  <div class="section" id="appendix">
+<h1>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h1>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p><img alt="intro11s" src="_images/intro11s.png" /></p>
+
+    </p></div></div>
+<div class="section" id="funkcije-blokova">
+<h2>Funkcije blokova<a class="headerlink" href="#funkcije-blokova" title="Permalink to this headline">¶</a></h2>
+<p>Oblik blokova u Scratchu osigurava se da povezivanjem mogu stvoriti samo sintaktički ispravne skripte. Postoje samostalni i funkcionalni blokovi. Samostalni blokovi (start, snop, C-blokovi i kraj) odgovaraju jezičnim naredbama. Funkcionalni (blok reporteri i logički blokovi) pohranjuju vrijednosti za samostalne blokove. Razgovarali smo o vrstama blokova na Scratchu detaljnije u lekciji 3 ovog praktičnog dijela, a sada ćemo predstaviti funkcije osnovnih skupina blokova i nekih skupina iz poglavlja Proširenje.</p>
+<div class="section" id="kretanje-blokova">
+<h3>Kretanje blokova<a class="headerlink" href="#kretanje-blokova" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="sidebar-title"><img alt="motion_blocks" src="_images/motion.png" /> Kretanje</p>
+<p><img alt="fig11_1" src="_images/fig11_1.png" /></p>
+</div>
+<p>Naredbe povezane s blokovima u ovoj grupi mogu izvršavati samo likovi. Pozornica je nepokretna i stoga ne može izvršiti nijedan nalog za kretanje. U grupi <em>Kretanje</em> postoji 18 blokova, jedan više od Scratch 2.0. Dodan je blok <img alt="glide_to" src="_images/glide_to.png" />.</p>
+<p>Da bi ih lakše koristili, blokovi koji izvode slične funkcije stoje blizu i formiraju podskupine. Funkcije podskupina su sljedeće:</p>
+<ol class="arabic simple">
+<li><p>pomicanje lika ravno ili kružno</p></li>
+<li><p>zauzimanje lika u zadanoj poziciji,</p></li>
+<li><p>usmjeravanje lika</p></li>
+<li><p>pomicanje lika promjenom njegovih koordinata,</p></li>
+<li><p>držeći lik unutar granica pozornice,</p></li>
+<li><p>postavljanje načina na koji se lik rotira,</p></li>
+<li><p>zadržavajući trenutne koordinate i orijentaciju likova.</p></li>
+</ol>
+<p>Blokovi prvih šest skupina su blokovi snopa, a blokovi u sedmoj skupini su izvještači, čija je funkcija pohranjivanje podataka. Ne mogu samostalno stajati, ali su umetnuti u ulazna polja drugih blokova, specificirajući na taj način svoje postupke.</p>
+<p>Blokovi prve grupe izvode relativno kretanje, kretanje u odnosu na trenutni položaj i orijentaciju. Nasuprot tome, blokovi druge grupe pomiču lik do određene točke u fazi, bez obzira gdje se lik trenutno nalazi. Takvo kretanje naziva se apsolutnim kretanjem.</p>
+<p>U polje unosa blokova pokreta unosi se niz podataka: odredišne koordinatne vrijednosti, kut rotacije, broj koraka ili trajanje pokreta. Jedan korak odgovara jednom pikselu. Vrijeme se izražava u sekundama, a kutovi u stupnjevima.</p>
+<p>Za neke blokove odabrano je odredište s padajućeg popisa. To može biti pokazivač miša ili jedan od znakova koji sudjeluju u projektu, kao i točka čije se koordinate generiraju nasumično.</p>
+<p>Blok <img alt="rotation_style" src="_images/rotation_style.png" /> može postaviti jedan  od tri moguća načina rotacije: <em>sve oko</em>, <em>lijevo-desno</em> i <em>zakretati</em>. Prva metoda znači da se lik može okretati za bilo koji od 360 stupnjeva. <em>Lijevo-desno</em> znači da se lik može okretati samo lijevo ili desno, a bilo koji drugi smjer je onemogućen. Zadnje znači da je lik uvijek okrenut ravno.</p>
+<p>Blokovi grupe <em>Kretanje</em> detaljno su obrađeni u lekciji 2 ovog praktičnog programa.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="blokovi-grupe-izgled">
+<h3>Blokovi grupe Izgled<a class="headerlink" href="#blokovi-grupe-izgled" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="sidebar-title"><img alt="looks_blocks" src="_images/looks.png" /> Izgled</p>
+<p><img alt="fig11_2" src="_images/fig11_2.png" /></p>
+</div>
+<p>Blokovi ove grupe kontroliraju izgled likova. Sedam od 21 bloka grupe Look može upravljati izgledom pozornice.
+Kad je lik u fokusu, vidi se 20 blokova, a kada je pozornica u fokusu, vide se 3 podgrupe. Blok <img alt="switch_backdrop_wait" src="_images/switch_backdrop_wait.png" /> omogućava promjenu pozadine i čekanje dok se to dogodi može se vidjeti samo kad je pozornica aktivna (nije vidljivo kad je lik u fokusu). Ostali blokovi koji se mogu pridružiti pozornici također se vide u ovom slučaju. Funkcije podskupina su sljedeće:</p>
+<ol class="arabic simple">
+<li><p>pokazujući što lik govori ili razmišlja,</p></li>
+<li><p>mijenjanje kostima lika ili pozadine pozornice,</p></li>
+<li><p>mijenjanje veličine znaka,</p></li>
+<li><p>rad s grafičkim efektima koji se mogu pripisati likovima i pozornici,</p></li>
+<li><p>pokazivanje ili skrivanje lika,</p></li>
+<li><p>prenošenje karaktera u željeni sloj prikaza,</p></li>
+<li><p>izvjestitelji koji ukazuju na kostim koji teče i veličinu lika, ili na tekuću pozadinu pozornice.</p></li>
+</ol>
+<p>Grafički efekti koji se mogu pridružiti liku su:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>boja - mijenja boju lika,</p></li>
+<li><p>riblje oko - prikazje lik promatran kroz širokokutne leće</p></li>
+<li><p>vrtlog - vrti lik oko središta,</p></li>
+<li><p>pixelate - pikselira lik,</p></li>
+<li><p>mozaik - stvara više manjih slika lika,</p></li>
+<li><p>svjetlina - mijenja svjetlinu lika</p></li>
+<li><p>duh - mijenja transparentnost lika.</p></li>
+</ul>
+</td></tr></table>
+<p>Primjerice, promjena boje može stvoriti iluziju da lik izražava emocije ili treperi, a može izgledati kao da se pojavila posve nova stvar. Ako za promjenu boje koristite naredbu pečata, možete nparaviti atraktive uzorke, poput duge.</p>
+<p>Učinak ribljeg oka mže stvoriti iluziju da se lik približava ili odlazi od ekrana, deblja se i slično. Može se koristiti kao prijelaz između kostima.</p>
+<p>Efekt vrtloga može simbolizirati putovanje kroz vrijeme, teleportaciju, a također vrtoglavicu, mučninu.</p>
+<p>Učinak pikselacije čini da likovi izgledaju kao u prvim računalnim igrama, kada su monitori imali malu rezoluciju, a lik je cenzuriran ili blokiran na pozornici.</p>
+<p>Mozaik efekt duplicira lik bez kloniranja.</p>
+<p>Promjenom svjetline, znak može zasjati ili potamniti, a efektni lik duha može biti nevidljiv za korisnika, ali drugi likovi projekta mogu ga otkriti.</p>
+<p>Blockovi <img alt="goto_layer" src="_images/goto_layer.png" /> i <img alt="go_layers" src="_images/go_layers.png" /> razlikuju se od blokova koji su u prethodnoj verziji Scrtacha obavljali slične funkcije.</p>
+<p>Kad je pozornica u fokusu, možete vidjeti 8 blokova podijeljenih u 3 podskupine: za promjenu pozadine, postavljanje grafičkih efekata u pozadinu i reportera koji pokazuje na trenutnu pozadinu. Novinar pozadinskog imena, koji je postojao u Scratch 2.0, ne postoji u novoj verziji.</p>
+<p>Blokovi <em>Looks</em> detaljno su obrađeni od predavanja 3 ovog praktičnog programa.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="blokovi-grupe-zvuk">
+<h3>Blokovi grupe Zvuk<a class="headerlink" href="#blokovi-grupe-zvuk" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="sidebar-title"><img alt="sound_blocks" src="_images/sound.png" /> Zvuk</p>
+<p><img alt="fig11_3" src="_images/fig11_3.png" /></p>
+</div>
+<p>U projektima se mogu koristiti dvije vrste zvuka: zvukovi i note. Blokovi u ovoj grupi koriste se za rad sa zvukovima, a blokovi u odjeljku <em>Music</em> koriste se za note. Zvukovi su dostupni samo uvozom, snimanjem ili uz ugrađene biblioteke zvukova. Sviraju se pomoću zvučnih blokova koji kontorliraju glasnoću, tempo i još mnogo tuga. Grupa <em>Zvučnih blokova</em> značajno je izmijenjena u odnosu na način kako je organizirani u jezičnoj verziji Scratch 2.0. neki blokovi koji su prethodno ibli u ovoj grupi premješteni su u proširenje <em>Music</em></p>
+<p>Funkcije podskupina su slijedeće:</p>
+<ol class="arabic simple">
+<li><p>pokrenuti, zaustaviti i reproducrati zvukove</p></li>
+<li><p>primjena zvučnih efekata</p></li>
+<li><p>kontrola glasnoće</p></li>
+</ol>
+<p><strong>Pokrenite, zaustavite i reproducirajte zvukove</strong></p>
+<p>Blok <img alt="play_until" src="_images/play_until.png" /> reproducira određeni zvuk, pauzirajući skriptu dok ne završi. Za razliku od njega, blok <img alt="start_sound" src="_images/start_sound.png" /> Zbog toga se zvuk pokretanja bloka obično koristi za najavu akcije, informiranje lika da je cilj postignut ili označavanje određenih događaja.</p>
+<p>S druge strane, blok <code class="docutils literal notranslate"><span class="pre">do</span> <span class="pre">reprodukcije</span></code> obično se koristi za reprodukciju “pozadinske glazbe”. Naime, ovaj blok se postavlja <code class="docutils literal notranslate"><span class="pre">zauvijek</span></code> u blok i tako se tijekom izvođenja projekta svira odgovarajuća glazbena tema. Može se koristiti i za odlaganje izvršenja skripte umjesto kontrolnog bloka <code class="docutils literal notranslate"><span class="pre">čekanja</span></code>.</p>
+<p>Blok <code class="docutils literal notranslate"><span class="pre">zvukovi</span> <span class="pre">zaustavljanja</span></code> zaustavit će sve trenutne zvukove - sve likove i pozornicu. Na primjer, ako projekt nudi opcije glazbe ili ne, ovaj se blok koristi za isključivanje glazbe. Također je uobičajeno da se svi zvukovi prekinu prije nego što projekt pređe na sljedeću scenu i slično.</p>
+<p><strong>Primjena zvučnih efekata</strong></p>
+<p>Blokovi koji postavljaju i mijenjaju zvučne efekte uvedeni su u Scratch 3.0. Iako novi uređivač zvuka nudi više zvučnih efekata (vidi dolje u odjeljku uređivača zvuka), blokovi podržavaju samo dva: postavljanje i promjenu tona te pomicanje zapisa zvuka lijevo / desno.</p>
+<p><strong>Kontrola glasnoće</strong></p>
+<p>Ti blokovi utječu samo na lik (ili pozadinu) na koju su priloženi. Na primjer, klikom na znak može ušutjeti zvuk, ako se znak smanji i na taj način čini se da nije od korisnika, zvuk može biti isključen. Također, ako se koriste blokovi iz nastavka <em>Music</em>, neki dijelovi skladbe mogu se čuti glasnije, a drugi tiši.</p>
+<p>Osam od tih blokova su snop blokovi, a jedan je reporter koji pohranjuje informacije o tomu.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="blokovi-grupe-dogadaji">
+<h3>Blokovi grupe Događaji<a class="headerlink" href="#blokovi-grupe-dogadaji" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="sidebar-title"><img alt="events_blocks" src="_images/events.png" /> Events</p>
+<p><img alt="fig11_4" src="_images/fig11_4.png" /></p>
+</div>
+<p>Blokovi u ovoj grupi pokreću izvršavanje skripti i šalju i primaju poruke. Ima ih 9 i podijeljeni su u 3 podgrupe. Kao i u ovoj verziji Scratch,  otkrivanje videa premješta se u proširenja s padajućeg popisa blokova <img alt="when_greater" src="_images/when_greater.png" /> ovaj blok izostavljeno.</p>
+<p>Funkcije podskupina su slijedeće:</p>
+<ol class="arabic simple">
+<li><p>pokretanje skripti s korisničkom radnjom,</p></li>
+<li><p>pokretanje skripti s korisničkom radnjom,</p></li>
+<li><p>omogućuju najavu i primanje poruka.</p></li>
+</ol>
+<p><strong>Pokretanje skripti s korisničkom radnjom</strong></p>
+<p>Korisnik može pokrenuti izvršenje projekta klikom na gumb <img alt="g_flag" src="_images/g_flag.png" />, neke od likova projekta, pozadine ili pritiske na tipkovnici. Uobičajeno je da izvedba projekta započne klikom na zelenu zastavicu. Tada se aktiviraju sve skripte koje započinju s ovim blokom. To su skripte koje izvode različite inicijalizacije, pa predaju upravljanje ostalim skriptama. Na primjer, brišu sve elemente s popisa, resetiraju varijable, postavljaju scene prikazivanjem ili skrivanjem znakova i izmjenom kostima, brisanjem bilo čega nacrtanog, izvođenjem pozadinske glazbe i slično. Iako je u potpunosti moguće raditi projekte bez ovog bloka, ne preporučuje se. Jedini način na koji bi se projekt mogao pokrenuti bez ovog bloka bilo bi aktiviranje skripti koje započinju s nekim drugim blokom u ovoj podskupini. U ovom slučaju projekt bi trajao samo dok se ne dovrše skripte koje ovise o početnim skriptama.</p>
+<p>Napomena. Blok <img alt="clicked_stage" src="_images/clicked_stage.png" /> je vidljiv samo kada je pozornica u fokusu.</p>
+<p><strong>Najavljivanje i primanje poruka</strong></p>
+<p>Poruke su glavni mehanizam za usklađivanje ponašanja likova u projektu i mogu poslužiti za provođenje postupaka. Najavljivanje se koristi za pozivanje skripti koje je potrebno aktivirati kada se ispune u određeni uvjeti.</p>
+<p><strong>Broadcasting and receipt of messages</strong></p>
+<p>Emitiranje poruka glavni je mehanizam za koordinaciju ponašanja stručnjaka koji sudjeluju u projektu, a može se koristiti i za realizaciju postupaka. Emitiranje se koristi za pozivanje skripti koje bi trebalo aktivirati kada se ispune određeni uvjeti. Skripte, čiji je prvi blok <img alt="when_receive" src="_images/when_receive.png" /> bit će pozvani nakon objave određene poruke. Ako se ista poruka ponovo šalje dok se skripta još uvijek pokreće, trenutna izvedba bit će prekinuta i skripta će se opet pokrenuti ispočetka. Dakle, ako u skriptu stavimo blok koji započinje blok ‘’kad primimo’’, koji deklarira poruku na koju skripta odgovara, imamo situaciju da se skripta sama poziva. To se naziva <strong>rekurzije</strong>, i može se koristiti za stvaranje fraktala, pravljenje petlji zauvijek i slično.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="blokovi-grupa-upravljanje">
+<h3>Blokovi grupa Upravljanje<a class="headerlink" href="#blokovi-grupa-upravljanje" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="sidebar-title"><img alt="control_blocks" src="_images/control.png" /> Control</p>
+<p><img alt="fig11_5" src="_images/fig11_5.png" /></p>
+</div>
+<p>Blokovima ove grupe upravlja se tijekom izvođenja skripte. Omogućuju grananje, ponavljanje i prekid izvođenja, kao i rad s klonovima znakova. Ukupno je 11, od kojih je jedna početna (hat), 2 su konačna, 3 su bočna, 5 C-blokova, a ‘’ako je ostalo’’, blok je u obliku slova E. Postoji 5 podskupina čije su slijedeće funkcije:</p>
+<ol class="arabic simple">
+<li><p>blok čekanja,</p></li>
+<li><p>blokovi ponavljanja,</p></li>
+<li><p>razgranati blokovi,</p></li>
+<li><p>blokovi za uvjetno ponavljanje,</p></li>
+<li><p>blok zaustavljanja,</p></li>
+<li><p>blokovi za rad s klonovima.</p></li>
+</ol>
+<p>O funkcijama ovih blokova razgovarali smo u lekcijama 5, 6 i 7 ovog praktičnog programa.</p>
+<p><strong>Rad s klonovima</strong></p>
+<p>Kloniranje je značajka koja omogućuje liku da stvori kopiju sebe dok projekt traje. Svaki klon (duplikat) ima iste kostime, zvukove i skripte kao izvornik, ali je inače neovisan. Kloniranje se razlikuje od ostavljanja lika slike utisnutog na pozornici po tome što su klonovi zasebni znakovi koji mogu pokrenuti skripte i djelovati na njih. Također se razlikuje od znakova stvorenih dupliciranjem postojećeg znaka po tome što su obični duplikati stalni i pojavljuju se popisi znakova, a nema klonova na popisu znakova i nestaju nakon dovršetka projekta.</p>
+<p>Kloniranje se koristi kada postoje slični likovi u projektima koji rade slične stvari. Budući da su klonovi stvoreni od strane projekta, a ne korisnika, kloniranje oslobađa korisnika da napravi iste promjene u svakom od mnogih znakova. Na primjer, kloniranje se može koristiti za stvaranje puno prijatelja i neprijatelja u igrama i za posebne efekte, poput vatrometa i snijega.</p>
+<p>Klonovi obično izvrše akciju onda kada su stvoreni. Blok <img alt="when_clone" src="_images/when_clone.png" /> pokreće skriptu koja se izvršava kada se stvori klon. Znak se može pridružiti u više skripti počevši s ovim blokom i svi će se oni pokrenuti u isto vrijeme kada se klon stvori. Skripta se može pokrenuti na više klonova odjednom. Neke radnje koje ovaj blok može izvesti su postavljanje klona u nasumični položaj ili premještanje klona dok se on ne sudari s likom.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="blokovi-grupe-ocitanja">
+<h3>Blokovi grupe očitanja<a class="headerlink" href="#blokovi-grupe-ocitanja" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="sidebar-title"><img alt="sensing_blocks" src="_images/sensing.png" /> Sensing</p>
+<p><img alt="fig11_6" src="_images/fig11_6.png" /></p>
+</div>
+<p>Ovu skupinu čine blokovi koji omogućuju projektu da prihvati doprinose s različitih uređaja, slično kao ljudska osjetila koja prikupljaju informacije iz svoje okoline.
+U grupi <em>Sensing</em> postoji 18 blokova. Za razliku od Scratch 2.0, u ovoj grupi više nema tri bloka koji su se bavili podešavanjem videozapisa i praćenjem kretanja, ali dodaj ne blok <img alt="set_drag" src="_images/set_drag.png" />. Ovaj blok regulira može li se znak na cijelom zaslonu povući ili ne, što je prethodno podešeno u likovima. Blokovi povezani s otkrivanjem videozapisa premješteni su u odgovarajuće proširenje.</p>
+<p>Blokovi su podijeljeni u 6 podskupina čije su sljedeće funkcije:</p>
+<ol class="arabic simple">
+<li><p>pohranjivanje podataka o položaju lika u odnosu na pokazivač miša i druge predmete</p></li>
+<li><p>unos s tipkovnice</p></li>
+<li><p>pohranu podataka o tekućim operacijama miša i tipkovnice,</p></li>
+<li><p>zadržavanje trenutne vrijednosti volumena,</p></li>
+<li><p>rad s tajmeorm,</p></li>
+<li><p>čuvanje parametara likova i pozornice,</p></li>
+<li><p>spremanje trenutnog vremena i korisničkih podataka.</p></li>
+</ol>
+<p>Među blokovima ove skupine samo 3 mogu stajati samostalno, svi ostali su funkcionalni. Tako su blokovi prve skupine umetnuti u kontrolne blokove, koji bi trebali osigurati da se izvode različite radnje ovisno o položajulika. Blokovi druge skupine odgovaraju informacijama koje osoba prikuplja osjetom dodira, a treće podacima koji su prikupljeni čulom sluha. Mjerač vremena može se koristiti za ograničavanje vremena igranja ili vremena koje je potrebno za rješavanje testnog zadatka. Blok koji pohranjuje parametre znakova i pozornice može pružiti mnogo podataka o svim objektima koji sudjeluju u projektu. Informacije koje osoba prikuplja putem vida i računalo s video kamerom mogu se koristiti ako je u projekt uključeno proširenje <em>Video Sensing</em>.</p>
+<p>Funkcije većine blokova u ovoj skupini opisali smo kroz primjere u prethodnim lekcijama. Ovdje ćemo samo spomenuti funkcije logičkih blokova i izvješća trenutnog vremena.</p>
+<p><strong>Logički blokovi</strong></p>
+<p>Među blokovima u ovoj skupini je 5 logičkih blokova. Svaki od njih može vratiti samo jednu od dvije vrijednosti: istinsku ili lažnu, ovisno o tome je li ispunjen uvjet koji im je dodan. Logički blokovi postavljaju se u ulazna polja šesterokutnog oblika upravljačkih blokova.</p>
+<p><strong>Trenutno vrijeme i informacije o korisniku</strong></p>
+<p>Reporter <img alt="time_unit" src="_images/time_unit.png" /> može dati slijedeće informacije o tekućem vremenu.</p>
+<a class="reference internal image-reference" href="_images/fig11_6b.png"><img alt="_images/fig11_6b.png" class="align-center" src="_images/fig11_6b.png" style="width: 200px;" /></a>
+</div>
+<hr class="docutils" />
+<div class="section" id="blokovi-grupe-operations">
+<h3>Blokovi grupe <em>Operations</em><a class="headerlink" href="#blokovi-grupe-operations" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="sidebar-title"><img alt="operator_blocks" src="_images/operators.png" /> Operators</p>
+<p><img alt="fig11_7" src="_images/fig11_7.png" /></p>
+</div>
+<p>U grupi <em>Operations</em> nema samostalnih blokova koji bi odgovarali jezičnim naredbama. Svi blokovi su funkcionalni, to jest pohranjuju vrijednosti numeričkih, nizova ili logičkih izraza i smještaju se u odgovarajuća ulazna polja samostalnih ili drugih funkcionalnih blokova. Novi blok ove grupe je <img alt="text_contains" src="_images/text_contains.png" />, koja vraća <em>true</em> ili <em>false</em>, ovisno o tome sadrži li niz dani znak ili ne.</p>
+<p>Grupa <em>Operations</em> sadrži ukupno 18 blokova - 11 izvjestitelja i 7 logičkih blokova koji omogućuju sljedeće vrste operacija:</p>
+<ol class="arabic simple">
+<li><p>osnovna aritmetika - zbrajanje, oduzimanje, množenje i dijeljenje,</p></li>
+<li><p>generiranje slučajnih brojeva,</p></li>
+<li><p>usporedbe - veći, manji, jednaki,</p></li>
+<li><p>formiranje složenih logičkih izraza,</p></li>
+<li><p>nizove</p></li>
+<li><p>cijeli brojevi,</p></li>
+<li><p>računanje vrijednosti matematičkih funkcija.</p></li>
+</ol>
+<p>Osnovne aritmetičke operacije mogu se izvesti prkeo cijlih i realnih brojeva. Samo podjela na nulu (djelitelj = 0) može dovesti do problema jer ne postoji broj pomnožen s nulom koji daje broj osim nule (kvocijnst * djelitelj = djelitelj). Stoga bi se programi trebali spriječiti nula. Ovako smo to pokazali u projektu <em>Young Mathematician</em> u lekciji 7 ovog praktičnog dijela.</p>
+<p>Interpretacijski tumač vraća jednu od vrijednosti <em>Infinity</em>, <em>NaN</em> ili <em>-Infinity</em> kao rezultat nule, ovisno o tome je li djelitelj pozitivan broj, 0 ili negativan broj.</p>
+<p>Objasnili smo uporabu slučajnih brojeva, logičkih izraza i složenih logičkih izraza nastalih logičkim operacijama <em>i</em>, <em>ili</em>, i <em>ne</em>, kroz primjere u prethodnim lekcijama.</p>
+<p>String operacije omogućuju vam povezivanje dva niza, izdvajanje znaka na zadanom položaju niza, određivanje duljine niza i provjeravanje da li niz sadrži zadani znak. String operacije detaljno su opisane u lekciji 9 ovog priručnika.</p>
+<p>String operacije omogućuju vam povezivanje dva niza, izdvajanje znaka na zadanom položaju niza, određivanje duljine niza i provjeravanje da li niz sadrži zadani znak. String operacije detaljno su opisane u lekciji 9 ovog priručnika.</p>
+<p>Matematičke funkcije koje su odabrane s padajućeg popisa blokova <img alt="function" src="_images/function.png" /> su:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>abs</p></li>
+<li><p>floor</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>ceiling</p></li>
+<li><p>sqrt</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>sin</p></li>
+<li><p>cos</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>tan</p></li>
+<li><p>asin</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>acos</p></li>
+<li><p>atan</p></li>
+</ul>
+</td><td><ul class="simple">
+<li><p>e^</p></li>
+<li><p>10^</p></li>
+</ul>
+</td></tr></table>
+</div>
+<hr class="docutils" />
+<div class="section" id="blokovi-grupe-varijabla-i-lista">
+<h3>Blokovi grupe Varijabla i lista<a class="headerlink" href="#blokovi-grupe-varijabla-i-lista" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="sidebar-title"><img alt="variables_blocks" src="_images/variables.png" /> Variables and Lists</p>
+<p><img alt="fig11_8" src="_images/fig11_8.png" /></p>
+</div>
+<p>Funkcije podskupina su slijedeće:</p>
+<p>Za varijable</p>
+<ol class="arabic simple">
+<li><p>izvještaji o promjenjivim korisnicima,</p></li>
+<li><p>postavljanje i promjena vrijednosti varijable,</p></li>
+<li><p>prikazivanje ili skrivanje promjenjivog novinara na pozornici.</p></li>
+</ol>
+<p>Za liste</p>
+<ol class="arabic simple" start="4">
+<li><p>izvjestitelji s popisa korisnika,</p></li>
+<li><p>dodavanje elementa na kraj popisa,</p></li>
+<li><p>operacije na listu,</p></li>
+<li><p>informacije o popisu za povratak,</p></li>
+<li><p>prikazivanje ili skrivanje izvjestitelja s popisa na pozornici.</p></li>
+</ol>
+<p>Operacije koje su podržane za rad s lista su:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>brisanje elementa iz određene pozicije,</p></li>
+<li><p>brisanje svih elemenata,</p></li>
+<li><p>umetnite element u zadani položaj i</p></li>
+<li><p>zamjena elementa iz određenog položaja.</p></li>
+</ul>
+</td></tr></table>
+<p>Sljedeće informacije mogu se dobiti o listi:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>koji se element nalazi u zadanom položaju,</p></li>
+<li><p>na kojem je položaju dani element,</p></li>
+<li><p>koliko popisa ima elemenata i</p></li>
+<li><p>sadrži li popis zadani element.</p></li>
+</ul>
+</td></tr></table>
+<p>Varijable i liste mogu biti globalni - za sve likove ili lokalni - za samo jedan lik. Varijable i liste koji su stvoreni za pozornicu vidljivi su svim likovima.</p>
+<p>Trenutne vrijednosti varijable mogu se pratiti na pozornici putem monitora varijable. Promjenjivi monitori mogu biti u tri formata:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>prikazivanje vrijednosti s nazivom varijable,</p></li>
+<li><p>veliki prikaz vrijednosti bez pravog imena,</p></li>
+<li><p>s klizačem koji omogućuje promjenu vrijednosti varijable.</p></li>
+</ul>
+</td></tr></table>
+<p>U predavanju 7 detaljno smo razgovarali o radu sa varijablama i radu s listama u lekciji 9 ovog praktičnog programa.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="blokovi-grupe-moji-blokovi">
+<h3>Blokovi grupe Moji blokovi<a class="headerlink" href="#blokovi-grupe-moji-blokovi" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="sidebar-title"><img alt="my_blocks" src="_images/my_blocks.png" /> My blocks</p>
+<p><img alt="fig11_9" src="_images/fig11_9.png" /></p>
+</div>
+<p>Počevši od programa Scratch 2.0 korisniku je predstavljeno da izrađuje vlastite blokove i tako implementira procedure. Nova verzija Skcratcha promijenila je boju i oblik korisničkih blokova.</p>
+<p>Kada korisnik zatraži da unesete novi blok, pojavljuje se početni blok - definicija, koja bi trebala slijediti radnje koje bi novonavedeni blok trebao izvesti. Tada se na listi blokova pojavljuje blok s dodijeljenim imenom u definiciji. Novi blok definiran korisnikom može se dalje koristiti kao i bilo koji drugi blok.</p>
+<p>Novi blok može imati i polja za unos. <em>Parametri</em> se unose u ulazna polja definicijskog zaglavlja. Postupci također mogu imati više parametara. Kada se postupak poziva na novi blok, u polje unosa unose se <em>argumenti</em>. Argumenti zamjenjuju svaku pojavu odgovarajućih parametara u postupku.</p>
+<p>U predavanju 8 ovog praktikuma razgovarali smo više o tome kako stvoriti i koristiti uvedene blokove.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="blokovi-grupe-prosirenja-pen">
+<h3>Blokovi grupe proširenja Pen<a class="headerlink" href="#blokovi-grupe-prosirenja-pen" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="sidebar-title"><img alt="pen_extension" src="_images/pen.png" /> Pen</p>
+<p><img alt="fig11_10" src="_images/fig11_10.png" /></p>
+</div>
+<p>Na Scratchu se svakom liku mogu dati položaj, smjer i smjer kretanja te može ostaviti trag pri kretanju. Pri tome, veličina, oblik i boja samog lika ne utječu na trag koji ostavlja, kao što likovi crtaju olovkom. Lik također može biti nevidljiv ili se sastoji od jedne točke, ali to ne utječe na njegov crtež. Sposobnost lika da ostavi trag pri kretanju temelji se na blokovima u ovoj grupi. Slika koju likovi oblikuju pamti se kao zbirka figura, zajedno s njihovim parametrima. Za definiranje ove slike koristi se izraz <em>vektorska grafika</em>.</p>
+<p>Blokovi u proširenju <em>Pen</em> organizirani su u 5 podskupina. Naredbe za sjenilo olovaka koje su korištene u prethodnim jezičnim verzijama ukinute su, a umjesto da specificiraju boju olovke samo brojem, boja je sada definirana atributima nijanse, zasićenosti i svjetline. Svi blokovi ove grupe u nizu blokova.</p>
+<p>Funkcije podskupina su slijedeće:</p>
+<ol class="arabic simple">
+<li><p>brišući sve što je nacrtano,</p></li>
+<li><p>ostavljajući pečat lika,</p></li>
+<li><p>podizanje i spuštanje olovke,</p></li>
+<li><p>postavljanje i promjena atributa olovke,</p></li>
+<li><p>postavljanje i promjena debljine olovke.</p></li>
+</ol>
+<p>Grafički uređivač u ovoj verziji Scratcha radi s tzv HSB (nijansa, zasićenost, svjetlina) model boja. To znači da se boja formira postavljanjem 3 komponente: nijansa, zasićenost i svjetlina. Nijansa boja označava broj boje u spektralnoj paleti, to jest, samu boju. Opisana je u krugu boja u kojem kut 0 ° predstavlja crvenu (boja boje 0) i 180 ° plavu zelenu (cijan, boja broj 100). Zasićenost boje govori svojim intenzitetom - što je veća boja čistija. Zasićenost može biti od 0 do 100%, a intenzitet 0% predstavlja bijelu boju, a intenzitet 100% čistu boju. Svjetlina boje ovisi o količini crne boje koja se miješa s promatranom bojom.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="blokovi-grupe-prosirenja-tekst-u-govor-i-prevedi">
+<h3>Blokovi grupe proširenja Tekst u govor i prevedi<a class="headerlink" href="#blokovi-grupe-prosirenja-tekst-u-govor-i-prevedi" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="sidebar-title"><img alt="voices_extension" src="_images/voices.png" /> Text to Speech and <img alt="translate_extension" src="_images/translate.png" /> Translate</p>
+<p><img alt="fig11_11" src="_images/fig11_11.png" /></p>
+</div>
+<p><strong>Proširenje teksta u govor</strong></p>
+<p>Ovo proširenje može se koristiti samo ako je računalo povezano na internet <img alt="requires" src="_images/requires.png" />, je koristi Amazon Web Services</p>
+<p>Kada iz grupe <em>Extensions</em> <img alt="voices_extension" src="_images/voices.png" /> from the group <em>Extensions</em>, u paleti blokova pojavit će se tri nova bloka. Omogućuju da lik na jeziku koji ste postavili u trećem bloku ove grupe izgovara tekst koji upišete u polje za unos prvog bloka. Također možete postaviti glas koji se izgovara: ženski (sopran ili alt) ili muški (tenor ili bas). To je dodijeljeno drugom bloku ove grupe.</p>
+<p><strong>Proširenje prevedi</strong></p>
+<p>Ovo se proširenje može koristiti samo ako je vaše računalo povezano s internetom <img alt="requires" src="_images/requires.png" />, jer koristi Google</p>
+<p>Kada iz grupe <em>Extensions</em> izabereš|translate_extension|, dva nova bloka pojavit će se u paleti blokova. Omogućuju prevođenje teksta ispisanog na jednom jeziku na drugi jezik. blok <img alt="language" src="_images/language.png" /> označava na koji je jezik postavljen Scratch. Tekst koji je napisan na trenutnom jeziku u prvom unosnom polju <img alt="translate_to" src="_images/translate_to.png" /> prevodi na jezik odabran s padajućeg popisa drugog polja za unos. Ako se prijevodni blok postavi u okvir za unos <code class="docutils literal notranslate"><span class="pre">say</span></code> ili <code class="docutils literal notranslate"><span class="pre">think</span></code> blok, možete vidjeti prijevod.</p>
+</div>
+</div>
+<div class="section" id="uporaba-ugradenog-grafickog-uredivaca">
+<h2>Uporaba ugrađenog grafičkog uređivača<a class="headerlink" href="#uporaba-ugradenog-grafickog-uredivaca" title="Permalink to this headline">¶</a></h2>
+<p>Scratch ima ugrađeni uređivač slika koji možete koristiti za stvaranje i uređivanje znakova, kostima i pozadina. Ovaj uređivač podržava crtanje u dva načina: rasterskom i vektorskom.</p>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<blockquote>
+<div><p>Računala mogu pamtiti slike na dva načina: rasterske i vektorske.</p>
+<p>U <em>rasterskoj grafici</em> slika se pamti kao pravokutna mreža piksela - bitmape. Bitmape se tehnički određuju širinom i visinom znaka u pikselima i brojem bitova potrebnim za pamćenje boje piksela. Na primjer, ako imamo samo 16 boja, potrebna su nam 4 bita po pikselu da bismo zapamtili njegovu boju. Rasterska grafika ovisi o razlučivosti. Rasterske slike nije moguće povećati bez gubitka kvalitete slike.</p>
+<p>Taj se nedostatak nadvladava primjenom vektorske grafike, koja pamti sliku kao zbirku figura, zajedno s njihovim podacima (parametrima) koji određuju kako će se slika crtati i gdje će se nalaziti. Grafika kornjača je primjer <em>vektorske grafike</em>.</p>
+</div></blockquote>
+<p>Sljedeća slika prikazuje uvećanu sliku crte povučene na ova dva načina.</p>
+<blockquote>
+<div><a class="reference internal image-reference" href="_images/fig11_12.png"><img alt="_images/fig11_12.png" class="align-center" src="_images/fig11_12.png" style="width: 210px;" /></a>
+</div></blockquote>
+
+    </p></div></div>
+<div class="section" id="korinsicko-sucelje">
+<h3>Korinsičko sučelje<a class="headerlink" href="#korinsicko-sucelje" title="Permalink to this headline">¶</a></h3>
+<p>Sljedeća slika prikazuje izgled ugrađenog uređivača slika u vektorskom i mapu bitova.</p>
+<a class="reference internal image-reference" href="_images/fig11_13.png"><img alt="_images/fig11_13.png" class="align-center" src="_images/fig11_13.png" style="width: 1200px;" /></a>
+<div class="sidebar">
+<p class="sidebar-title">New costumes</p>
+<p><img alt="novi" src="_images/fig11_14.png" /></p>
+</div>
+<p><strong>Područje kostima</strong></p>
+<p>S lijeve strane je područje kostima (1) s ikonama za svaki kostim i redni broj kostima. Na dnu prostora kostima nalazi se gumb za stvaranje novih kostima. Za uređivanje različitih kostima u uređivaču slika, jednostavno kliknite ikonu željenog kostima i odgovarajuća slika će se pojaviti u području za uređivanje - crtanje platna (7).</p>
+<p>Možete dodati novi kostim (ili pozadinu) tako da pokažite mišem iznad gumba <img alt="b_sprite" src="_images/b_sprite.png" /> pri dnu ovog područja i odaberite jednu od opcija koja će se pojaviti. Možete odabrati kostim iz biblioteke kostima, nacrtati vlastiti, preuzeti datoteku slike s računala, fotografirati ili odabrati “kostim iznenađenja”, koji je nasumično odabran iz biblioteke kostima.</p>
+<p>Napomena. Biblioteka kostima sadrži pojedinačne kostime svih likova koji se nalaze u Biblioteci kostima.</p>
+<div class="sidebar">
+<p class="sidebar-title">Changing the mode of operation</p>
+<p><img alt="vector_bmp" src="_images/vector_bmp.png" /></p>
+<p><img alt="bmp_vector" src="_images/bmp_vector.png" /></p>
+</div>
+<p><strong>Prebacivanje iz vektorskog u mapu bitova i obrnuto</strong></p>
+</div>
+<div class="section" id="opcije-se-koriste-u-oba-nacina">
+<h3>Opcije se koriste u oba načina<a class="headerlink" href="#opcije-se-koriste-u-oba-nacina" title="Permalink to this headline">¶</a></h3>
+<p>Te se opcije nalaze iznad platna za crtanje.</p>
+<div class="sidebar">
+<p class="sidebar-title">Changing the color</p>
+<p><img alt="promena_boje" src="_images/fig11_15.png" /></p>
+</div>
+<p><img alt="fill" src="_images/fill.png" /> <strong>Promjena boje</strong></p>
+<p>Klikom na unosno polje referentnog bloka boja otvara se padajući izbornik koji sadrži klizače: boja, zasićenost i svjetlina, a ispod njih pipeta za uzorkovanje boja. Željenu boju možete postaviti pomicanjem klizača ili pritiskom na pipetu.</p>
+<p>Pomicanjem klizača u <em>boji</em> mijenjate nijansu boje (na primjer, od crvene do plave). Ovaj se alat najviše koristi jer ima najveću razliku između boja.
+Pomicanjem klizača <em>zasićenost</em> mijenja intenzitet boje: 100 je odabrana boja, 50 je svjetlije boje, a 0 je potpuno bijela.
+Pomicanjem klizača <em>svjetlina</em> podešavate svjetlinu koliko boja će biti zatamnjena: svjetlina 0 je potpuno crna, dok je 100 odabrana boja.</p>
+<p>Ako se klikne pipeta, pojačava se povećalo s krugom u sredini.
+Da biste odabrali željenu boju, trebate postaviti sredinu povećala iznad dijela platna na kojem se nalazi ta boja i kliknuti.</p>
+<p>Četiri su mogućnosti iznad tri klizača. Omogućuju različite načine punjenja. Područje možete ravnomjerno ispuniti jednom bojom ili gradijentom, s nijansama boje. Ako kliknete na neku od opcija osim opcije pune boje, prikazat će se dvije odabrane boje: <img alt="swap" src="_images/swap.png" />. Klikom na prvu ili drugu boju možete ih smjestiti. Klikom na <em>zamjenu</em> između dvije boje mijenja se njihov redoslijed. Stilovi ispunjavanja su: jednobojni, okomito linearni gradijent, vodoravno linearni gradijent i kružni gradijent.</p>
+<p><img alt="size" src="_images/size.png" /> <strong>Promjena debljine olovke</strong></p>
+<p>Postoji ulaz za odabir debljine olovke. Unesite veličinu ili upotrijebite strelice sa strane da biste je promijenili. Što je veći broj, linija će biti deblja.</p>
+<p><img alt="name" src="_images/name.png" /> <strong>Nazivanje kostima</strong></p>
+<p>Naziv kostima važan je za organizaciju, a ponekad i za programiranje projekta. Kako je svakom kostimu dodijeljen vlastiti redoslijed, nije dobro kostime imenovati samo brojevima koji ne sadrže druge znakove. Dajte kostimu novo ime klikom na tekstnu traku u gornjem lijevom dijelu opcija i upisivanjem imena.</p>
+<p><img alt="copy" src="_images/copy.png" /> <strong>Kopirati (Copy) i</strong>  <img alt="paste" src="_images/paste.png" />  <strong>Zalijepiti (Paste)</strong></p>
+<p>Drugi red opcija uključuje gumbe za kopiranje i zalijepiti. Opcija kopiranja odabrano područje kopira, zalijepivši ga na drugo mjesto. Također možete koristiti prečace: Ctrl + C za kopiranje i Ctrl + V za zalijepiti. Prvo odaberite pravokutno područje koje želite kopirati, a zatim ga povucite na mjesto gdje želite kopirati.</p>
+<p><img alt="redo" src="_images/redo.png" /> <strong>Poništi i ponovo</strong></p>
+<p>Desno od naziva kostima nalaze se dva gumba za poništavanje i ponavljanje. Ovi gumbi omogućuju vam da poništite posljednju radnju i ponovite radnju poništavanja. Gumb za ponavljanje nije moguće koristiti ako prethodno nije upotrijebljen gumb za poništavanje. Ako napustite uređivač slika, sve što ste napravili u njemu postaje trajno i može se poništiti samo ručno. Prečac na poništavanju tipkovnice je Ctrl + Z.</p>
+<p><img alt="flip_h" src="_images/flip_h.png" /> <strong>Horizontalno</strong>  <img alt="flip_v" src="_images/flip_v.png" /> <strong>and Vertikalno okretanje</strong></p>
+<p>Kad odaberete stavku, možete je zakrenuti vodoravno ili okomito. U drugom retku opcije su dva gumba s dvije strelice, svaka usmjerena na isprekidanu liniju. Jedan s lijeve strane okreće odabrani objekt vodoravno, a drugi okomito.</p>
+</div>
+<div class="section" id="opcije-samo-za-vektorski-nacin-rada">
+<h3>Opcije samo za vektorski način rada<a class="headerlink" href="#opcije-samo-za-vektorski-nacin-rada" title="Permalink to this headline">¶</a></h3>
+<p>Ove su opcije dostupne samo kada je grafički uređivač u vektorskom načinu rada i ne pojavljuju se u mapi bitova.</p>
+<p><strong>Precizno kretanje predmeta</strong></p>
+<p>Kada se objekt odabere u vektorskom načinu, tipke sa strelicama mogu se koristiti za precizno pomicanje točno jednog piksela. A kad je u mapi bitova, odabrano područje se također može pomicati tipkama sa strelicama. Ova opcija može biti korisna ako želite nacrtati precizan crtež ili poravnati predmete.</p>
+<div class="sidebar">
+<p class="sidebar-title">Postavljanje konture</p>
+<p><img alt="promena_konture" src="_images/fig11_16.png" /></p>
+</div>
+<p><img alt="outline" src="_images/outline.png" /> <strong>Outlines</strong></p>
+<p>S desne strane opcije podešavanja boje nalazi se padajući izbornik koji vam omogućuje promjenu konture objekta. Ovaj padajući izbornik također ima tri klizača, ali za razliku od izbornika za podešavanje boja, ovdje nemate mogućnosti miješati dvije boje. Desno od padajućeg izbornika nalazi se tekstni okvir koji određuje debljinu konture. Možete unijeti broj ili ga promijeniti pomoću tipki sa strelicama.</p>
+<p><strong>organizirajte prikaze po slojevima</strong></p>
+<p>Sljedeću analogiju možemo objasniti kako su likovi predstavljeni na pozornici. Zamislite da je svaki lik naslikan na zasebnoj prozirnoj foliji i da su sve folije naslagane jedna preko druge preko one na kojoj je pozadina naslikana. Kretanje lika može se predstaviti kao kretanje filma na kojem je naslikan. Ono što pristaje prozirnim folijama na Scratchu su <em>slojevi</em>. Svakim potezom lik zamrači sve u slojevima ispod njega.</p>
+<p>U gornjem desnom dijelu uređivača slika nalaze se četiri gumba koja vam omogućuju kretanje likova kroz slojeve:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p><img alt="v_forward" src="_images/v_forward.png" /> pomiče object jedan sloj ispred</p></li>
+<li><p><img alt="v_front" src="_images/v_front.png" /> pomiče object skroz ispred,</p></li>
+<li><p><img alt="v_backward" src="_images/v_backward.png" /> pomiče object skroz ispred</p></li>
+<li><p><img alt="v_back" src="_images/v_back.png" /> pomiče blok skroz ispod</p></li>
+</ul>
+</td></tr></table>
+<p><img alt="v_group" src="_images/v_group.png" /> <strong>Grupiranje</strong> <img alt="v_ungroup" src="_images/v_ungroup.png" /> <strong>i razdvajanje</strong></p>
+<p>Ova se opcija koristi za grupiranje više objekata u jednu cjelinu. Kad postoji mnogo objekata koje je potrebno pomaknuti ili izbrisati odjednom, korisno ih je grupirati. Na taj će se način svi istovremeno moći kretati ili brisati. Kliknite i prevucite objekte (ili držite Shift i pritisnite svaki) da biste ih odabrali, a zatim kliknite gumb grupe. Svi se objekti dalje tretiraju kao jedan objekt.</p>
+<p>Gumb za razdvajanje čini suprotno - odabranu skupinu možete podijeliti na manje dijelove. Ovaj gumb postaje vidljiv kada odaberete grupu i omogućuje vam grupiranje objekata.</p>
+<p><img alt="v_curved" src="_images/v_curved.png" /> <strong>Zaobljeno</strong> <img alt="v_pointed" src="_images/v_pointed.png" /> <strong>ili šiljato</strong></p>
+<p>Kada koristite alat za promjenu oblika, postoje dvije mogućnosti, s desne strane konture, koje omogućuju zakrivljenje kovrča poput elipse ili suženje poput pravokutnika. Ovo je korisno pri stvaranju oblika s zakrivljenim i šiljastim rubovima. Ako je odabrano više točaka (držite tipku shift i kliknite na više), navedena promjena primijenit će se na sve odabrane točke.</p>
+</div>
+<div class="section" id="rad-u-mapi-bitova">
+<h3>Rad u mapi bitova<a class="headerlink" href="#rad-u-mapi-bitova" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="sidebar-title">Raster Tools</p>
+<p><img alt="rasterski" src="_images/fig11_17.png" /></p>
+</div>
+<p><img alt="r_brush" src="_images/r_brush.png" /> <strong>Crtanje slobodnom rukom</strong></p>
+<p>Možete postaviti boju crteža i debljinu kista odgovarajućim opcijama. Koristi opcije za poništavanje i ponovno pokretanje ako pogriješite. Gumica za brisanje pomaže i u slučaju pogreške.</p>
+<p><img alt="r_line" src="_images/r_line.png" /> <strong>Crtanje linija</strong></p>
+<p>Možete postaviti boju crteža i debljinu kista odgovarajućim opcijama. Koristi opcije za poništavanje i ponovno pokretanje ako pogriješite. Gumica za brisanje pomaže i u slučaju pogreške.</p>
+<p><img alt="r_circle" src="_images/r_circle.png" /> <strong>Crtanje kruga</strong></p>
+<p>Može se nacrtati prazan ili ispunjen krug. Koristi Shift + povucite za crtanje kruga. Pomoću odgovarajućih opcija možete odabrati stil punjenja i promijeniti debljinu konture.</p>
+<p><img alt="r_rectan" src="_images/r_rectan.png" /> <strong>Crtanje pravokutnika</strong></p>
+<p>Može se nacrtati prazan ili ispunjen pravokutnik. Koristi Shift + povucite za crtanje kvadrata. Pomoću odgovarajućih opcija možete odabrati stil punjenja i promijeniti debljinu konture.</p>
+<div class="sidebar">
+<p class="sidebar-title">Text</p>
+<p><img alt="tekst" src="_images/fig11_18.png" /></p>
+</div>
+<p><img alt="r_text" src="_images/r_text.png" /> <strong>Pisanje teksta</strong></p>
+<p>Kliknite bilo gdje na platnu, a zatim upišite svoj tekst kad vidite pokazivač. Zatim kliknite izvan područja teksta. Alat za odabir automatski odabire tekst, tako da možete promijeniti njegovu veličinu i orijentaciju. Koristi ručke (krugove i strelice oko teksta) za promjenu veličine i usmjeravanje teksta</p>
+<p><img alt="r_fill" src="_images/r_fill.png" />  <strong>Popunjavanje zatvorenih područja</strong></p>
+<p>Područje možete ravnomjerno ispuniti jednom bojom ili gradijentom, s nijansama boje koristeći odgovarajuću opciju punjenja.</p>
+<p><img alt="r_eraser" src="_images/r_eraser.png" /> <strong>Brisanje slobodnim pokretima</strong></p>
+<p>Podesite veličinu gumice s odgovarajućom opcijom. Područja koja ste izbrisali postaju prozirna.</p>
+<p><img alt="r_select" src="_images/r_select.png" /> <strong>Odabir pravokutnog područja</strong></p>
+<p>Možete:</p>
+<ol class="arabic simple">
+<li><p>premjestite se na novu lokaciju povlačenjem,</p></li>
+<li><p>povećavati, smanjivati i zakretati,</p></li>
+<li><p>izbrišite pritiskom na trku za brisanje Del</p></li>
+</ol>
+</div>
+<div class="section" id="rad-u-vektorskom-nacinu">
+<h3>Rad u vektorskom načinu<a class="headerlink" href="#rad-u-vektorskom-nacinu" title="Permalink to this headline">¶</a></h3>
+<div class="sidebar">
+<p class="sidebar-title">Vector Tools</p>
+<p><img alt="vektorski" src="_images/fig11_19.png" /></p>
+</div>
+<p><img alt="v_select" src="_images/v_select.png" /> <strong>Izbor objekta</strong></p>
+<p>Ona koristi ovaj alat za pomicanje, brisanje, promjenu veličine ili rotaciju objekta. Kada se objekt klikne, oko njega se pojavljuje okvir <img alt="izbor_objekta" src="_images/fig11_20.png" />, što znači da je odabran objekt.</p>
+<p>Ako želite odabrati više objekata odjednom, držite lijevu tipku miša i prevucite mišem preko njih ili držite tipku Shift i kliknite istovremeno sve predmete koje želite odabrati.
+Kada pomičete pokazivač blizu središta predmeta, pokazivač miša mijenja oblik, što znači da možete pomicati objekt oko platna. Objekt se također može pomicati strelicama na tipkovnici.
+Odabrani objekt briše se pritiskom na tipku Del. Možete promijeniti veličinu objekta povlačenjem bilo kojih hvataljki - krugova oko ruba objekta.
+Da biste rotirali predmet oko njegovog središte uhvatite ga i povucite rotacijske strelice.</p>
+<p><img alt="v_reshape" src="_images/v_reshape.png" /> <strong>Promjena oblika objekta</strong></p>
+<p>Kliknite na objekt koji želite preoblikovati i na obodu objekta pojavit će se skup kontrolnih točaka, kao što je prikazano na slici (1). Kliknite jednu od njih i povucite je (2). Dodatnim upravljačkim točkama možete stvoriti klikom na konturu objekta (3). Možete izbrisati kontrolnu točku pomicanjem kursora na nju (4). Odabrana točka promijenit će boju, a zatim kliknite na nju (5). Gumbi <img alt="v_curved" src="_images/v_curved.png" /> i <img alt="v_pointed" src="_images/v_pointed.png" />, koji se pojavljuju u opcijama, omogućuju vam zaokruživanje ili oštrenje rubova konture objekta.</p>
+<a class="reference internal image-reference" href="_images/fig11_21.png"><img alt="_images/fig11_21.png" class="align-center" src="_images/fig11_21.png" style="width: 680px;" /></a>
+<p><img alt="v_brush" src="_images/v_brush.png" /> <strong>Crtanje slobodnom rukom</strong></p>
+<p>Ovaj je alat sličan alatu odgovarajućeg alata u mapi bitova. Držite pokazivač miša i pomaknite ga da biste nacrtali zakrivljenu liniju. Umjesto piksela, krivulja je ovdje definirana skupom kontrolnih točaka. Izgled linije možete promijeniti pomoću alata <em>Reshape</em>.</p>
+<p><img alt="v_eraser" src="_images/v_eraser.png" /> <strong>Gumica</strong></p>
+<p>Ovaj alat je sličan odgovarajućem alatu u radu u mapi bitova.</p>
+<p><img alt="v_fill" src="_images/v_fill.png" /> <strong>Ispunite zatvoreni prostor ili obojite konturu predmeta</strong></p>
+<p>Kantica u vektorskom načinu rada djeluje drugačije nego u mapi bitova, gdje se alat ispunjava u bilo kojem odabranom zatvorenom području. Vektorski način rada radi samo s vektorskim objektima. Nakon odabira ovog alata, klikom na objekt može se promijeniti njegova boja ili boja konture.</p>
+<p><img alt="v_text" src="_images/v_text.png" /> <strong>Ispis teksta</strong></p>
+<p>Odaberite ovaj alat, a zatim kliknite bilo gdje na platnu i unesite tekst kad se pokazivač pojavi. Kada završite, kliknite izvan područja teksta. Alat <em>Select</em> automatski će odabrati tekst tako da možete promijeniti njegovu veličinu i orijentaciju. Za razliku od teksta u mapi bitova, tekst kreiran u vektorskom načinu može se uređivati u bilo koje vrijeme, čak i nakon napuštanja grafičkog uređivača. Da biste mogli izmijeniti njezin sadržaj, dovoljno je odabrati tekst.</p>
+<p><img alt="v_line" src="_images/v_line.png" /> <strong>Crtanje linija</strong></p>
+<p>Linija je definirana s dvije kontrolne točke na oba kraja. Da biste nacrtali crtu, kliknite gdje želite započeti liniju i povucite do krajnje točke. Da biste nacrtali vodoravnu ili okomitu liniju, držite tipku Shift dok povlačite miš.</p>
+<p>Da biste nacrtali zakrivljenu liniju, počnite s ravnom linijom, zatim odaberite alat Promijeni oblik, a zatim napravite Shift + klik bilo gdje na liniji i povucite novu kontrolnu točku. Ovo je način da se formira krivuljasta linija.</p>
+<p><img alt="v_circle" src="_images/v_circle.png" /> <strong>Crtanje kruga</strong></p>
+<p>Koristi ovaj alat za crtanje kruga crtanjem u boji. Kliknite da biste istaknuli gornji lijevi kut, a zatim povucite (Shift + povlačenje u krug) do veličine kruga koju želite. Možete promijeniti stil ispunjavanja (ispunjen ili prazan) i debljinu crta pomoću gumba u području opcija. Rezultirajući krug ima 4 ravnomjerno raspoređene kontrolne točke.</p>
+<p><img alt="v_rectan" src="_images/v_rectan.png" /> <strong>Crtanje pravokutnika</strong></p>
+<p>Koristi ovaj alat za crtanje kruga crtanjem u boji. Kliknite da biste istaknuli gornji lijevi kut, a zatim povucite (Shift + povlačenje u krug) do veličine kruga koju želite. Možete promijeniti stil ispunjavanja (ispunjen ili prazan) i debljinu crta pomoću gumba u području opcija. Rezultirajući krug ima 4 ravnomjerno raspoređene kontrolne točke.</p>
+</div>
+</div>
+<div class="section" id="upotreba-ugradenog-zvucnog-uredivaca">
+<h2>Upotreba ugrađenog zvučnog uređivača<a class="headerlink" href="#upotreba-ugradenog-zvucnog-uredivaca" title="Permalink to this headline">¶</a></h2>
+<p>Scratch-ov uređivač zvuka omogućuje korisnicima uređivanje i reprodukciju zvukova. U glazbi se pojam <em>remix</em> koristi za označavanje nove, modificirane verzije glazbenog sastava.</p>
+<div class="section" id="the-user-interface">
+<h3>The User Interface<a class="headerlink" href="#the-user-interface" title="Permalink to this headline">¶</a></h3>
+<p>Prozor uređivača zvuka podijeljen je u dva područja: popis zvukova (1) i područje uređivanja (2)</p>
+<a class="reference internal image-reference" href="_images/fig11_22.png"><img alt="_images/fig11_22.png" class="align-center" src="_images/fig11_22.png" style="width: 880px;" /></a>
+<div class="sidebar">
+<p class="sidebar-title">New Sound</p>
+<p><img alt="novi_zvuk" src="_images/fig11_23.png" /></p>
+</div>
+<p><strong>Popis zvukova</strong></p>
+<p>Popis zvukova nalazi se na lijevoj strani prozora i koristi se za odabir zvukova koje ćemo uređivati u uređivanju. Odabir zvuka vrši se klikom na njega. Odabrani zvuk dobiva plavu kutiju oko ikone sličnu aktivnom liku na popisu likova. U gornjem desnom dijelu aktivnog zvuka pojavljuje se “x”, čime je moguće izbrisati. Desnim klikom na ikonu zvuka otvara se izbornik prečaca koji nudi umnožavanje, izvoz i brisanje zvuka.</p>
+<p>Na dnu ovog područja nalazi se gumb zvukova <img alt="b_sound" src="_images/b_sound.png" />, koji omogućava uvođenje novih zvukova.</p>
+<p><strong>Područje uređivanja</strong></p>
+<p>Područje za uređivanje sadrži traku na vrhu (3), grafički prikaz zvuka u sredini (4) i traku ispod (5), koja sadrži 7 alata.</p>
+<p>U traci iznad grafičkog audio prikaza nalaze se alati koji vam omogućuju uređivanje zvuka, ali ne proizvode efekte. Postoje:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p>polje imena za zvuk,</p></li>
+<li><p>tipke za ponovno pozivanje i ponavljanje posjednje radnje i</p></li>
+<li><p>gumb <img alt="trim" src="_images/trim.png" />, za urezivanje kako biste obrezali snimak</p></li>
+</ul>
+</td></tr></table>
+<p>In the bottom bar are the tools, which make special effects while the sound is playing:</p>
+<table class="hlist"><tr><td><ul class="simple">
+<li><p><img alt="faster" src="_images/faster.png" /> - ubrzavanje,</p></li>
+<li><p><img alt="slower" src="_images/slower.png" /> - usporavanje,</p></li>
+<li><p><img alt="echo" src="_images/echo.png" /> - eho,</p></li>
+<li><p><img alt="robot" src="_images/robot.png" /> - robot,</p></li>
+<li><p><img alt="louder" src="_images/louder.png" /> - pojačavanje,</p></li>
+<li><p><img alt="softer" src="_images/softer.png" /> - stišavanje i</p></li>
+<li><p><img alt="reverse" src="_images/reverse.png" /> - okretanje zvučnog zapisa unazad.</p></li>
+</ul>
+</td></tr></table>
+<p>Ubrzаvаnjе i uspоrаvаnjе realizira sе tаkо štо sе umjesto nоtе reproducira višа ili nižа оd njе. Еfеkt еhо pоstižе sе pоnоvnim puštаnjеm zvukа nakon 0.15 sеkundi.</p>
+</div>
+</div>
+</div>
+
+
+  
+      <div class="col-md-12">
+<ul class="pager">
+        <li id="relations-prev" title='Previous chapter - Stringovi' data-toggle="tooltip"><a href="Scratch3 Strings.html">Previous chapter</a></li>
+    
+</ul>
+
+<!-- <ul class="pager"> -->
+    <!-- -->
+        <!-- <li id="relations-prev" title='Претходно поглавље - Stringovi' data-toggle="tooltip"><a href="Scratch3 Strings.html">Претходно поглавље</a></li> -->
+    <!--  -->
+    <!-- -->
+<!-- </ul> -->
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+  
+</div>
+<footer class="footer col-md-12">
+    <div class="container">
+        <div class="text-center">
+            <hr>
+            <p class="text-muted">
+                <span class="text-center">&copy; 2019 <a href="https://petlja.org">Petlja.org</a> 
+                  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; vertical-align: text-bottom" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+                  
+                  (Created using  <a href="https://pypi.org/project/Sphinx/">Sphinx</a>, <a href="http://runestoneinteractive.org/">RunestoneComponents</a> and <a href="https://github.com/Petlja/PetljaDoc">PetljaDoc</a>)</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>
